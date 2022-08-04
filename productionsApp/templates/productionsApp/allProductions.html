@@ -1,0 +1,90 @@
+{% extends 'shared/master.html' %}
+{% load static %}
+{% block title %}لیست محصولات{% endblock %}
+{% block content %}
+
+	<section id="advertisement">
+		<div class="container">
+			<img src="{% static 'images/shop/advertisement.jpg' %}" alt="banner" />
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 padding-right">
+					<div class="features_items">
+                        <!--features_items-->
+						<h2 class="title text-center">تمامی محصولات</h2>
+						{% for product in products %}
+						{% include 'productionsApp/includes/cardProductions.html' with product=product %}
+						{% endfor %}
+                    <div class="clearfix">
+                        {% include 'productionsApp/includes/categoryPartial.html' %}
+                    </div>
+						<ul class="pagination">
+                         {% if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                        {% endif %}
+                            {% for pageNumber in paginator.page_range %}
+                                <li class="{% if page_obj.number == pageNumber %} active {% endif %}">
+                                    <a href="?page={{ pageNumber }}">
+                                        {{ pageNumber }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
+                        {% endif %}
+						</ul>
+					</div>
+                    <!--features_items-->
+				</div>
+            	<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>دسته بندی محصولات</h2>
+						<div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+
+                        {% for cat in products%}
+									<div class="panel-body">
+										<ul>
+											<li><a href="{{ cat.get_absolute_url }}">{{ cat.slug }}</a></li>
+										</ul>
+									</div>
+						{% endfor %}
+
+						<div class="brands_products">
+                            <!--brands_products-->
+							<h2>برنـد ها</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+                                    {% for cat in products%}
+									<div class="panel-body">
+										<ul>
+                                            {% if cat.brand.product_set %}
+                                            <li><a href="{{ cat.get_absolute_url }}"> <span class="pull-left"></span>
+                                           {{ cat.brand }}
+                                            </a></li>
+                                            {% endif %}
+										</ul>
+									</div>
+						{% endfor %}
+								</ul>
+							</div>
+						</div>
+                            <!--/brands_products-->
+
+						<div class="shipping text-center">
+                            <!--shipping-->
+							<img src="{% static 'images/home/shipping.jpg' %}" alt="" />
+						</div>
+                            <!--/shipping-->
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

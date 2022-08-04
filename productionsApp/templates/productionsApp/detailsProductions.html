@@ -1,0 +1,106 @@
+{% extends 'shared/master.html' %}
+{% load static %}
+{% block title %}
+{{ productC.title }}
+{% endblock %}
+{% block content %}
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 padding-right">
+					<div class="product-details">
+                        <!--product-details-->
+						<div class="col-sm-6">
+							<div class="view-product">
+								<img src="{{ product.image.url }}" alt="{{ product.slug }}">
+							</div>
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								    <div class="carousel-inner">
+									</div>
+							</div>
+
+						</div>
+						<div class="col-sm-6">
+							<div class="product-information">
+								<div>
+									<h2>{{ product.title }}</h2>
+									<p>شناسـه : {{ product.id }}</p>
+								</div>
+								<div>
+									<span>
+										<span>قیمت : {{ product.price }} تومان</span>
+									</span>
+									<form action="#" method="post">
+                                        {% csrf_token %}
+                                          <p><b>توضیحات :</b> {{ product.Description }} </p>
+										<label>تعداد : {{ product.numbers }}  </label>
+                                    </form>
+								</div>
+								<div>
+									<p><b>موجـودی در انبار فروشگاه :</b>
+                                        {% if product.isActive %} موجود است
+                                    {% else %}
+                                    موجود نیست
+                                    {% endif %}</p>
+                                    </p>
+									{% if product.brand %}
+                                        <p><b>برنـد :</b> {{ product.brand.title }} </p>
+									{% endif %}
+								</div>
+								<span class="socials-share share">
+									<ul>
+										<a href="https://bale.ai/">
+											<li>
+												<label>بلـه</label>
+												<img src="{% static 'images/product-details/Bale.png' %}">
+											</li>
+										</a>
+										<a href="https://hi.splus.ir/">
+											<li>
+												<label>سـروش</label>
+												<img src="{% static 'images/product-details/Soroush.png' %}">
+											</li>
+										</a>
+										<a href="https://www.instagram.com/?hl=en">
+											<li>
+												<label>اینستاگرام</label>
+												<img src="{%  static 'images/product-details/Instagram.png' %}">
+											</li>
+										</a>
+										<li><img src="images/product-details/rating.png" alt=""></li>
+									</ul>
+								</span>
+
+							</div>
+                            <!--/product-information-->
+						</div>
+					</div>
+                    <!--/product-details-->
+							<div class="tab-pane fade active in" id="reviews">
+								<div class="col-sm-12">
+									<ul>
+										<li><a href=""><i class="fa fa-user"></i>مشتـری 1</a></li>
+										<li><a href=""><i class="fa fa-clock-o"></i>12:41 ب . ظ</a></li>
+										<li><a href=""><i class="fa fa-calendar-o"></i>29 تیـر 1397</a></li>
+									</ul>
+									<p><b>نظـر خود را بنویسیـد</b></p>
+
+									<form action="#">
+										<span>
+											<input type="text" placeholder="نام و نام خانوادگـی">
+											<input type="email" placeholder="آدرس ایمیـل">
+										</span>
+										<textarea name=""></textarea>
+										<button type="button" class="btn btn-default pull-left" style="margin-bottom: 10px">
+											ارسـال
+										</button>
+									</form>
+								</div>
+							</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+
+<div class="panel-group category-products" id="accordian">
+    <!--category-productsr-->
+ {% for main_category in main_categories %}
+   <div class="panel panel-default">
+        <div class="panel-heading">
+			<h4 class="panel-title">
+                {% if main_category.main_category_set.ll %}
+                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                    <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                    {{ main_category.title }}
+                    </a>
+            {% else %}
+                <a href="">
+                    {{ main_category.title }}
+                </a>
+                {% endif %}
+
+            </h4>
+        </div>
+        <div id="sportswear" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">محصول 1 </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ {% endfor %}
+
+</div>

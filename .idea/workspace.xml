@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0002_categoryparent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0003_alter_productscategory_parent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/categoriesProductions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/Screenshot_540.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/Screenshot_541.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/Screenshot_542.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/Screenshot_543.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/Screenshot_549.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/category/babyicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/categoryPartial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/templates/productsApp/incloudes/productItemPartial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/templates/productsApp/productDetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/templates/productsApp/productPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/templates/productsApp/productsList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsApp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="zeynab boogari &lt;102822120+farzanebgr@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CmjsQfsVvqQHhM0hnkTwpQYzfO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/uploads/images/category" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Python\shopCenter\shopCenter\uploads\images\category" />
+      <recent name="D:\Python\shopCenter\shopCenter\productsApp\templates\productsApp" />
+      <recent name="D:\Python\shopCenter\shopCenter\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\shopCenter\shopCenter\productionsApp\templates\productionsApp" />
+      <recent name="D:\Python\shopCenter\shopCenter\contactApp\templates\contactApp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="shopCenter" type="Python.DjangoServer" factoryName="Django server">
+      <module name="shopCenter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="shopCenter.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="" />
+      <created>1659414860340</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659414860340</updated>
+      <workItem from="1659414869318" duration="19411000" />
+      <workItem from="1659436350004" duration="5188000" />
+      <workItem from="1659443443686" duration="27000" />
+      <workItem from="1659620028024" duration="8711000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1659438898541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659438898541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+</project>

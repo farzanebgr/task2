@@ -1,0 +1,57 @@
+{% extends 'shared/master.html' %}
+{% load static %}
+
+{% block title %}ثبت نام در سایت{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section id="form">
+            <!--form-->
+            <div class="row">
+                <div class="col-sm-6 col-md-offset-3">
+                    <div class="signup-form">
+                        <!--sign up form-->
+                        <h2>ثبت نام کاربـر جدیـد</h2>
+                        <form method="post" action="{% url 'register-page' %}">
+                            {% csrf_token %}
+                            {{ register_form.username.label_tag }}
+                            {{ register_form.username }}
+                            {{ register_form.username.errors }}
+
+                            {{ register_form.first_name.label_tag }}
+                            {{ register_form.first_name }}
+                            {{ register_form.first_name.errors }}
+
+                            {{ register_form.last_name.label_tag }}
+                            {{ register_form.last_name }}
+                            {{ register_form.last_name.errors }}
+
+                            {{ register_form.age.label_tag }}
+                            {{ register_form.age }}
+                            {{ register_form.age.errors }}
+
+                            {{ register_form.mobile.label_tag }}
+                            {{ register_form.mobile }}
+                            {{ register_form.mobile.errors }}
+
+                            {{ register_form.email.label_tag }}
+                            {{ register_form.email }}
+                            {{ register_form.email.errors }}
+
+                            {{ register_form.password.label_tag }}
+                            {{ register_form.password }}
+                            {{ register_form.password.errors }}
+
+                            {{ register_form.confirm_password.label_tag }}
+                            {{ register_form.confirm_password }}
+                            {{ register_form.confirm_password.errors }}
+
+                            <button type="submit" class="btn btn-default">ثبت نام</button>
+                        </form>
+                    </div>
+                    <!--/sign up form-->
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

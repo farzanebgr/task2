@@ -1,0 +1,35 @@
+{% extends 'shared/master.html' %}
+{% load static %}
+
+{% block title %}ورود به سایت{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section id="form">
+            <!--form-->
+            <div class="row">
+                <div class="col-sm-6 col-md-offset-3">
+                    <div class="signup-form">
+                        <!--sign up form-->
+                        <h1 class="title text-center">از پنل کاربری خود خارج شدید</h1>
+                    <br>
+                            {% if showMessage %}
+                            <div class="alert alert-danger">
+                                <h1 class="title text-center">خارج شدید</h1>
+                                <br>
+                                <h5>{{ showMessage }}</h5>
+                                <br>
+                                <div class="text-center  text-center" style="font-size: larger">
+                                    <a href="{% url 'login-page' %} ">ورود به سایت</a>
+                                <br>
+                                 <a href="{% url 'index-page' %}" >برگشت به صفحه اصلی</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <!--/sign up form-->
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
