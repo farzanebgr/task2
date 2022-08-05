@@ -55,8 +55,8 @@
                                 {% if request.user.is_superuser %}
                                     <li><a href="/admin"><i class="fa fa-user"></i> پنل ادمین</a></li>
                                 {% endif %}
-                                <li><a href="login.html"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
-                                <li><a href="login.html"><i class="fa fa-user"></i> پنل کاربری</a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> پنل کاربری</a></li>
                                 <li><a href="{% url 'logout-page' %}"><i class="fa fa-sign-out"></i> خروج</a></li>
                             {% else %}
                                 <li><a href="{% url 'register-page' %}"><i class="fa fa-user-plus"></i> ثبت نام</a></li>
@@ -93,24 +93,24 @@
                     </div>
                     <div class="mainmenu pull-right">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="#" class="active">خـانه</a></li>
+                            <li><a href="{% url 'index-page' %}" class="active">خـانه</a></li>
                             <li class="dropdown"><a href="#">فروشگـاه<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="#">محصولات</a></li>
-                                    <li><a href="#">جزئیات محصولات</a></li>
+                                    <li><a href="{% url 'all-productions-page' %}">محصولات</a></li>
+                                    <li><a href="{% url 'categories-productions-page' %}">دسته بندی محصولات</a></li>
                                     <li><a href="#">پرداخت</a></li>
                                     <li><a href="#">سبـد خریـد</a></li>
-                                    <li><a href="#">ورود</a></li>
+                                    <li><a href="{% url 'login-page' %}">ورود</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">اخبـار<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="#">برند ها<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="#">آخریـن اخبـار</a></li>
-                                    <li><a href="#">صفحـه خبـر</a></li>
+                                    <li><a href="#">دسته بندی برندها</a></li>
+                                    <li><a href="#">جدید ترین برند ها</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">درباره مـا</a></li>
-                            <li><a href="#">تماس با مـا</a></li>
+                            <li><a href="{% url 'contact-us-page' %}">تماس با مـا</a></li>
                         </ul>
                     </div>
                 </div>

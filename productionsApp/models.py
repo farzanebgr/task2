@@ -12,7 +12,7 @@ class ProductsCategory(models.Model):
                                verbose_name='دسته بندی والد')
 
     def __str__(self):
-        return f'{self.title} - {self.urlTitle}'
+        return self.title
 
     class Meta:
         verbose_name = 'دسته بندی محصول'

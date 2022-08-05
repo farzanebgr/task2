@@ -64,7 +64,7 @@ class contactUsView(CreateView):
         return render(request, 'contactApp/contactUs.html', context)
 
 
-class contactUsView(TemplateView):
+class copyrightView(TemplateView):
     template_name = 'contactApp/copyRight.html'
     success_url = '/copy-right-page/'
 

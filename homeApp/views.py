@@ -9,7 +9,7 @@ class indexView(TemplateView):
     model = CategoryParent
 
     def get_context_data(self, **kwargs):
-        categoriesParents = CategoryParent.objects.filter(isActive=True)
+        categoriesParents = CategoryParent.objects.filter(isActive=True)[:6]
         settings = settingModel.objects.filter(isMainSettings=True).first()
         context = {
             'categoriesParents': categoriesParents,

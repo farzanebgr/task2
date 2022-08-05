@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Products, ProductsCategory
+from .models import Products, ProductsCategory, CategoryParent
 from django.views.generic import ListView, DetailView
 
 
@@ -37,7 +37,7 @@ class AllProductionsView(ListView):
 
 
 def categories_productions_partial(request: HttpResponse):
-    productions_main_categories = ProductsCategory.objects.filter(isActive=True, parent_id=None)
+    productions_main_categories = CategoryParent.objects.filter(isActive=True)
     context = {
         'main_categories': productions_main_categories
     }
