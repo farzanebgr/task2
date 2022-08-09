@@ -24,38 +24,7 @@
                                 </div>
                             </div>
                         {% endif %}
-				    	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
-                            {% csrf_token %}
 
-                                <div class="col-md-6 form-group">
-                                    {{ form.fullName.label_tag }}
-                                    {{ form.fullName }}
-                                    {{ form.fullName.errors }}
-
-                                </div>
-
-                             <div class="col-md-6 form-group">
-                                    {{ form.email.label_tag }}
-                                    {{ form.email }}
-                                    {{ form.email.errors }}
-
-                                </div>
-                             <div class="col-md-12 form-group">
-                                    {{ form.title.label_tag }}
-                                    {{ form.title }}
-                                    {{ form.title.errors }}
-
-                                </div>
-                             <div class="col-md-12 form-group">
-                                    {{ form.message.label_tag }}
-                                    {{ form.message }}
-                                    {{ form.message.errors }}
-
-                                </div>
-				            <div class="form-group col-md-12">
-				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">
-                            </div>
-				        </form>
 	    			</div>
 	    		</div>
 	    		<div class="col-sm-4">

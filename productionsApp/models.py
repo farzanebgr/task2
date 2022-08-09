@@ -1,5 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
+from jalali_date import datetime2jalali, date2jalali
+from userAccountApp.models import User
 
 
 class ProductsCategory(models.Model):
@@ -33,13 +35,25 @@ class CategoryParent(models.Model):
 
 
 class ProductsBrand(models.Model):
-    title = models.CharField(max_length=300, db_index=True, verbose_name='نام برند')
+    title = models.CharField(max_length=200, db_index=True, verbose_name='نام برند')
     titleEN = models.CharField(max_length=300, db_index=True, verbose_name='نام انگلیسی برند', null=True)
     isActive = models.BooleanField(verbose_name='فعال / غیرفعال')
+    image = models.ImageField(upload_to='brands/', null=True, blank=True, verbose_name='تصویر محصول')
+    shortDescription = models.TextField(verbose_name='توضیحات کوتاه', null=True)
+    description = models.TextField(verbose_name='توضیحات برند', null=True)
+    createDate = models.DateTimeField(auto_now_add=True, null=True, verbose_name='تاریخ نوشته')
 
     class Meta:
         verbose_name = 'برند'
         verbose_name_plural = 'برند ها'
+
+    def createJalalidate(self):
+        date = date2jalali(self.createDate).strftime('14%y/%m/%d')
+        return date
+
+    def createJalalitime(self):
+        time = datetime2jalali(self.createDate).strftime('%H : %M')
+        return time
 
     def __str__(self):
         return self.title
@@ -68,7 +82,7 @@ class Products(models.Model):
         super().save(*args, **keyargs)
 
     def __str__(self):
-        return f"{self.title} ({self.price})"
+        return self.title
 
     class Meta:
         verbose_name = 'محصول'
@@ -85,3 +99,26 @@ class ProductsTags(models.Model):
     class Meta:
         verbose_name = 'تگ محصول'
         verbose_name_plural = 'تگ های محصولات'
+
+
+class ProductsComments(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
+    parent = models.ForeignKey('ProductsComments', null=True, blank=True, on_delete=models.CASCADE, verbose_name='والد')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر', )
+    createDate = models.DateTimeField(verbose_name='تاریخ ثبت', auto_now_add=True)
+    message = models.TextField(verbose_name='متن نظر')
+
+    class Meta:
+        verbose_name = 'نظر'
+        verbose_name_plural = 'نظرات'
+
+    def createJalalidate(self):
+        date = date2jalali(self.createDate).strftime('14%y/%m/%d')
+        return date
+
+    def createJalalitime(self):
+        time = datetime2jalali(self.createDate).strftime('%H:%M')
+        return time
+
+    def __str__(self):
+        return str(self.user)

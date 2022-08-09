@@ -1,8 +1,7 @@
 {% extends 'shared/master.html' %}
+{% load jalali_tags %}
 {% load static %}
-{% block title %}
-{{ productC.title }}
-{% endblock %}
+{% block title %}{{ productC.title }}{% endblock %}
 {% block content %}
 <section>
 		<div class="container">
@@ -10,97 +9,124 @@
 				<div class="col-sm-10 padding-right">
 					<div class="product-details">
                         <!--product-details-->
-						<div class="col-sm-6">
+						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="{{ product.image.url }}" alt="{{ product.slug }}">
+								<img src="{{ products.image.url }}" alt="{{ products.slug }}">
 							</div>
-							<div id="similar-product" class="carousel slide" data-ride="carousel">
-								    <div class="carousel-inner">
-									</div>
-							</div>
-
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-7">
 							<div class="product-information">
 								<div>
-									<h2>{{ product.title }}</h2>
-									<p>شناسـه : {{ product.id }}</p>
+									<h2>{{ products.title }}</h2>
+									<p>شناسـه : {{ products.id }}</p>
 								</div>
 								<div>
 									<span>
-										<span>قیمت : {{ product.price }} تومان</span>
+										<span>قیمت : {{ products.price }} تومان</span>
 									</span>
 									<form action="#" method="post">
                                         {% csrf_token %}
-                                          <p><b>توضیحات :</b> {{ product.Description }} </p>
-										<label>تعداد : {{ product.numbers }}  </label>
+                                          <p><b>توضیحات :</b> {{ products.Description }} </p>
+										<label>تعداد : {{ products.numbers }}  </label>
                                     </form>
 								</div>
 								<div>
 									<p><b>موجـودی در انبار فروشگاه :</b>
-                                        {% if product.isActive %} موجود است
+                                        {% if products.isActive %} موجود است
                                     {% else %}
                                     موجود نیست
                                     {% endif %}</p>
                                     </p>
-									{% if product.brand %}
-                                        <p><b>برنـد :</b> {{ product.brand.title }} </p>
+									{% if products.brand %}
+                                        <p><b>برنـد :</b> {{ products.brand.title }} </p>
 									{% endif %}
 								</div>
-								<span class="socials-share share">
-									<ul>
-										<a href="https://bale.ai/">
-											<li>
-												<label>بلـه</label>
-												<img src="{% static 'images/product-details/Bale.png' %}">
-											</li>
-										</a>
-										<a href="https://hi.splus.ir/">
-											<li>
-												<label>سـروش</label>
-												<img src="{% static 'images/product-details/Soroush.png' %}">
-											</li>
-										</a>
-										<a href="https://www.instagram.com/?hl=en">
-											<li>
-												<label>اینستاگرام</label>
-												<img src="{%  static 'images/product-details/Instagram.png' %}">
-											</li>
-										</a>
-										<li><img src="images/product-details/rating.png" alt=""></li>
-									</ul>
-								</span>
-
 							</div>
                             <!--/product-information-->
 						</div>
 					</div>
-                    <!--/product-details-->
-							<div class="tab-pane fade active in" id="reviews">
-								<div class="col-sm-12">
-									<ul>
-										<li><a href=""><i class="fa fa-user"></i>مشتـری 1</a></li>
-										<li><a href=""><i class="fa fa-clock-o"></i>12:41 ب . ظ</a></li>
-										<li><a href=""><i class="fa fa-calendar-o"></i>29 تیـر 1397</a></li>
-									</ul>
-									<p><b>نظـر خود را بنویسیـد</b></p>
+                </div>
+            </div>
+                <!--Comments-->
 
-									<form action="#">
-										<span>
-											<input type="text" placeholder="نام و نام خانوادگـی">
-											<input type="email" placeholder="آدرس ایمیـل">
-										</span>
-										<textarea name=""></textarea>
-										<button type="button" class="btn btn-default pull-left" style="margin-bottom: 10px">
-											ارسـال
-										</button>
-									</form>
-								</div>
-							</div>
-					</div>
-				</div>
+                    <div class="response-area" id="comments_area">
+                        <h2> نظرات ({{ comments_count }})</h2>
+                        <ul class="media-list">
+                            {% for comment in comments %}
+                                <li class="media" id="single_comment_box_{{ comment.id }}">
+                                    <a class="pull-right" href="#">
+                                        <img class="media-object" src="/static/images/blog/user.png" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <ul class="sinlge-post-meta">
+                                            <li><i class="fa fa-user"></i>{{ comment.user }}</li>
+                                            <li><i class="fa fa-clock-o"></i> {{ comment.createJalalitime }}</li>
+                                            <li>
+                                                <i class="fa fa-calendar"></i> {{ comment.createJalalidate }}
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            {{ comment.message }}
+                                        </p>
+                                        <a class="btn btn-primary" onclick="fillParentId({{ comment.id }})"><i
+                                                class="fa fa-reply"></i>پاسـخ</a>
+                                    </div>
+                                </li>
 
-			</div>
-		</div>
-	</section>
+                                {% for sub_comment in comment.productscomments_set.all %}
+                                    <li class="media second-media" id="single_comment_box_{{ comment.id }}">
+                                        <a class="pull-right" href="#">
+                                            <img class="media-object" src="/static/images/blog/user_response.png" alt="">
+                                        </a>
+                                        <div class="media-body">
+                                            <ul class="sinlge-post-meta">
+                                                <li><i class="fa fa-user"></i>{{ sub_comment.user }}</li>
+                                                <li><i class="fa fa-clock-o"></i> {{ sub_comment.createJalalitime}}
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-calendar"></i> {{ sub_comment.createJalalidate }}
+                                                </li>
+                                            </ul>
+                                            <p>
+                                                {{ sub_comment.message }}
+                                            </p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+            <!--/Response-area-->
+                    <div class="replay-box" id="comment_form">
+                        {% if request.user.is_authenticated %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h2>نظـر خود را بنویسیـد</h2>
+                                    <div class="text-area">
+                                        <input type="hidden" value="" id="parent_id" >
+                                        <div class="blank-arrow">
+                                            <label>متن پیام</label>
+                                        </div>
+                                        <span>*</span>
+                                        <textarea name="message" rows="11" id="commentText"></textarea>
+                                       <div class="col-md-12 form-group">
+                                       </div>
+                                        <a class="btn btn-primary" onclick="sendProductComments({{ products.id }})">
+                                            ارسـال نظـر</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-warning">
+                                برای درج نظر می بایست <a href="{% url 'login-page' %}">لاگین</a> کنید
+                            </div>
+                        {% endif %}
+                    </div>
+            <!--/Repaly Box-->
+                </div>
+
+            </div>
+        </div>
+    </section>
 {% endblock %}
