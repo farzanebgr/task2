@@ -23,7 +23,12 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/../shopCenter\templates" />
+        <option value="$MODULE_DIR$/userAccountApp/templates" />
+        <option value="$MODULE_DIR$/contactApp/templates" />
+        <option value="$MODULE_DIR$/homeApp/templates" />
+        <option value="$MODULE_DIR$/productionsApp/templates" />
+        <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/userPanelApp/templates" />
       </list>
     </option>
   </component>

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+
+import siteSettingsApp
 from siteSettingsApp.models import settingModel, footerLinkBox
 from productionsApp.models import CategoryParent
 
@@ -15,6 +17,16 @@ class indexView(TemplateView):
             'categoriesParents': categoriesParents,
             'settings': settings,
         }
+        return context
+
+
+class aboutUsView(TemplateView):
+    template_name = 'homeApp/aboutUs.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(aboutUsView, self).get_context_data()
+        siteSettongs: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettongs'] = siteSettongs
         return context
 
 

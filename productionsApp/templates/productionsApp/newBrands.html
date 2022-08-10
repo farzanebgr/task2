@@ -1,0 +1,51 @@
+{% extends 'shared/master.html' %}
+{% load render_partial %}
+{% load static %}
+{% block title %}جدید ترین برند ها{% endblock %}
+{% block content %}
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-9">
+					<div class="blog-post-area">
+						<h2 class="title text-center">جدید ترین برند های فروشگاه</h2>
+                        {% for brand in brands %}
+                            <div class="single-blog-post">
+							<h3>{{ brand.titleEN }}</h3>
+							<div class="post-meta">
+								<ul>
+									<li><i class="fa fa-user"></i>کاربر مدیر</li>
+									<li><i class="fa fa-clock-o"></i>{{ brand.createJalalitime }}</li>
+									<li><i class="fa fa-calendar"></i>{{ brand.createJalalidate }}</li>
+								</ul>
+							</div>
+							<a href="{% url 'brand-detail-page' pk=brand.id %}">
+								<img src="{{ brand.image.url }}" alt="{{ brand.titleEN }}">
+							</a>
+							<p>{{ brand.shortDescription }}</p>
+							<a class="btn btn-primary" href="{% url 'brand-detail-page' pk=brand.id %}">ادامـه مطلب</a>
+						</div>
+                        {% endfor %}
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<div class="brands_products"><!--brands_products-->
+							<h2>جدید ترین برند موجود</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+                                    {% for brand in brands %}
+                                        <li><a href="{% url 'brand-detail-page' pk=brand.id %}"> <span class="pull-left">({{ brand.titleEN }})</span>{{ brand.title }}</a></li>
+                                    {% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+{% endblock %}

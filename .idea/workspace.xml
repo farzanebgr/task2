@@ -5,53 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0004_productsbrand_description_productsbrand_image_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0005_productsbrand_shortdescription.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0006_productsbrand_createdate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0007_productscomments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/commentsProduction.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/saveProductComment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/blog/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/productsComments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/brands/Nike.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_581.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/brands/UGG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/products/Screenshot_582.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/aboutUs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0008_alter_productscomments_options_brandscomments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0009_brandscomments_isactive_productsbrand_havecomments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0010_products_havecomments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/brandProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/commentsBrand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/newBrands.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/brandsComments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/CarouselBanner2_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_529.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_586.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_587.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_588.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/brands/Screenshot_589.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/products/Screenshot_584.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/products/Screenshot_585.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/user/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/user/user_uS7HQnc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userAccountApp/migrations/0002_user_aboutuser_user_address_user_avatar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/changePassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/editProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/includes/panelPartial.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userPanelDashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shopCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopCenter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/categoryPartial.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/categoryPartial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/commentsProduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/commentsProduction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_center" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/headerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/headerRef.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -87,19 +111,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/userPanelApp/templates/userPanelApp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Python\shopCenter\task2\userPanelApp\templates\userPanelApp" />
       <recent name="D:\Python\shopCenter\shopCenter\uploads\images\category" />
       <recent name="D:\Python\shopCenter\shopCenter\productsApp\templates\productsApp" />
       <recent name="D:\Python\shopCenter\shopCenter\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\shopCenter\task2\userPanelApp\templates\userPanelApp" />
       <recent name="D:\Python\shopCenter\shopCenter\productionsApp\templates\productionsApp" />
       <recent name="D:\Python\shopCenter\shopCenter\contactApp\templates\contactApp" />
     </key>
@@ -151,7 +178,9 @@
       <workItem from="1660018533446" duration="1028000" />
       <workItem from="1660019604404" duration="15000" />
       <workItem from="1660019874903" duration="47000" />
-      <workItem from="1660019923074" duration="7048000" />
+      <workItem from="1660019923074" duration="15900000" />
+      <workItem from="1660039128335" duration="8420000" />
+      <workItem from="1660105248629" duration="12434000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

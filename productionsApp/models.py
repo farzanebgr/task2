@@ -42,6 +42,7 @@ class ProductsBrand(models.Model):
     shortDescription = models.TextField(verbose_name='توضیحات کوتاه', null=True)
     description = models.TextField(verbose_name='توضیحات برند', null=True)
     createDate = models.DateTimeField(auto_now_add=True, null=True, verbose_name='تاریخ نوشته')
+    haveComments = models.BooleanField(null=True, blank=True, verbose_name='نمایش نظرات')
 
     class Meta:
         verbose_name = 'برند'
@@ -59,6 +60,30 @@ class ProductsBrand(models.Model):
         return self.title
 
 
+class BrandsComments(models.Model):
+    isActive = models.BooleanField(verbose_name='نمایش نظر', null=True)
+    brand = models.ForeignKey(ProductsBrand, on_delete=models.CASCADE, verbose_name='نام برند')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='نام کاربر')
+    parent = models.ForeignKey('BrandsComments', null=True, blank=True, on_delete=models.CASCADE, verbose_name='والد')
+    createDate = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت نظر')
+    message = models.TextField(verbose_name='متن نظر')
+
+    class Meta:
+        verbose_name = 'نظر درباره برند'
+        verbose_name_plural = 'نظرات برند'
+
+    def createJalalidate(self):
+        date = date2jalali(self.createDate).strftime('14%y/%m/%d')
+        return date
+
+    def createJalalitime(self):
+        time = datetime2jalali(self.createDate).strftime('%H:%M')
+        return time
+
+    def __str__(self):
+        return str(self.user)
+
+
 class Products(models.Model):
     title = models.CharField(max_length=300, verbose_name='نام محصول')
     category = models.ManyToManyField(ProductsCategory, related_name='productCategories',
@@ -74,6 +99,7 @@ class Products(models.Model):
     slug = models.SlugField(default="", null=False, db_index=True, blank=True, max_length=200, unique=True,
                             verbose_name='عنوان در url')
     isDelete = models.BooleanField(verbose_name='حذف شده / نشده')
+    haveComments = models.BooleanField(null=True, blank=True, verbose_name='نمایش نظرات')
 
     def get_absolute_url(self):
         return reverse('product-details-page', args=[self.slug])
@@ -89,18 +115,6 @@ class Products(models.Model):
         verbose_name_plural = 'محصولات'
 
 
-class ProductsTags(models.Model):
-    caption = models.CharField(max_length=300, db_index=True, verbose_name='تگ محصول')
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product_tags')
-
-    def __str__(self):
-        return self.caption
-
-    class Meta:
-        verbose_name = 'تگ محصول'
-        verbose_name_plural = 'تگ های محصولات'
-
-
 class ProductsComments(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
     parent = models.ForeignKey('ProductsComments', null=True, blank=True, on_delete=models.CASCADE, verbose_name='والد')
@@ -109,8 +123,8 @@ class ProductsComments(models.Model):
     message = models.TextField(verbose_name='متن نظر')
 
     class Meta:
-        verbose_name = 'نظر'
-        verbose_name_plural = 'نظرات'
+        verbose_name = 'نظر درباره محصول'
+        verbose_name_plural = 'نظرات محصولات'
 
     def createJalalidate(self):
         date = date2jalali(self.createDate).strftime('14%y/%m/%d')
@@ -122,3 +136,15 @@ class ProductsComments(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+
+class ProductsTags(models.Model):
+    caption = models.CharField(max_length=300, db_index=True, verbose_name='تگ محصول')
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product_tags')
+
+    def __str__(self):
+        return self.caption
+
+    class Meta:
+        verbose_name = 'تگ محصول'
+        verbose_name_plural = 'تگ های محصولات'

@@ -1,5 +1,4 @@
-<div class="panel-group category-products" id="accordian">
-    <!--category-productsr-->
+<div class="panel-group category-products" id="accordian"><!--category-productsr-->
  {% for main_category in main_categories %}
    <div class="panel panel-default">
         <div class="panel-heading">
@@ -22,7 +21,7 @@
             <div class="panel-body">
                 <ul>
                     {% for sub_main_category in main_category.productscategory_set.all %}
-                    <li><a href="">{{ sub_main_category }}</a></li>
+                    <li><a href="{% url 'product-list-by-category' cat=sub_main_category.urlTitle %}">{{ sub_main_category }}</a></li>
                     {% endfor %}
                     
                 </ul>

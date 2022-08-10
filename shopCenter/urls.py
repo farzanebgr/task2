@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('homeApp.urls')),
     path('', include('contactApp.urls')),
     path('', include('userAccountApp.urls')),
+    path('userpannel/', include('userPanelApp.urls')),
     path('productions/', include('productionsApp.urls')),
     path('admin/', admin.site.urls),
 
