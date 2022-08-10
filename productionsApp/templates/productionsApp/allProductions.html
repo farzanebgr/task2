@@ -21,17 +21,17 @@
                         <div class="clearfix"></div>
 						<ul class="pagination">
                          {% if page_obj.has_previous %}
-                            <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                            <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.previous_page_number }})">قبلی</a></li>
                         {% endif %}
                             {% for pageNumber in paginator.page_range %}
                                 <li class="{% if page_obj.number == pageNumber %} active {% endif %}">
-                                    <a href="?page={{ pageNumber }}">
+                                    <a class="cursore-pointer" onclick="fillPage({{ pageNumber }})">
                                         {{ pageNumber }}
                                     </a>
                                 </li>
                             {% endfor %}
                             {% if page_obj.has_next %}
-                            <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
+                            <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.next_page_number }})">بعدی</a></li>
                         {% endif %}
 						</ul>
                         {% else %}
@@ -48,10 +48,33 @@
 					<div class="left-sidebar">
                         {% render_partial 'productionsApp.views.categories_productions_partial' %}
                         {% render_partial 'productionsApp.views.brands_productions_partial' %}
+
+                        <div class="price-range"><!--price-range-->
+							<h2>فیلتـر قیمـت</h2>
+							 <div class="well">
+                                <input
+                                        style="width: 100%"
+                                        type="text"
+                                        class="span2"
+                                        value="{{ start_price }},{{ end_price }}"
+                                        data-slider-min="0"
+                                        data-slider-max="{{ db_max_price }}"
+                                        data-slider-step="100000"
+                                        data-slider-value="[{{ start_price }},{{ end_price }}]"
+                                        id="sl2">
+                                <br/>
+                                <b>{{ db_max_price }} تومان </b>
+                                 <b class="pull-left">0 تومان</b>
+                            </div>
+                            <form action="" id="filter_form" method="get">
+                                <input id="page" name="page" type="hidden" value="{{ page_obj.number }}"/>
+                                <input id="start_price" name="start_price" type="hidden" value="{{ start_price }}"/>
+                                <input id="end_price" name="end_price" type="hidden" value="{{ end_price }}"/>
+                            </form>
+                            <button class="btn btn-success btn-block" onclick="filterProductPrice()">فیلتر قیمت</button>
+						</div><!--/price-range-->
                     </div>
                 </div>
-
-
                     </div>
                 </div>
             </div>

@@ -5,3 +5,6 @@
 .errorlist li {
     color: red;
 }
+.cursore-pointer{
+    cursor: pointer;
+}
