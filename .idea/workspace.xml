@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/static/js/filterPrice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -130,7 +137,8 @@
       <workItem from="1660019874903" duration="47000" />
       <workItem from="1660019923074" duration="15900000" />
       <workItem from="1660039128335" duration="8420000" />
-      <workItem from="1660105248629" duration="18200000" />
+      <workItem from="1660105248629" duration="19196000" />
+      <workItem from="1660275848221" duration="387000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

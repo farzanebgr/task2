@@ -29,6 +29,7 @@
         <option value="$MODULE_DIR$/productionsApp/templates" />
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/userPanelApp/templates" />
+        <option value="$MODULE_DIR$/orderApp/templates" />
       </list>
     </option>
   </component>
