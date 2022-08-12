@@ -158,6 +158,9 @@ class ProductsVisit(models.Model):
     def __str__(self):
         return f'{self.product.title} / {self.ip}'
 
+    def productCount(self):
+        return self.ip.count(self.id)
+
     class Meta:
         verbose_name = 'بازید محصول'
         verbose_name_plural = 'بازید های محصول'
