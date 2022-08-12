@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,7 @@
       <workItem from="1660019923074" duration="15900000" />
       <workItem from="1660039128335" duration="8420000" />
       <workItem from="1660105248629" duration="19196000" />
-      <workItem from="1660275848221" duration="1567000" />
+      <workItem from="1660275848221" duration="2873000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

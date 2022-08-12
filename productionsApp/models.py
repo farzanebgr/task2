@@ -148,3 +148,16 @@ class ProductsTags(models.Model):
     class Meta:
         verbose_name = 'تگ محصول'
         verbose_name_plural = 'تگ های محصولات'
+
+
+class ProductsVisit(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
+    ip = models.CharField(max_length=30, verbose_name='آی پی کاربر')
+    user = models.ForeignKey(User, verbose_name='کاربر', null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.product.title} / {self.ip}'
+
+    class Meta:
+        verbose_name = 'بازید محصول'
+        verbose_name_plural = 'بازید های محصول'
