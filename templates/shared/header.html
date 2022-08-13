@@ -55,7 +55,7 @@
                                 {% if request.user.is_superuser %}
                                     <li><a href="/admin"><i class="fa fa-user"></i> پنل ادمین</a></li>
                                 {% endif %}
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+                                <li><a href="{% url 'user-basket-page' %}"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
                                 <li><a href="{% url 'user-panel-page' %}"><i class="fa fa-user"></i> پنل کاربری</a></li>
                                 <li><a href="{% url 'logout-page' %}"><i class="fa fa-sign-out"></i> خروج</a></li>
                             {% else %}
@@ -104,7 +104,7 @@
                                     <li><a href="{% url 'all-productions-page' %}" class="{% if request.resolver_match.url_name == 'all-productions-page' %} active {% endif %}">محصولات</a></li>
                                     <li><a href="{% url 'categories-productions-page' %}" class="{% if request.resolver_match.url_name == 'categories-productions-page' %} active {% endif %}">دسته بندی محصولات</a></li>
                                     <li><a href="#">پرداخت</a></li>
-                                    <li><a href="#">سبـد خریـد</a></li>
+                                    <li><a href="{% url 'user-basket-page' %}">سبـد خریـد</a></li>
                                     <li><a href="{% url 'login-page' %}" class="{% if request.resolver_match.url_name == 'login-page' %} active {% endif %}">ورود</a></li>
                                 </ul>
                             </li>

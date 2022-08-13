@@ -22,11 +22,11 @@ urlpatterns = [
     path('', include('homeApp.urls')),
     path('', include('contactApp.urls')),
     path('', include('userAccountApp.urls')),
-    path('userpannel/', include('userPanelApp.urls')),
+    path('userpanel/', include('userPanelApp.urls')),
     path('order/', include('orderApp.urls')),
     path('productions/', include('productionsApp.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
     path('admin/', admin.site.urls),
 
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

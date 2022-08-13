@@ -19,6 +19,8 @@ class ProductionsDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProductionsDetailView, self).get_context_data()
         loaded_product = self.object
+        product: Products = kwargs.get('object')
+        context['visit'] = ProductsVisit.objects.filter(product_id=product.id).count()
         request = self.request
         user_ip = get_client_ip(self.request)
         user_id = None
@@ -29,7 +31,6 @@ class ProductionsDetailView(DetailView):
             new_visit = ProductsVisit(ip=user_ip, user_id=user_id, product_id=loaded_product.pk)
             new_visit.save()
         if Products.haveComments:
-            product: Products = kwargs.get('object')
             context['comments'] = ProductsComments.objects.filter(product_id=product.id, parent=None).order_by(
                 '-createDate').prefetch_related('productscomments_set')
             context['comments_count'] = ProductsComments.objects.filter(product_id=product.id).count()

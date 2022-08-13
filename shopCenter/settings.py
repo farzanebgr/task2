@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # EXTERNAL APPS
     'django_render_partial',
     'jalali_date',
+    'star_ratings',
 ]
 
 # default settings
@@ -158,6 +159,9 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+STAR_RATINGS_RERATE = True
+STAR_RATINGS_RERATE_SAME_DELETE = True
+STAR_RATINGS_CLEARABLE = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

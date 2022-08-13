@@ -20,7 +20,7 @@
 								<div>
 									<h2>{{ products.title }}</h2>
 									<p>شناسـه : {{ products.id }}</p>
-                                    <p>بازدید : {{ products.productsvisit_set.count }}</p>
+                                    <p>بازدید : {{ visit }}</p>
 								</div>
 								<div>
 									<span>
@@ -48,6 +48,7 @@
 							</div>
                             <!--/product-information-->
 						</div>
+                        {% include 'productionsApp/includes/ratings.html' %}
 					</div>
                 </div>
             </div>
