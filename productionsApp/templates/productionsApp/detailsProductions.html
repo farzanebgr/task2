@@ -25,11 +25,13 @@
 									<span>
 										<span>قیمت : {{ products.price }} تومان</span>
 									</span>
-									<form action="#" method="post">
-                                        {% csrf_token %}
                                           <p><b>توضیحات :</b> {{ products.Description }} </p>
-										<label>تعداد : {{ products.numbers }}  </label>
-                                    </form>
+										<label>تعداد :   </label>
+                                        <input type="number" min="1" max="{{ products.numbers }}" id="numbers" value="1" class="search_box">
+                                        <button type="button" class="btn btn-fefault cart" onclick="addProductToOrder({{ products.id }})">
+											<i class="fa fa-shopping-cart"></i>
+											افـزودن به سبـد خریـد
+										</button>
 								</div>
 								<div>
 									<p><b>موجـودی در انبار فروشگاه :</b>

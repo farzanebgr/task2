@@ -1,7 +1,6 @@
 from django.db.models import Count
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
-
 from utils.httpService import get_client_ip
 from .models import Products, ProductsCategory, CategoryParent, ProductsBrand, ProductsComments, BrandsComments, \
     ProductsVisit
