@@ -28,3 +28,4 @@ class OrderDetail(models.Model):
 
     def __str__(self):
         return str(self.order)
+
