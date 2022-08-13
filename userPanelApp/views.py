@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView
-from orderApp.models import Order
+from orderApp.models import Order, OrderDetail
 from userAccountApp.models import User
 from .forms import editProfileModelForm, changePasswordForm
 from django.contrib.auth import logout
@@ -71,9 +71,7 @@ def panelPartial(request: HttpRequest):
 def userBasket(request: HttpRequest):
     current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(isPaid=False,
                                                                                              user_id=request.user.id)
-    total_amount = 0
-    for order_detail in current_order.orderdetail_set.all():
-        total_amount += order_detail.count * order_detail.product.price
+    total_amount = current_order.calculate_total_price()
     context = {
         'order': current_order,
         'sum': total_amount
@@ -87,24 +85,19 @@ def remove_order_detail(request):
         return JsonResponse({
             'status': 'not_found_detail_id'
         })
-    current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(isPaid=False, user_id=request.user.id)
-    detail = current_order.orderdetail_set.filter(id=detail_id).first()
-    if detail is None:
+    deleted_count, deleted_dict = OrderDetail.objects.filter(id=detail_id, order__isPaid=False, order__user_id=request.user.id).delete()
+    if deleted_count == 0:
         return JsonResponse({
             'status': 'detail_not_found'
         })
-    detail.delete()
 
     current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(isPaid=False, user_id=request.user.id)
-    total_amount = 0
-    for order_detail in current_order.orderdetail_set.all():
-        total_amount += order_detail.count * order_detail.product.price
+    total_amount = current_order.calculate_total_price()
     context = {
         'order': current_order,
         'sum': total_amount
     }
-    data = render_to_string('userPanelApp/userBasketContent.html', context)
     return JsonResponse({
         'status': 'success',
-        'body': data
+        'body': render_to_string('userPanelApp/userBasketContent.html', context)
     })
