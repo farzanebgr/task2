@@ -29,3 +29,5 @@ class OrderDetail(models.Model):
     def __str__(self):
         return str(self.order)
 
+    def get_total_price(self):
+        return self.count * self.product.price

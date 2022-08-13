@@ -1,5 +1,6 @@
 {% extends 'shared/master.html' %}
 {% load render_partial %}
+{% load poll_extras %}
 {% load static %}
 {% block title %}لیست محصولات{% endblock %}
 {% block content %}
@@ -63,7 +64,7 @@
                                         data-slider-value="[{{ start_price }},{{ end_price }}]"
                                         id="sl2">
                                 <br/>
-                                <b>{{ db_max_price }} تومان </b>
+                                <b>{{ db_max_price | three_digits_currency }}  </b>
                                  <b class="pull-left">0 تومان</b>
                             </div>
                             <form action="" id="filter_form" method="get">

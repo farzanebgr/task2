@@ -1,5 +1,6 @@
 {% extends 'shared/master.html' %}
 {% load jalali_tags %}
+{% load poll_extras %}
 {% load static %}
 {% block title %}{{ productC.title }}{% endblock %}
 {% block content %}
@@ -23,7 +24,7 @@
 								</div>
 								<div>
 									<span>
-										<span>قیمت : {{ products.price }} تومان</span>
+										<span>قیمت : {{ products.price | three_digits_currency}} </span>
 									</span>
                                           <p><b>توضیحات :</b> {{ products.Description }} </p>
 										<label>تعداد :   </label>

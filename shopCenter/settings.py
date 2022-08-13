@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'productionsApp',
     'userPanelApp',
     'orderApp',
+    'polls',
     # EXTERNAL APPS
     'django_render_partial',
     'jalali_date',
