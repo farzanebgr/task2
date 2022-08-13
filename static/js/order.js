@@ -5,3 +5,11 @@ function removeOrderDetail(detailId) {
         }
     });
 }
+
+function changeOrderDetailCount(detailId, state) {
+    $.get('/userpanel/change-order-detail/?detailId=' + detailId + '&state=' + state).then(res => {
+        if (res.status === 'success') {
+            $('#order-detail-content').html(res.body);
+        }
+    });
+}
