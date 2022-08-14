@@ -1,6 +1,7 @@
 {% extends 'shared/master.html' %}
 {% load render_partial %}
 {% load static %}
+{% load ratings %}
 {% block title %}{{ productsbrand.titleEN }}{% endblock %}
 {% block content %}
 <section>
@@ -18,6 +19,11 @@
 									<li><i class="fa fa-clock-o"></i>{{ productsbrand.createJalalitime }}</li>
 									<li><i class="fa fa-calendar"></i>{{ productsbrand.createJalalidate }}</li>
 								</ul>
+                                <ul>
+                                    <li>
+                                        <div>{% ratings object %}</div>
+                                    </li>
+                                </ul>
 							</div>
 							<a href="">
 								<img src="{{ productsbrand.image.url }}" alt="{{ productsbrand.titleEN }}">

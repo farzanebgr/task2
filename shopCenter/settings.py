@@ -159,9 +159,8 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-STAR_RATINGS_RERATE = True
-STAR_RATINGS_RERATE_SAME_DELETE = True
-STAR_RATINGS_CLEARABLE = True
+STAR_RATINGS_STAR_HEIGHT = 16
+
 LOGIN_URL = '/login/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

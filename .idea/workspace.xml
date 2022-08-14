@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/star_ratings/widget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShoppingDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/includes/panelPartial.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/includes/panelPartial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/headerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/headerRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
@@ -24,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -134,7 +141,7 @@
       <workItem from="1660105248629" duration="19196000" />
       <workItem from="1660275848221" duration="5526000" />
       <workItem from="1660363889827" duration="23815000" />
-      <workItem from="1660450866994" duration="5047000" />
+      <workItem from="1660450866994" duration="9154000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

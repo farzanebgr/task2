@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpRequest, JsonResponse
+from django.http import HttpRequest, JsonResponse, Http404
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.urls import reverse
@@ -165,3 +165,15 @@ def change_order_detail_count(request):
         'status': 'success',
         'body': render_to_string('userPanelApp/userBasketContent.html', context)
     })
+
+
+@login_required
+def myShoppingDetails(request: HttpRequest, order_id):
+    order = Order.objects.prefetch_related('orderdetail_set').filter(id=order_id, user_id=request.user.id).first()
+    if order is None:
+        raise Http404('پیدا نشد')
+
+    context = {
+        'order': order
+    }
+    return render(request, 'userPanelApp/userShoppingDetail.html', context)

@@ -164,3 +164,7 @@ class ProductsVisit(models.Model):
     class Meta:
         verbose_name = 'بازید محصول'
         verbose_name_plural = 'بازید های محصول'
+
+
+
+
