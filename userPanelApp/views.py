@@ -10,12 +10,15 @@ from productionsApp.models import Products
 from userAccountApp.models import User
 from .forms import editProfileModelForm, changePasswordForm
 from django.contrib.auth import logout
+from django.utils.decorators import method_decorator
 
 
+@method_decorator(login_required, name='dispatch')
 class userPanelDashboard(TemplateView):
     template_name = 'userPanelApp/userPanelDashboard.html'
 
 
+@method_decorator(login_required, name='dispatch')
 class editProdileView(View):
 
     def get(self, request: HttpRequest):
@@ -39,6 +42,7 @@ class editProdileView(View):
         return render(request, 'userPanelApp/editProfile.html', context)
 
 
+@method_decorator(login_required, name='dispatch')
 class changePasswordView(View):
     def get(self, request: HttpRequest):
         context = {
@@ -69,6 +73,7 @@ def panelPartial(request: HttpRequest):
     return render(request, 'userPanelApp/includes/panelPartial.html')
 
 
+@login_required
 def userBasket(request: HttpRequest):
     current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(isPaid=False,
                                                                                              user_id=request.user.id)
@@ -80,6 +85,7 @@ def userBasket(request: HttpRequest):
     return render(request, 'userPanelApp/userBasket.html', context)
 
 
+@login_required
 def remove_order_detail(request):
     detail_id = request.GET.get('detailId')
     if detail_id is None:
@@ -106,6 +112,7 @@ def remove_order_detail(request):
     })
 
 
+@login_required
 def change_order_detail_count(request):
     detail_id = request.GET.get('detailId')
     state = request.GET.get('state')

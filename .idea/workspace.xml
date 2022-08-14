@@ -7,8 +7,8 @@
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
@@ -66,7 +66,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -134,6 +134,7 @@
       <workItem from="1660105248629" duration="19196000" />
       <workItem from="1660275848221" duration="5526000" />
       <workItem from="1660363889827" duration="23815000" />
+      <workItem from="1660450866994" duration="1667000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
