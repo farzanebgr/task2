@@ -1,29 +1,29 @@
 {% load poll_extras %}
 {% load ratings %}
 <div class="col-sm-4">
-	<div class="product-image-wrapper">
-		<div class="single-products">
-			<div class="productinfo text-center">
-				<img src="{{ product.image.url }}" alt="" />
-				<h2>{{ product.price | three_digits_currency}} </h2>
-				<p>{{ product.title }}</p>
-				<button onclick="addProductToOrder({{ product.id }})"  class="btn btn-default add-to-cart">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                <img src="{{ product.image.url }}" alt="" />
+                <h2>{{ product.price | three_digits_currency}} </h2>
+                <p>{{ product.title }}</p>
+                <button onclick="addProductToOrder({{ product.id }})"  class="btn btn-default add-to-cart">
                     <i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</button>
-		    </div>
-	    	<div class="product-overlay">
-				<div class="overlay-content">
-					<h2>{{ product.price | three_digits_currency}} </h2>
-					<p>{{ product.title }}</p>
-					<button onclick="addProductToOrder({{ product.id }})" class="btn btn-default add-to-cart">
+            </div>
+            <div class="product-overlay">
+                <div class="overlay-content">
+                    <h2>{{ product.price | three_digits_currency}} </h2>
+                    <p>{{ product.title }}</p>
+                    <button onclick="addProductToOrder({{ product.id }})" class="btn btn-default add-to-cart">
                         <i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</button>
-				</div>
-			</div>
-		</div>
-    	<div class="choose">
-			<ul class="nav nav-pills nav-justified">
-				<li><a href="{% url 'detail-productions-page' slug=product.slug %}">
+                </div>
+            </div>
+        </div>
+        <div class="choose">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'detail-productions-page' slug=product.slug %}">
                     <i class="fa fa-plus-square"></i>مشاهده جزئیات</a></li>
-			</ul>
-		</div>
-	</div>
+            </ul>
+        </div>
+    </div>
 </div>

@@ -4,135 +4,117 @@
 {% load ratings %}
 {% block title %}{{ productsbrand.titleEN }}{% endblock %}
 {% block content %}
-<section>
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-9">
-					<div class="blog-post-area">
-						<h2 class="title text-center">{{ productsbrand.titleEN }}</h2>
-						<div class="single-blog-post">
-							<h3>{{ productsbrand.title }}</h3>
-							<div class="post-meta">
-								<ul>
-									<li><i class="fa fa-user"></i>کاربر مدیر</li>
-									<li><i class="fa fa-clock-o"></i>{{ productsbrand.createJalalitime }}</li>
-									<li><i class="fa fa-calendar"></i>{{ productsbrand.createJalalidate }}</li>
-								</ul>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 text-warning" style="font-size:large">
+                {% ratings object %}
+                </div>
+                <div class="col-sm-9">
+                    <div class="blog-post-area">
+                        <h2 class="title text-center">{{ productsbrand.titleEN }}</h2>
+                        <div class="single-blog-post">
+                            <h3>{{ productsbrand.title }}</h3>
+                            <div class="post-meta">
                                 <ul>
-                                    <li>
-                                        <div>{% ratings object %}</div>
-                                    </li>
+                                    <li><i class="fa fa-user"></i>کاربر مدیر</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ productsbrand.createJalalitime }}</li>
+                                    <li><i class="fa fa-calendar"></i>{{ productsbrand.createJalalidate }}</li>
                                 </ul>
-							</div>
-							<a href="">
-								<img src="{{ productsbrand.image.url }}" alt="{{ productsbrand.titleEN }}">
-							</a>
-							<p>{{ productsbrand.shortDescription }}</p>
-							<p>{{ productsbrand.description }}</p>
-						</div>
-					</div>
+                            </div>
+                            <a href="">
+                                <img src="{{ productsbrand.image.url }}" alt="{{ productsbrand.titleEN }}">
+                            </a>
+                            <p>{{ productsbrand.shortDescription }}</p>
+                            <p>{{ productsbrand.description }}</p>
+                        </div>
+                    </div>
                     {% if productsbrand.haveComments %}
 
-                     <!--Comments-->
+                        <!--Comments-->
 
-                    <div class="response-area" id="comments_area">
-                        <h2> نظرات ({{ comments_count }})</h2>
-                        <ul class="media-list">
-                            {% for comment in comments %}
-                                <li class="media" id="single_comment_box_{{ comment.id }}">
-                                    <a class="pull-right" href="#">
-                                        <img class="media-object" src="/static/images/blog/user.png" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <ul class="sinlge-post-meta">
-                                            <li><i class="fa fa-user"></i>{{ comment.user }}</li>
-                                            <li><i class="fa fa-clock-o"></i> {{ comment.createJalalitime }}</li>
-                                            <li>
-                                                <i class="fa fa-calendar"></i> {{ comment.createJalalidate }}
-                                            </li>
-                                        </ul>
-                                        <p>
-                                            {{ comment.message }}
-                                        </p>
-                                        <a class="btn btn-primary" onclick="fillBrandParentId({{ comment.id }})"><i
-                                                class="fa fa-reply"></i>پاسـخ</a>
-                                    </div>
-                                </li>
-
-                                {% for sub_comment in comment.brandscomments_set.all %}
-                                    <li class="media second-media" id="single_comment_box_{{ comment.id }}">
+                        <div class="response-area" id="comments_area">
+                            <h2> نظرات ({{ comments_count }})</h2>
+                            <ul class="media-list">
+                                {% for comment in comments %}
+                                    <li class="media" id="single_comment_box_{{ comment.id }}">
                                         <a class="pull-right" href="#">
-                                            <img class="media-object" src="/static/images/blog/user_response.png" alt="">
+                                            <img class="media-object" src="/static/images/blog/user.png" alt="">
                                         </a>
                                         <div class="media-body">
                                             <ul class="sinlge-post-meta">
-                                                <li><i class="fa fa-user"></i>{{ sub_comment.user }}</li>
-                                                <li><i class="fa fa-clock-o"></i> {{ sub_comment.createJalalitime}}
-                                                </li>
+                                                <li><i class="fa fa-user"></i>{{ comment.user }}</li>
+                                                <li><i class="fa fa-clock-o"></i> {{ comment.createJalalitime }}</li>
                                                 <li>
-                                                    <i class="fa fa-calendar"></i> {{ sub_comment.createJalalidate }}
+                                                    <i class="fa fa-calendar"></i> {{ comment.createJalalidate }}
                                                 </li>
                                             </ul>
                                             <p>
-                                                {{ sub_comment.message }}
+                                                {{ comment.message }}
                                             </p>
+                                            <a class="btn btn-primary" onclick="fillBrandParentId({{ comment.id }})"><i
+                                                    class="fa fa-reply"></i>پاسـخ</a>
                                         </div>
                                     </li>
-                                {% endfor %}
-                            {% endfor %}
 
-                        </ul>
-                    </div>
-            <!--/Response-area-->
-                    <div class="replay-box" id="comment_form">
-                        {% if request.user.is_authenticated %}
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <h2>نظـر خود را بنویسیـد</h2>
-                                    <div class="text-area">
-                                        <input type="hidden" value="" id="parent_id" >
-                                        <div class="blank-arrow">
-                                            <label>متن پیام</label>
+                                    {% for sub_comment in comment.brandscomments_set.all %}
+                                        <li class="media second-media" id="single_comment_box_{{ comment.id }}">
+                                            <a class="pull-right" href="#">
+                                                <img class="media-object" src="/static/images/blog/user_response.png" alt="">
+                                            </a>
+                                            <div class="media-body">
+                                                <ul class="sinlge-post-meta">
+                                                    <li><i class="fa fa-user"></i>{{ sub_comment.user }}</li>
+                                                    <li><i class="fa fa-clock-o"></i> {{ sub_comment.createJalalitime}}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-calendar"></i> {{ sub_comment.createJalalidate }}
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    {{ sub_comment.message }}
+                                                </p>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                        <!--/Response-area-->
+                        <div class="replay-box" id="comment_form">
+                            {% if request.user.is_authenticated %}
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h2>نظـر خود را بنویسیـد</h2>
+                                        <div class="text-area">
+                                            <input type="hidden" value="" id="parent_id" >
+                                            <div class="blank-arrow">
+                                                <label>متن پیام</label>
+                                            </div>
+                                            <span>*</span>
+                                            <textarea name="message" rows="11" id="commentText"></textarea>
+                                            <div class="col-md-12 form-group">
+                                            </div>
+                                            <a class="btn btn-primary" onclick="sendBrandComments({{ productsbrand.id }})">
+                                                ارسـال نظـر</a>
                                         </div>
-                                        <span>*</span>
-                                        <textarea name="message" rows="11" id="commentText"></textarea>
-                                       <div class="col-md-12 form-group">
-                                       </div>
-                                        <a class="btn btn-primary" onclick="sendBrandComments({{ productsbrand.id }})">
-                                            ارسـال نظـر</a>
                                     </div>
                                 </div>
-                            </div>
-                        {% else %}
-                            <div class="alert alert-warning">
-                                برای درج نظر می بایست <a href="{% url 'login-page' %}">لاگین</a> کنید
-                            </div>
-                        {% endif %}
-                    </div>
-            <!--/Repaly Box-->
-				</div>
+                            {% else %}
+                                <div class="alert alert-warning">
+                                    برای درج نظر می بایست <a href="{% url 'login-page' %}">لاگین</a> کنید
+                                </div>
+                            {% endif %}
+                        </div>
+                        <!--/Repaly Box-->
+                        </div>
                     {% endif %}
-{#						<div class="brands_products">#}
-{#                            <!--brands_products-->#}
-{#							<h2>برنـد ها</h2>#}
-{#							<div class="brands-name">#}
-{#								<ul class="nav nav-pills nav-stacked">#}
-{#									<li><a href=""> <span class="pull-left">(50)</span>برنـد 1</a></li>#}
-{#									<li><a href=""> <span class="pull-left">(56)</span>برنـد 2</a></li>#}
-{#									<li><a href=""> <span class="pull-left">(27)</span>برنـد 3</a></li>#}
-{#									<li><a href=""> <span class="pull-left">(32)</span>برنـد 4</a></li>#}
-{#									<li><a href=""> <span class="pull-left">(5)</span>برنـد 5</a></li>#}
-{#								</ul>#}
-{#							</div>#}
-{#						</div>#}
-{#                <!--/brands_products-->#}
+            </div>
+        </div>
 
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
+        </div>
+        </div>
+    </section>
 
 {% endblock %}

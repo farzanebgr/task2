@@ -12,6 +12,6 @@ function addProductToOrder(productId){
             if (result.isConfirmed && res.status === 'not_auth') {
                 window.location.href = '/login/';
             }
-            })
+        })
     });
-    }
+}

@@ -86,10 +86,10 @@ class loginView(View):
 
 
 class logoutView(View):
-        def get(self, request):
-            logout(request)
-            message = 'از حساب کاربری خود خارج شدید. برای ورود مجدد از طریق لینک زیر اقدام کنید.'
-            context = {
-                'showMessage': message
-                      }
-            return render(request, 'userAccountApp/logoutPage.html', context)
+    def get(self, request):
+        logout(request)
+        message = 'از حساب کاربری خود خارج شدید. برای ورود مجدد از طریق لینک زیر اقدام کنید.'
+        context = {
+            'showMessage': message
+        }
+        return render(request, 'userAccountApp/logoutPage.html', context)

@@ -4,26 +4,26 @@
 {% load static %}
 {% block title %}لیست محصولات{% endblock %}
 {% block content %}
-	<section id="advertisement">
-		<div class="container">
-			<img src="{% static 'images/shop/advertisement.jpg' %}" alt="banner" />
+    <section id="advertisement">
+        <div class="container">
+            <img src="{% static 'images/shop/advertisement.jpg' %}" alt="banner" />
         </div>
-	</section>
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-9 padding-right">
-					{% if products %}
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 padding-right">
+                    {% if products %}
                         <div class="features_items"><!--features_items-->
-						<h2 class="title text-center">تمامی محصولات</h2>
-						{% for product in products %}
-						{% include 'productionsApp/includes/cardProductions.html' with product=product %}
-						{% endfor %}
+                        <h2 class="title text-center">تمامی محصولات</h2>
+                        {% for product in products %}
+                            {% include 'productionsApp/includes/cardProductions.html' with product=product %}
+                        {% endfor %}
                         <div class="clearfix"></div>
-						<ul class="pagination">
-                         {% if page_obj.has_previous %}
-                            <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.previous_page_number }})">قبلی</a></li>
-                         {% endif %}
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.previous_page_number }})">قبلی</a></li>
+                            {% endif %}
                             {% for pageNumber in paginator.page_range %}
                                 <li class="{% if page_obj.number == pageNumber %} active {% endif %}">
                                     <a class="cursore-pointer" onclick="fillPage({{ pageNumber }})">
@@ -32,54 +32,54 @@
                                 </li>
                             {% endfor %}
                             {% if page_obj.has_next %}
-                            <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.next_page_number }})">بعدی</a></li>
-                        {% endif %}
-						</ul>
-                        {% else %}
-                       <div class="alert alert-warning">
-                       <p>
-                           هیچ محصولی یافت نشد
-                       </p>
-					{% endif %}
+                                <li><a class="cursore-pointer" onclick="fillPage({{ page_obj.next_page_number }})">بعدی</a></li>
+                            {% endif %}
+                        </ul>
+                    {% else %}
+                        <div class="alert alert-warning">
+                        <p>
+                            هیچ محصولی یافت نشد
+                        </p>
+                    {% endif %}
                     </div>
                     <!--features_items-->
-                       </div>
-
-                     <div class="col-sm-3">
-					<div class="left-sidebar">
-                        {% render_partial 'productionsApp.views.categories_productions_partial' %}
-                        {% render_partial 'productionsApp.views.brands_productions_partial' %}
-
-                        <div class="price-range"><!--price-range-->
-							<h2>فیلتـر قیمـت</h2>
-							 <div class="well">
-                                <input
-                                        style="width: 100%"
-                                        type="text"
-                                        class="span2"
-                                        value="{{ start_price }},{{ end_price }}"
-                                        data-slider-min="0"
-                                        data-slider-max="{{ db_max_price }}"
-                                        data-slider-step="100000"
-                                        data-slider-value="[{{ start_price }},{{ end_price }}]"
-                                        id="sl2">
-                                 <br/>
-                                <b>{{ db_max_price | three_digits_currency }}  </b>
-                                 <b class="pull-left">0 تومان</b>
-                            </div>
-                            <form action="" id="filter_form" method="get">
-                                <input id="page" name="page" type="hidden" value="{{ page_obj.number }}"/>
-                                <input id="start_price" name="start_price" type="hidden" value="{{ start_price }}"/>
-                                <input id="end_price" name="end_price" type="hidden" value="{{ end_price }}"/>
-                            </form>
-                            <button class="btn btn-success btn-block" onclick="filterProductPrice()">فیلتر قیمت</button>
-						</div><!--/price-range-->
                     </div>
-                </div>
+
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                            {% render_partial 'productionsApp.views.categories_productions_partial' %}
+                            {% render_partial 'productionsApp.views.brands_productions_partial' %}
+
+                            <div class="price-range"><!--price-range-->
+                                <h2>فیلتـر قیمـت</h2>
+                                <div class="well">
+                                    <input
+                                            style="width: 100%"
+                                            type="text"
+                                            class="span2"
+                                            value="{{ start_price }},{{ end_price }}"
+                                            data-slider-min="0"
+                                            data-slider-max="{{ db_max_price }}"
+                                            data-slider-step="100000"
+                                            data-slider-value="[{{ start_price }},{{ end_price }}]"
+                                            id="sl2">
+                                    <br/>
+                                    <b>{{ db_max_price | three_digits_currency }}  </b>
+                                    <b class="pull-left">0 تومان</b>
+                                </div>
+                                <form action="" id="filter_form" method="get">
+                                    <input id="page" name="page" type="hidden" value="{{ page_obj.number }}"/>
+                                    <input id="start_price" name="start_price" type="hidden" value="{{ start_price }}"/>
+                                    <input id="end_price" name="end_price" type="hidden" value="{{ end_price }}"/>
+                                </form>
+                                <button class="btn btn-success btn-block" onclick="filterProductPrice()">فیلتر قیمت</button>
+                            </div><!--/price-range-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-	</section>
+        </div>
+    </section>
 
 {% endblock %}

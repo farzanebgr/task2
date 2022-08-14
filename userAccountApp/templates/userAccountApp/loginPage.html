@@ -15,9 +15,9 @@
                         <form method="post" action="{% url 'login-page' %}">
                             {% csrf_token %}
                             {% if showMessage %}
-                            <div class="alert alert-success">
-                                <h4>{{ showMessage }}</h4>
-                            </div>
+                                <div class="alert alert-success">
+                                    <h4>{{ showMessage }}</h4>
+                                </div>
                             {% endif %}
                             {{ login_form.email.label_tag }}
                             {{ login_form.email }}

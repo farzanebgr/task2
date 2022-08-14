@@ -16,21 +16,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================= */
- 
+
 !function( $ ) {
 
 	var Slider = function(element, options) {
 		this.element = $(element);
 		this.picker = $('<div class="slider">'+
-							'<div class="slider-track">'+
-								'<div class="slider-selection"></div>'+
-								'<div class="slider-handle"></div>'+
-								'<div class="slider-handle"></div>'+
-							'</div>'+
-							'<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'+
-						'</div>')
-							.insertBefore(this.element)
-							.append(this.element);
+			'<div class="slider-track">'+
+			'<div class="slider-selection"></div>'+
+			'<div class="slider-handle"></div>'+
+			'<div class="slider-handle"></div>'+
+			'</div>'+
+			'<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'+
+			'</div>')
+			.insertBefore(this.element)
+			.append(this.element);
 		this.id = this.element.data('slider-id')||options.id;
 		if (this.id) {
 			this.picker[0].id = this.id;
@@ -230,12 +230,12 @@
 			this.inDrag = true;
 			var val = this.calculateValue();
 			this.element.trigger({
-					type: 'slideStart',
-					value: val
-				}).trigger({
-					type: 'slide',
-					value: val
-				});
+				type: 'slideStart',
+				value: val
+			}).trigger({
+				type: 'slide',
+				value: val
+			});
 			return false;
 		},
 

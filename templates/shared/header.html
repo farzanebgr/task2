@@ -51,7 +51,7 @@
                 <div class="col-sm-8 header-middle-menu">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                           {% if request.user.is_authenticated %}
+                            {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <li><a href="/admin"><i class="fa fa-user"></i> پنل ادمین</a></li>
                                 {% endif %}
@@ -95,7 +95,7 @@
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li>
                                 <a href="{% url 'index-page' %}"
-                                 class="{% if request.resolver_match.url_name == 'index-page' %} active {% endif %}" >
+                                   class="{% if request.resolver_match.url_name == 'index-page' %} active {% endif %}" >
                                     خـانه
                                 </a>
                             </li>

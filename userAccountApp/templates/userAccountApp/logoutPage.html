@@ -12,8 +12,8 @@
                     <div class="signup-form">
                         <!--sign up form-->
                         <h1 class="title text-center">از پنل کاربری خود خارج شدید</h1>
-                    <br>
-                            {% if showMessage %}
+                        <br>
+                        {% if showMessage %}
                             <div class="alert alert-danger">
                                 <h1 class="title text-center">خارج شدید</h1>
                                 <br>
@@ -21,8 +21,8 @@
                                 <br>
                                 <div class="text-center  text-center" style="font-size: larger">
                                     <a href="{% url 'login-page' %} ">ورود به سایت</a>
-                                <br>
-                                 <a href="{% url 'index-page' %}" >برگشت به صفحه اصلی</a>
+                                    <br>
+                                    <a href="{% url 'index-page' %}" >برگشت به صفحه اصلی</a>
                                 </div>
                             </div>
                         {% endif %}

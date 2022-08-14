@@ -6,15 +6,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-             <div class="thumbnail">
-                  <div class="caption">
-                      {% if currentUser.avatar.url %}
-                <img style="width: 100%" src="{{ currentUser.avatar.url }}" />
-                    {% else %}
-                    <img style="width: 100%" src="/static/images/blog/user.png"/>
-                {% endif %}
-                  </div>
-             </div>
+                <div class="thumbnail">
+                    <div class="caption">
+                        {% if currentUser.avatar.url %}
+                            <img style="width: 100%" src="{{ currentUser.avatar.url }}" />
+                        {% else %}
+                            <img style="width: 100%" src="/static/images/blog/user.png"/>
+                        {% endif %}
+                    </div>
+                </div>
                 {% render_partial 'userPanelApp.views.panelPartial' %}
 
             </div>
@@ -22,7 +22,7 @@
                 <form enctype="multipart/form-data" action="{% url 'edit-profile-page' %}" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                     <button type="submit" style="margin: 20px 5px; padding: 10px 20px;" class="btn btn-success pull-left">ثبت</button>
+                    <button type="submit" style="margin: 20px 5px; padding: 10px 20px;" class="btn btn-success pull-left">ثبت</button>
                 </form>
             </div>
         </div>

@@ -2,60 +2,60 @@
 {% load static %}
 {% block title %}فروشگاه مرکزی{% endblock %}
 {% block content %}
-<section id="slider">
-    <!--slider-->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>{{ settings.siteEnglishName }}</span></h1>
-									<h2> تلفن: {{ settings.sitePhone }} </h2>
-									<p>آدرس:  {{ settings.siteAddress }}</p>
-									<a class="button btn btn-default" href="{% url 'all-productions-page' %}">محصولات</a>
-								</div>
-								<div class="col-sm-6">
-									<img src="{% static 'images/home/girl2.jpg' %}" class="girl img-responsive" alt="" />
-								</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
+    <section id="slider">
+        <!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-sm-6">
+                                    <h1><span>{{ settings.siteEnglishName }}</span></h1>
+                                    <h2> تلفن: {{ settings.sitePhone }} </h2>
+                                    <p>آدرس:  {{ settings.siteAddress }}</p>
+                                    <a class="button btn btn-default" href="{% url 'all-productions-page' %}">محصولات</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="{% static 'images/home/girl2.jpg' %}" class="girl img-responsive" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-	</section>
+    </section>
     {% for category in categoriesParents %}
-       <a href="#">
-           <h2 class="title text-center">{{ category.title }}</h2>
-       </a>
-       <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            {% for item in category.productscategory_set.all %}
-                      <div class="col-sm-3 col-lg-2 pull-right">
-        					<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ item.image.url }}" alt="{{ item.title }}"/>
-											<h2>{{ item.title }} </h2>
-													<a href="#" class="btn btn-default add-to-cart">
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        محصولات بیشتر
-                                                        </a>
-                                    </div>
-								</div>
-							</div>
-                     </div>
-           {% endfor %}
-          </div>
-      </div>
-   {% endfor %}
+        <a href="#">
+            <h2 class="title text-center">{{ category.title }}</h2>
+        </a>
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for item in category.productscategory_set.all %}
+                    <div class="col-sm-3 col-lg-2 pull-right">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="{{ item.image.url }}" alt="{{ item.title }}"/>
+                                    <h2>{{ item.title }} </h2>
+                                    <a href="#" class="btn btn-default add-to-cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        محصولات بیشتر
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
 
-</div>
-				</div>
+    </div>
+    </div>
 
-			</div>
-		</div>
-	</section>
+    </div>
+    </div>
+    </section>
 {% endblock %}

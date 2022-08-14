@@ -38,17 +38,17 @@
     <div class="footer-widget">
         <div class="container">
             <div class="row">
-                 {% for footer_link_box in footer_link_boxes %}
-					<div class="col-sm-3 pull-right">
-						<div class="single-widget">
-							<h2>{{ footer_link_box.title }}</h2>
-							<ul class="nav nav-pills nav-stacked">
+                {% for footer_link_box in footer_link_boxes %}
+                    <div class="col-sm-3 pull-right">
+                        <div class="single-widget">
+                            <h2>{{ footer_link_box.title }}</h2>
+                            <ul class="nav nav-pills nav-stacked">
                                 {% for link in footer_link_box.footerlink_set.all %}
-								<li><a href="{{ link.url }}"> {{ link.title }} </a></li>
-								{% endfor %}
-							</ul>
-						</div>
-					</div>
+                                    <li><a href="{{ link.url }}"> {{ link.title }} </a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -58,7 +58,7 @@
             <div class="row">
                 <h3 class="pull-right">
                     <a target="_blank" href="{{ settings.siteEmail}}">
-                       <b>{{ settings.siteEmail }}</b>
+                        <b>{{ settings.siteEmail }}</b>
                     </a>
                     ({{ settings.siteCopyRight }})
                 </h3>
