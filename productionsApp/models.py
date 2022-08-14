@@ -166,5 +166,17 @@ class ProductsVisit(models.Model):
         verbose_name_plural = 'بازید های محصول'
 
 
+class ProductsRating(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
+    rating = models.IntegerField(verbose_name='امتیاز', null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر')
+    isRating = models.BooleanField(verbose_name='نظر داده / نداده')
+
+    class Meta:
+        verbose_name = 'امتیاز محصول'
+        verbose_name_plural = 'امتبازات محصولات'
+
+    def __str__(self):
+        return str(self.product)
 
 

@@ -89,6 +89,7 @@ def panelPartial(request: HttpRequest):
 def userBasket(request: HttpRequest):
     current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(isPaid=False,
                                                                                              user_id=request.user.id)
+
     total_amount = current_order.calculate_total_price()
     context = {
         'order': current_order,

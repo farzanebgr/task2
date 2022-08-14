@@ -18,10 +18,17 @@
 						<div class="col-sm-7">
 							<div class="product-information">
 								<div>
-									<h2>{{ products.title }}</h2>
-									<p>شناسـه : {{ products.id }}</p>
+                                    <h2>{{ products.title }}</h2>
+                                    {% if not user.is_authorized %}
+                                        <span class="fa fa-star cursore-pointer"></span>
+                                        <span class="fa fa-star cursore-pointer"></span>
+                                        <span class="fa fa-star cursore-pointer"></span>
+                                        <span class="fa fa-star cursore-pointer"></span>
+                                        <span class="fa fa-star cursore-pointer" id="star-five" onclick="addRating({{products.id}})"></span>
+                                    {% endif %}
+                                    <p>شناسـه : {{ products.id }}</p>
                                     <p>بازدید : {{ visit }}</p>
-								</div>
+                                </div>
 								<div>
 									<span>
 										<span>قیمت : {{ products.price | three_digits_currency}} </span>
@@ -48,7 +55,6 @@
 							</div>
                             <!--/product-information-->
 						</div>
-                        {% include 'productionsApp/includes/ratings.html' %}
 					</div>
                 </div>
             </div>

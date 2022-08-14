@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/templates/star_ratings/widget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShoppingDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0012_productsrating.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0013_alter_productsrating_rating.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/productRating.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/ratings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/headerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/headerRef.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +143,7 @@
       <workItem from="1660105248629" duration="19196000" />
       <workItem from="1660275848221" duration="5526000" />
       <workItem from="1660363889827" duration="23815000" />
-      <workItem from="1660450866994" duration="9154000" />
+      <workItem from="1660450866994" duration="15310000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
