@@ -27,16 +27,15 @@ def shoppingPaid(request):
             'status': 'not_paid'
         })
     order_item = Order.objects.filter(id=order_id, user_id=request.user.id).first()
-    order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False, order__user_id=request.user.id).first()
+    order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False,
+                                              order__user_id=request.user.id).first()
     if order_detail is None:
         return JsonResponse({
             'status': 'not_found_detail'
         })
     if state == 'true':
         order_item.isPaid = True
-        order_detail.product.numbers = order_detail.get_total_count()
         order_item.save()
-        order_detail.save()
         return JsonResponse({
             'text': 'خرید شما با موفقیت انحام شد',
         })
@@ -150,13 +149,15 @@ def remove_order_detail(request):
 
 
 @login_required
-def change_order_detail_count(request):
+def change_order_detail_count(request: HttpRequest):
     detail_id = request.GET.get('detailId')
     state = request.GET.get('state')
+    productCount = request.GET.get('productCount')
+    currentCount = request.GET.get('currentCount')
 
     if detail_id is None or state is None:
         return JsonResponse({
-            'status': 'not_found_detail_id_or_state'
+            'status': 'not_found_detail_id_or_state_or_there_is_no_product_available'
         })
 
     order_detail = OrderDetail.objects.filter(id=detail_id, order__isPaid=False, order__user_id=request.user.id).first()
@@ -169,6 +170,7 @@ def change_order_detail_count(request):
     if state == 'increase':
         order_detail.count += 1
         order_detail.save()
+
     elif state == 'decrease':
         if order_detail.count == 1:
             order_detail.delete()
@@ -197,7 +199,7 @@ def myShoppingDetails(request: HttpRequest, order_id):
     order = Order.objects.prefetch_related('orderdetail_set').filter(id=order_id, user_id=request.user.id).first()
     if order is None:
         raise Http404('پیدا نشد')
-
+    order_detail = OrderDetail.objects.filter()
     context = {
         'order': order
     }

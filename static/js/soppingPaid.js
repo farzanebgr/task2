@@ -1,4 +1,4 @@
-function shoppingPaid(orderId, state) {
+function shoppingPaid(orderId, state, ) {
     $.get('/userpanel/shopping-paid/?orderId=' + orderId + '&state=' + state).then(res => {
         Swal.fire({
             icon: 'success',

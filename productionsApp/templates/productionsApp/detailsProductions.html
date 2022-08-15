@@ -32,12 +32,15 @@
                                         <span>قیمت : {{ products.price | three_digits_currency}} </span>
                                     </span>
                                     <p><b>توضیحات :</b> {{ products.Description }} </p>
+
                                     <label>تعداد :   </label>
-                                    <input type="number" min="1" max="{{ products.numbers }}" id="count" value="1" class="search_box">
-                                    <button type="button" class="btn btn-fefault cart" onclick="addProductToOrder({{ products.id }})">
+                                    <input type="number" min="1" max="{{ products.productCount }}" id="count" value="1" class="search_box"/>
+{#                                    <input type="number" min="1" max="{{ products.productCount }}" id="productCount" value="{{ products.productCount }}" class="search_box"/>#}
+                                    <button type="button" class="btn btn-fefault cart" onclick="addProductToOrder({{ products.id }}, {{ products.productCount }})">
                                         <i class="fa fa-shopping-cart"></i>
                                         افـزودن به سبـد خریـد
                                     </button>
+
                                 </div>
                                 <div>
                                     <p><b>موجـودی در انبار فروشگاه :</b>

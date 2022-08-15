@@ -5,7 +5,7 @@ from .models import Products, ProductsCategory, ProductsBrand, ProductsTags, Cat
 
 class ProductsAdmin(admin.ModelAdmin):
     list_filter = ['title', 'isActive']
-    list_display = ['title', 'price', 'slug', 'shortDescription', 'numbers', 'slug']
+    list_display = ['title', 'price', 'slug', 'shortDescription', 'productCount', 'slug']
 
 
 class ProductsCommentsAdmin(admin.ModelAdmin):
