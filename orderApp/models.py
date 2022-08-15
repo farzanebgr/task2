@@ -6,7 +6,7 @@ from productionsApp.models import Products
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر')
     isPaid = models.BooleanField(verbose_name='نهایی شده/ نشده')
-    paymentDate = models.DateTimeField(null=True, blank=True, verbose_name='تاریخ پرداخت')
+    paymentDate = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name='تاریخ پرداخت')
 
     class Meta:
         verbose_name = 'سبد خرید'
@@ -41,4 +41,10 @@ class OrderDetail(models.Model):
         return str(self.order)
 
     def get_total_price(self):
-        return self.count * self.product.price
+        self.finalPrice = self.count * self.product.price
+        return self.finalPrice
+
+    def get_total_count(self):
+        number = self.product.numbers - self.count
+        self.product.numbers = number
+        return number

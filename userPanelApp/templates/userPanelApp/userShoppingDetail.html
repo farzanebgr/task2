@@ -26,7 +26,7 @@
                             <td>{{ detail.id }}</td>
                             <td>{{ detail.product.title }}</td>
                             <td>{{ detail.count }}</td>
-                            <td>{{ detail.finalPrice | three_digits_currency}}</td>
+                            <td>{{ detail.get_total_price | three_digits_currency}}</td>
                         </tr>
                     {% endfor %}
                     </tbody>

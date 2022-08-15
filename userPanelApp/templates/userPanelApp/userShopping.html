@@ -1,5 +1,6 @@
 {% extends 'shared/master.html' %}
 {% load render_partial %}
+{% load jalali_tags %}
 {% load poll_extras %}
 {% block title %}لیست خرید های من{% endblock %}
 
@@ -17,7 +18,6 @@
                     <tr class="text-info">
                         <th class="text-center">شناسه خرید شما</th>
                         <th class="text-center">تاریخ تایید فاکتور</th>
-                        <th class="text-center">قیمت نهایی خرید</th>
                         <th class="text-center">اطلاعات خرید</th>
                     </tr>
                     </thead>
@@ -26,7 +26,6 @@
                         <tr>
                             <td>{{ order.id }}</td>
                             <td>{{ order.paymentDate | show_jalali_date }}</td>
-                            <td>{{ order.calculate_total_price | three_digits_currency }}</td>
                             <td><a href="{% url 'user-shopping-detail-page' order_id=order.id %}"  class="btn btn-info center-block">جزئیات</a></td>
                         </tr>
                     {% endfor %}

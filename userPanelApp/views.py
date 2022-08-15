@@ -18,6 +18,30 @@ class userPanelDashboard(TemplateView):
     template_name = 'userPanelApp/userPanelDashboard.html'
 
 
+@login_required
+def shoppingPaid(request):
+    order_id = request.GET.get('orderId')
+    state = request.GET.get('state')
+    if order_id is None or state is None:
+        return JsonResponse({
+            'status': 'not_paid'
+        })
+    order_item = Order.objects.filter(id=order_id, user_id=request.user.id).first()
+    order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False, order__user_id=request.user.id).first()
+    if order_detail is None:
+        return JsonResponse({
+            'status': 'not_found_detail'
+        })
+    if state == 'true':
+        order_item.isPaid = True
+        order_detail.product.numbers = order_detail.get_total_count()
+        order_item.save()
+        order_detail.save()
+        return JsonResponse({
+            'text': 'خرید شما با موفقیت انحام شد',
+        })
+
+
 @method_decorator(login_required, name='dispatch')
 class editProdileView(View):
 

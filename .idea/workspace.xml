@@ -5,50 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/soppingPaid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/copyRight.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/copyRight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/showMessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/showMessages.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/aboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/aboutUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/allProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/categoriesProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/categoriesProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/brandProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/brandProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/cardProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/categoryPartial.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/categoryPartial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/productRating.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/includes/productRating.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/newBrands.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/newBrands.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/brandsComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/brandsComments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/gmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/gmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/html5shiv.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/html5shiv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/price-range.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/price-range.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/productsComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/productsComments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/shopCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/shopCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/star_ratings/widget.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/templates/userAccountApp/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/templates/userAccountApp/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/templates/userAccountApp/logoutPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/templates/userAccountApp/logoutPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/editProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/includes/panelPartial.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/includes/panelPartial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasket.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userBasketContent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userPanelDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userPanelDashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShopping.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShoppingDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/userShoppingDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -183,6 +152,8 @@
       <workItem from="1660363889827" duration="23815000" />
       <workItem from="1660450866994" duration="16962000" />
       <workItem from="1660475280963" duration="3353000" />
+      <workItem from="1660478737517" duration="301000" />
+      <workItem from="1660540641961" duration="8497000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

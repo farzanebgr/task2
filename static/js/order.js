@@ -13,3 +13,4 @@ function changeOrderDetailCount(detailId, state) {
         }
     });
 }
+

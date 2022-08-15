@@ -10,5 +10,6 @@ urlpatterns = [
     path('my-shopping-detail/<order_id>', views.myShoppingDetails, name='user-shopping-detail-page'),
     path('remove-order-detail/', views.remove_order_detail, name='remove-order-detail-ajax'),
     path('change-order-detail/', views.change_order_detail_count, name='change-order-detail-count-ajax'),
+    path('shopping-paid/', views.shoppingPaid, name='shopping-paid-ajax'),
 
 ]

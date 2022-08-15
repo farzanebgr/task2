@@ -1,5 +1,4 @@
 {% load poll_extras %}
-{% load ratings %}
 <div class="col-sm-4">
     <div class="product-image-wrapper">
         <div class="single-products">
@@ -7,14 +6,14 @@
                 <img src="{{ product.image.url }}" alt="" />
                 <h2>{{ product.price | three_digits_currency}} </h2>
                 <p>{{ product.title }}</p>
-                <button onclick="addProductToOrder({{ product.id }})"  class="btn btn-default add-to-cart">
+                <button type="button" onclick="addProductToOrder({{ product.id }})"  class="btn btn-default add-to-cart">
                     <i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</button>
             </div>
             <div class="product-overlay">
                 <div class="overlay-content">
                     <h2>{{ product.price | three_digits_currency}} </h2>
                     <p>{{ product.title }}</p>
-                    <button onclick="addProductToOrder({{ product.id }})" class="btn btn-default add-to-cart">
+                    <button type="button" onclick="addProductToOrder({{ product }})" class="btn btn-default add-to-cart">
                         <i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</button>
                 </div>
             </div>
