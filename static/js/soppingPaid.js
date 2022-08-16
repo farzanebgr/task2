@@ -1,7 +1,10 @@
-function shoppingPaid(orderId, state, ) {
-    $.get('/userpanel/shopping-paid/?orderId=' + orderId + '&state=' + state).then(res => {
+function shoppingPaid(orderId,productCount) {
+    const customerCount = $('#customerCount').val();
+    $.get('/userpanel/shopping-paid/?orderId=' + orderId + '&productCount=' + productCount,{
+        customerCount : customerCount,
+    }).then(res => {
         Swal.fire({
-            icon: 'success',
+            icon: res.icon,
             title: res.text,
             showConfirmButton: false,
             timer: 2000

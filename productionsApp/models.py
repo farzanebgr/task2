@@ -91,7 +91,7 @@ class Products(models.Model):
     image = models.ImageField(upload_to='products/', null=True, blank=True, verbose_name='تصویر محصول')
     brand = models.ForeignKey(ProductsBrand, on_delete=models.CASCADE, verbose_name='برند', null=True, blank=True)
     price = models.IntegerField(verbose_name='قیمت')
-    productCount = models.IntegerField(verbose_name='تعداد محصول', default=1)
+    productCount = models.IntegerField(verbose_name='تعداد محصول', default=0)
     dateOfCreate = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name='تاریخ ثبت')
     shortDescription = models.CharField(max_length=360, db_index=True, default='empty', verbose_name='توضیحات کوتاه')
     Description = models.TextField(db_index=True, verbose_name='توضیحات اصلی')

@@ -19,25 +19,38 @@ class userPanelDashboard(TemplateView):
 
 
 @login_required
-def shoppingPaid(request):
+def shoppingPaid(request: HttpRequest):
     order_id = request.GET.get('orderId')
-    state = request.GET.get('state')
-    if order_id is None or state is None:
-        return JsonResponse({
-            'status': 'not_paid'
-        })
+    customerCount = int(request.GET.get('customerCount'))
+    productCount = int(request.GET.get('productCount'))
+
     order_item = Order.objects.filter(id=order_id, user_id=request.user.id).first()
-    order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False,
-                                              order__user_id=request.user.id).first()
+    order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False, order__user_id=request.user.id).first()
+
     if order_detail is None:
         return JsonResponse({
-            'status': 'not_found_detail'
+            'status': 'not_found_detail',
+            'icon': 'error',
+            'text': 'اطلاعات مربوطه یافت نشد!'
         })
-    if state == 'true':
+    product = Products.objects.filter(id=order_detail.product.id).first()
+
+    if productCount >= customerCount:
+        productCount -= customerCount
+        product.productCount -= productCount
         order_item.isPaid = True
+        product.save()
         order_item.save()
         return JsonResponse({
-            'text': 'خرید شما با موفقیت انحام شد',
+            'status': 'success',
+            'icon': 'success',
+            'text': 'خرید شما با موفقیت انجام شد',
+        })
+    else:
+        return JsonResponse({
+            'status': 'product_not_available',
+            'icon': 'warning',
+            'text': 'درخواست کالای شما بیش از حد موجودی است.',
         })
 
 
@@ -58,10 +71,10 @@ class editProdileView(View):
         editForm = editProfileModelForm(request.POST, request.FILES, instance=currentUser)
         if editForm.is_valid():
             editForm.save(commit=True)
-            context = {
-                'form': editForm,
-                'currentUser': currentUser
-            }
+        context = {
+            'form': editForm,
+            'currentUser': currentUser
+        }
         return render(request, 'userPanelApp/editProfile.html', context)
 
 
@@ -152,7 +165,6 @@ def remove_order_detail(request):
 def change_order_detail_count(request: HttpRequest):
     detail_id = request.GET.get('detailId')
     state = request.GET.get('state')
-    productCount = request.GET.get('productCount')
     currentCount = request.GET.get('currentCount')
 
     if detail_id is None or state is None:
