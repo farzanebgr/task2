@@ -32,15 +32,23 @@
                                         <span>قیمت : {{ products.price | three_digits_currency}} </span>
                                     </span>
                                     <p><b>توضیحات :</b> {{ products.Description }} </p>
-
+                                    {% if products.productCount == 0 %}
+                                     <label disabled>تعداد :   </label>
+                                        <p style="color: red">
+                                            موجودی این محصول به پایان رسیده است.
+                                        </p>
+                                    <button class="btn btn-fefault cart disabled">
+                                        <i class="fa fa-shopping-cart disabled"></i>
+                                        افـزودن به سبـد خریـد
+                                    </button>
+                                    {% else %}
                                     <label>تعداد :   </label>
                                     <input type="number" min="1" max="{{ products.productCount }}" id="count" value="1" class="search_box"/>
-{#                                    <input type="number" min="1" max="{{ products.productCount }}" id="productCount" value="{{ products.productCount }}" class="search_box"/>#}
                                     <button type="button" class="btn btn-fefault cart" onclick="addProductToOrder({{ products.id }}, {{ products.productCount }})">
                                         <i class="fa fa-shopping-cart"></i>
                                         افـزودن به سبـد خریـد
                                     </button>
-
+                                {% endif %}
                                 </div>
                                 <div>
                                     <p><b>موجـودی در انبار فروشگاه :</b>

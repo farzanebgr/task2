@@ -35,9 +35,8 @@ def shoppingPaid(request: HttpRequest):
         })
     product = Products.objects.filter(id=order_detail.product.id).first()
 
-    if productCount >= customerCount:
-        productCount -= customerCount
-        product.productCount -= productCount
+    if product.productCount >= customerCount:
+        product.productCount -= customerCount
         order_item.isPaid = True
         product.save()
         order_item.save()
