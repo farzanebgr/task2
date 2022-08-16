@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Products, ProductsCategory, ProductsBrand, ProductsTags, CategoryParent, ProductsComments, \
-    BrandsComments, ProductsVisit
+    BrandsComments, ProductsVisit, ProductGallery
 
 
 class ProductsAdmin(admin.ModelAdmin):
@@ -42,6 +42,11 @@ class ProductsVisitAdmin(admin.ModelAdmin):
     list_display = ['product', 'ip', 'user']
 
 
+class ProductGalleryAdmin(admin.ModelAdmin):
+    list_filter = ['product']
+    list_display = ['product', 'image']
+
+
 admin.site.register(Products, ProductsAdmin)
 admin.site.register(ProductsComments, ProductsCommentsAdmin)
 admin.site.register(ProductsBrand, BrandsAdmin)
@@ -50,3 +55,4 @@ admin.site.register(ProductsCategory, CategoriesAdmin)
 admin.site.register(ProductsTags, TagsAdmin)
 admin.site.register(CategoryParent, BrandsAdmin)
 admin.site.register(ProductsVisit, ProductsVisitAdmin)
+admin.site.register(ProductGallery, ProductGalleryAdmin)

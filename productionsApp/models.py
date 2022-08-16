@@ -180,3 +180,13 @@ class ProductsRating(models.Model):
         return str(self.product)
 
 
+class ProductGallery(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
+    image = models.ImageField(upload_to='images/productGallery', verbose_name='تصویر')
+
+    class Meta:
+        verbose_name = 'تصویر محصول'
+        verbose_name_plural = 'تصاویر محصولات'
+
+    def __str__(self):
+        return self.product.title

@@ -3,8 +3,9 @@ from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 from utils.httpService import get_client_ip
 from .models import Products, ProductsCategory, CategoryParent, ProductsBrand, ProductsComments, BrandsComments, \
-    ProductsVisit
+    ProductsVisit, ProductGallery
 from django.views.generic import ListView, DetailView
+from utils.convertors import group_list
 
 
 class ProductionsDetailView(DetailView):
@@ -21,6 +22,9 @@ class ProductionsDetailView(DetailView):
         loaded_product = self.object
         product: Products = kwargs.get('object')
         context['visit'] = ProductsVisit.objects.filter(product_id=product.id).count()
+        galleries = list(ProductGallery.objects.filter(product_id=loaded_product.id).all())
+        galleries.insert(0, loaded_product)
+        context['product_galleries'] = group_list(galleries, 3)
         request = self.request
         user_ip = get_client_ip(self.request)
         user_id = None

@@ -11,146 +11,171 @@
                 <div class="col-md-12 padding-right">
                     <div class="product-details">
                         <!--product-details-->
-                        <div class="col-sm-5">
+                        <div class="col-md-5">
                             <div class="view-product">
-                                <img src="{{ products.image.url }}" alt="{{ products.slug }}">
+                                {% if products.image %}
+                                    <img src="{{ products.image.url }}" alt="{{ products.title }}" id="mainImage"/>
+                                {% endif %}
+                                <h3>بزرگنمایـی</h3>
                             </div>
-                            <br>
-                            <div class="text-warning" style="font-size:small">
-                                {% ratings object %}
+                            <div id="similar-product" class="carousel slide" data-ride="carousel"><!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    {% for group in product_galleries %}
+                                        <div class="item {% if forloop.first %}active{% endif %}">
+                                            {% for gallery in group %}
+                                                <a onclick="showLargeImage('{{ gallery.image.url }}')">
+                                                    <img src="{{ gallery.image.url }}" width="125" height="75" alt="">
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <!-- Controls -->
+                                <a class="right item-control" href="#similar-product" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                                <a class="left item-control" href="#similar-product" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-6">
                             <div class="product-information">
                                 <div>
                                     <h2>{{ products.title }}</h2>
                                     <p>شناسـه : {{ products.id }}</p>
                                     <p>بازدید : {{ visit }}</p>
                                 </div>
-                                <div>
-                                    <span>
-                                        <span>قیمت : {{ products.price | three_digits_currency}} </span>
-                                    </span>
-                                    <p><b>توضیحات :</b> {{ products.Description }} </p>
-                                    {% if products.productCount == 0 %}
-                                     <label disabled>تعداد :   </label>
-                                        <p style="color: red">
-                                            موجودی این محصول به پایان رسیده است.
-                                        </p>
+                                <span>
+                                    <span>قیمت : {{ products.price | three_digits_currency}} </span>
+                                </span>
+                                <br>
+                                {% if products.productCount == 0 %}
+                                    <label disabled style="font-size: x-large">تعداد :   </label>
+                                    <p style="color: red;font-size: large">
+                                        موجودی این محصول به پایان رسیده است.
+                                    </p>
                                     <button class="btn btn-fefault cart disabled">
                                         <i class="fa fa-shopping-cart disabled"></i>
                                         افـزودن به سبـد خریـد
                                     </button>
-                                    {% else %}
-                                    <label>تعداد :   </label>
-                                    <input type="number" min="1" max="{{ products.productCount }}" id="count" value="1" class="search_box"/>
+                                {% else %}
+                                    <label active style="font-size: x-large">تعداد :   </label>
+                                    <input type="number" size="2" min="1" max="{{ products.productCount }}" id="count" value="1" class="search_box"/>
                                     <button type="button" class="btn btn-fefault cart" onclick="addProductToOrder({{ products.id }}, {{ products.productCount }})">
                                         <i class="fa fa-shopping-cart"></i>
                                         افـزودن به سبـد خریـد
                                     </button>
                                 {% endif %}
+                            </div>
+                            <div>
+                                {% if products.brand %}
+                                    <p style="font-size: x-large"><b>برنـد :</b> {{ products.brand.title }} </p>
+                                {% endif %}
+                            </div>
+                            <br>
+                            <div class="text-warning" style="font-size:small">
+                                {% ratings object %}
+                            </div>
+                        </div>
+                    </div><!--/product-information-->
+                    <div class="category-tab shop-details-tab"><!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#details" data-toggle="tab">جزئیات</a></li>
+                                <li><a href="#reviews" data-toggle="tab">نظرات</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="details">
+                                <div class="col-md-12" style="font-size:large">
+                                    {{ products.Description | safe }}
                                 </div>
-                                <div>
-                                    <p><b>موجـودی در انبار فروشگاه :</b>
-                                        {% if products.isActive %} موجود است
-                                        {% else %}
-                                            موجود نیست
-                                        {% endif %}</p>
-                                    </p>
-                                    {% if products.brand %}
-                                        <p><b>برنـد :</b> {{ products.brand.title }} </p>
+                            </div>
+
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="col-sm-12">
+                                    {% if products.haveComments %}
+                                        <!--Comments-->
+                                        <div class="response-area" id="comments_area">
+                                            <h2> نظرات ({{ comments_count }})</h2>
+                                            <ul class="media-list">
+                                                {% for comment in comments %}
+                                                    <li class="media" id="single_comment_box_{{ comment.id }}">
+                                                        <a class="pull-right" href="#">
+                                                            <img class="media-object" src="/static/images/blog/user.png" alt="">
+                                                        </a>
+                                                        <div class="media-body">
+                                                            <ul class="sinlge-post-meta">
+                                                                <li><i class="fa fa-user"></i>{{ comment.user }}</li>
+                                                                <li><i class="fa fa-clock-o"></i> {{ comment.createJalalitime }}</li>
+                                                                <li>
+                                                                    <i class="fa fa-calendar"></i> {{ comment.createJalalidate }}
+                                                                </li>
+                                                            </ul>
+                                                            <p>
+                                                                {{ comment.message }}
+                                                            </p>
+                                                            <a class="btn btn-primary" onclick="fillParentId({{ comment.id }})"><i
+                                                                    class="fa fa-reply"></i>پاسـخ</a>
+                                                        </div>
+                                                    </li>
+
+                                                    {% for sub_comment in comment.productscomments_set.all %}
+                                                        <li class="media second-media" id="single_comment_box_{{ comment.id }}">
+                                                            <a class="pull-right" href="#">
+                                                                <img class="media-object" src="/static/images/blog/user_response.png" alt="">
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <ul class="sinlge-post-meta">
+                                                                    <li><i class="fa fa-user"></i>{{ sub_comment.user }}</li>
+                                                                    <li><i class="fa fa-clock-o"></i> {{ sub_comment.createJalalitime}}
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-calendar"></i> {{ sub_comment.createJalalidate }}
+                                                                    </li>
+                                                                </ul>
+                                                                <p>
+                                                                    {{ sub_comment.message }}
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    {% endfor %}
+                                                {% endfor %}
+
+                                            </ul>
+                                        </div>
+                                        <!--/Response-area-->
+                                        <div class="replay-box" id="comment_form">
+                                            {% if request.user.is_authenticated %}
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h2>نظـر خود را بنویسیـد</h2>
+                                                        <div class="text-area">
+                                                            <input type="hidden" value="" id="parent_id" >
+                                                            <div class="blank-arrow">
+                                                                <label>متن پیام</label>
+                                                            </div>
+                                                            <span>*</span>
+                                                            <textarea name="message" rows="11" id="commentText"></textarea>
+                                                            <div class="col-md-12 form-group">
+                                                            </div>
+                                                            <a class="btn btn-primary" onclick="sendProductComments({{ products.id }})">
+                                                                ارسـال نظـر</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% else %}
+                                                <div class="alert alert-warning">
+                                                    برای درج نظر می بایست <a href="{% url 'login-page' %}">لاگین</a> کنید
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <!--/Repaly Box-->
+                                        </div>
                                     {% endif %}
-                                </div>
                             </div>
-                            <!--/product-information-->
+                        </div><!--/category-tab-->
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% if products.haveComments %}
-                <!--Comments-->
-
-                <div class="response-area" id="comments_area">
-                    <h2> نظرات ({{ comments_count }})</h2>
-                    <ul class="media-list">
-                        {% for comment in comments %}
-                            <li class="media" id="single_comment_box_{{ comment.id }}">
-                                <a class="pull-right" href="#">
-                                    <img class="media-object" src="/static/images/blog/user.png" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <ul class="sinlge-post-meta">
-                                        <li><i class="fa fa-user"></i>{{ comment.user }}</li>
-                                        <li><i class="fa fa-clock-o"></i> {{ comment.createJalalitime }}</li>
-                                        <li>
-                                            <i class="fa fa-calendar"></i> {{ comment.createJalalidate }}
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        {{ comment.message }}
-                                    </p>
-                                    <a class="btn btn-primary" onclick="fillParentId({{ comment.id }})"><i
-                                            class="fa fa-reply"></i>پاسـخ</a>
-                                </div>
-                            </li>
-
-                            {% for sub_comment in comment.productscomments_set.all %}
-                                <li class="media second-media" id="single_comment_box_{{ comment.id }}">
-                                    <a class="pull-right" href="#">
-                                        <img class="media-object" src="/static/images/blog/user_response.png" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <ul class="sinlge-post-meta">
-                                            <li><i class="fa fa-user"></i>{{ sub_comment.user }}</li>
-                                            <li><i class="fa fa-clock-o"></i> {{ sub_comment.createJalalitime}}
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-calendar"></i> {{ sub_comment.createJalalidate }}
-                                            </li>
-                                        </ul>
-                                        <p>
-                                            {{ sub_comment.message }}
-                                        </p>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        {% endfor %}
-
-                    </ul>
-                </div>
-                <!--/Response-area-->
-                <div class="replay-box" id="comment_form">
-                    {% if request.user.is_authenticated %}
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h2>نظـر خود را بنویسیـد</h2>
-                                <div class="text-area">
-                                    <input type="hidden" value="" id="parent_id" >
-                                    <div class="blank-arrow">
-                                        <label>متن پیام</label>
-                                    </div>
-                                    <span>*</span>
-                                    <textarea name="message" rows="11" id="commentText"></textarea>
-                                    <div class="col-md-12 form-group">
-                                    </div>
-                                    <a class="btn btn-primary" onclick="sendProductComments({{ products.id }})">
-                                        ارسـال نظـر</a>
-                                </div>
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="alert alert-warning">
-                            برای درج نظر می بایست <a href="{% url 'login-page' %}">لاگین</a> کنید
-                        </div>
-                    {% endif %}
-                </div>
-                <!--/Repaly Box-->
-                </div>
-            {% endif %}
-
-        </div>
-        </div>
     </section>
 {% endblock %}

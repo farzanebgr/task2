@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/uploads/cache/76/d3/76d362e27fc0aba85769a22d42616789.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/cache/7e/38/7e38ccf0cd62b6ba92394f9ecfd6581f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/cache/dc/00/dc000d8722bbc2def40beb03a93f1590.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/cache/eb/70/eb703e25c5044d4469dd267ff51ffdea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0017_productgallery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/ShowImageGalleries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cache/5a/30/5a30919f3a24c79bd221d8524892dc2d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_603.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_604.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_605.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_607.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_608.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/products/Screenshot_60.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/convertors.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/convertors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +165,8 @@
       <workItem from="1660562872623" duration="3405000" />
       <workItem from="1660623660861" duration="6123000" />
       <workItem from="1660637997606" duration="8000" />
-      <workItem from="1660638692453" duration="9284000" />
+      <workItem from="1660638692453" duration="13327000" />
+      <workItem from="1660653454962" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
