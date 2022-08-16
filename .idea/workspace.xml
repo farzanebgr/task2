@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/siteSettingsApp/migrations/0004_slider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/Screenshot_601.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/front-view-woman-with-shopping-bag-concept-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/front-view-woman-with-shopping-bag-concept.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteSettingsApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteSettingsApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteSettingsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteSettingsApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +157,9 @@
       <workItem from="1660540641961" duration="10685000" />
       <workItem from="1660557512255" duration="5305000" />
       <workItem from="1660562872623" duration="3405000" />
-      <workItem from="1660623660861" duration="6014000" />
+      <workItem from="1660623660861" duration="6123000" />
+      <workItem from="1660637997606" duration="8000" />
+      <workItem from="1660638692453" duration="6092000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

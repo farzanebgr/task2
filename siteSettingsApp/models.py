@@ -10,7 +10,7 @@ class settingModel(models.Model):
     siteFax = models.CharField(max_length=200, null=True, blank=True, verbose_name='فکس سایت')
     siteEmail = models.CharField(max_length=200, null=True, blank=True, verbose_name='ایمیل سایت')
     siteCopyRight = models.CharField(max_length=200, verbose_name='متن کپی رایت سایت')
-    siteRights = models.TextField(verbose_name='متن کپی رایت سایت',null=True,blank=True)
+    siteRights = models.TextField(verbose_name='متن کپی رایت سایت', null=True, blank=True)
     siteLogo = models.ImageField(upload_to='uploads/images/siteSettings', verbose_name='لوگو سایت')
     siteMap = models.ImageField(upload_to='uploads/images/siteSettings', verbose_name='نقشه سایت')
     siteAboutUs = models.TextField(verbose_name='درباره ما')
@@ -45,6 +45,23 @@ class footerLink(models.Model):
     class Meta:
         verbose_name = 'آدرس در فوتر'
         verbose_name_plural = 'آدرس ها در فوتر'
+
+    def __str__(self):
+        return self.title
+
+
+class Slider(models.Model):
+    title = models.CharField(max_length=200, verbose_name='عنوان')
+    titleEN = models.CharField(max_length=200, verbose_name='عنوان انگلیسی')
+    url = models.CharField(max_length=200, verbose_name='لینک')
+    url_title = models.CharField(max_length=200, verbose_name='عنوان لینک')
+    description = models.TextField(verbose_name='توضیحات اسلایدر')
+    image = models.ImageField(upload_to='images/sliders/', verbose_name='تصویر اسلایدر')
+    isActive = models.BooleanField(verbose_name='فعال بودن /نبودن')
+
+    class Meta:
+        verbose_name = ' اسلایدر'
+        verbose_name_plural = 'اسلایدر ها'
 
     def __str__(self):
         return self.title

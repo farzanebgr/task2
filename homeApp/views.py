@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-
-import siteSettingsApp
-from siteSettingsApp.models import settingModel, footerLinkBox
+from siteSettingsApp.models import settingModel, footerLinkBox, Slider
 from productionsApp.models import CategoryParent
 
 
@@ -13,7 +11,9 @@ class indexView(TemplateView):
     def get_context_data(self, **kwargs):
         categoriesParents = CategoryParent.objects.filter(isActive=True)[:6]
         settings = settingModel.objects.filter(isMainSettings=True).first()
+        sliders = Slider.objects.filter(isActive=True)
         context = {
+            'sliders': sliders,
             'categoriesParents': categoriesParents,
             'settings': settings,
         }

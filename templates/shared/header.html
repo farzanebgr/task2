@@ -1,47 +1,28 @@
+{% load static %}
 <header id="header">
-    <!--header-->
-    <div class="header_top">
-        <!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> 80 21 24 36 98+ </a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/header_top-->
-
     <div class="header-middle">
-        <!--header-middle-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-4" style="text-align: left;">
                     <div class="logo">
-                        <a href="#">
-                            <img src="/static/images/home/logo.png" alt="Logo" style="text-align: center;"/>
+                        <a href="{% url 'index-page' %}">
+                            <img src="{{ settings.siteLogo.url }}" alt="{{ settings.siteName }}"/>
                         </a>
                     </div>
                 </div>
-
                 <div class="col-sm-8 header-middle-menu">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <li><a href="/admin"><i class="fa fa-user"></i> پنل ادمین</a></li>
+                                    <li><a href="/admin"><i class="fa fa-pagelines"></i> پنل مدیریت سایت </a></li>
                                 {% endif %}
-                                <li><a href="{% url 'user-basket-page' %}"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
-                                <li><a href="{% url 'user-panel-page' %}"><i class="fa fa-user"></i> پنل کاربری</a></li>
-                                <li><a href="{% url 'logout-page' %}"><i class="fa fa-sign-out"></i> خروج</a></li>
+                                <li><a href="{% url 'user-basket-page' %}"><i class="fa fa-shopping-cart"></i> سبد خرید </a></li>
+                                <li><a href="{% url 'user-panel-page' %}"><i class="fa fa-user-circle-o"></i> پنل کاربری </a></li>
+                                <li><a href="{% url 'logout-page' %}"><i class="fa fa-sign-out"></i> خروج </a></li>
                             {% else %}
-                                <li><a href="{% url 'register-page' %}"><i class="fa fa-user-plus"></i> ثبت نام</a></li>
-                                <li><a href="{% url 'login-page' %}"><i class="fa fa-sign-in"></i> ورود</a></li>
+                                <li><a href="{% url 'register-page' %}"><i class="fa fa-user-plus"></i> ثبت نام </a></li>
+                                <li><a href="{% url 'login-page' %}"><i class="fa fa-sign-in"></i> ورود </a></li>
                             {% endif %}
                         </ul>
                     </div>
@@ -49,19 +30,14 @@
             </div>
         </div>
     </div>
-    <!--/header-middle-->
-
     <div class="header-bottom">
-        <!--header-bottom-->
         <div class="container">
             <div class="row">
-
                 <div class="col-sm-3">
                     <div class="search_box pull-left">
                         <input type="text" placeholder="جستـجو"/>
                     </div>
                 </div>
-
                 <div class="col-sm-9">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -82,28 +58,20 @@
                             </li>
                             <li class="dropdown"><a href="#">فروشگـاه<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{% url 'all-productions-page' %}" class="{% if request.resolver_match.url_name == 'all-productions-page' %} active {% endif %}">محصولات</a></li>
-                                    <li><a href="{% url 'categories-productions-page' %}" class="{% if request.resolver_match.url_name == 'categories-productions-page' %} active {% endif %}">دسته بندی محصولات</a></li>
-                                    <li><a href="#">پرداخت</a></li>
-                                    <li><a href="{% url 'user-basket-page' %}">سبـد خریـد</a></li>
-                                    <li><a href="{% url 'login-page' %}" class="{% if request.resolver_match.url_name == 'login-page' %} active {% endif %}">ورود</a></li>
+                                    <li><a href="{% url 'all-productions-page' %}" class="{% if request.resolver_match.url_name == 'all-productions-page' %} active {% endif %}"><i class="fa fa-product-hunt"></i> محصولات فروشگاه </a></li>
+                                    <li><a href="{% url 'categories-productions-page' %}" class="{% if request.resolver_match.url_name == 'categories-productions-page' %} active {% endif %}"><i class="fa fa-buysellads"></i> دسته بندی </a></li>
+                                    <li><a href="{% url 'user-basket-page' %}"><i class="fa fa-shopping-cart"></i> سبد خرید شما </a></li>
+                                    <li><a href="{% url 'login-page' %}" class="{% if request.resolver_match.url_name == 'login-page' %} active {% endif %}"><i class="fa fa-user-circle"></i> ورود به پنل کاربری</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">برند ها<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="{% url 'brands-page' %}" class="{% if request.resolver_match.url_name == 'brands-page' %} active {% endif %}">دسته بندی برندها</a></li>
-                                    <li><a href="{% url 'new-brands-page' %}" class="{% if request.resolver_match.url_name == 'new-brands-page' %} active {% endif %}">جدید ترین برند ها</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{% url 'brands-page' %}" class="{% if request.resolver_match.url_name == 'brands-page' %} active {% endif %}">برند ها </a></li>
                             <li><a href="{% url 'about-us-page' %}" class="{% if request.resolver_match.url_name == 'about-us-page' %} active {% endif %}">درباره مـا</a></li>
                             <li><a href="{% url 'contact-us-page' %}" class="{% if request.resolver_match.url_name == 'contact-us-page' %} active {% endif %}">تماس با مـا</a></li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <!--/header-bottom-->
 </header>
 <!--/header-->
