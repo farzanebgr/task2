@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_render_partial',
     'jalali_date',
     'star_ratings',
+    'sorl.thumbnail',
 ]
 
 # default settings
