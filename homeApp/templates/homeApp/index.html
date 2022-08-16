@@ -43,37 +43,48 @@
                 </div>
             </div>
         </div>
-    </section><!--/slider-->
-    {% for category in categoriesParents %}
-        <a href="#">
-            <h2 class="title text-center">{{ category.title }}</h2>
-        </a>
-        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                {% for item in category.productscategory_set.all %}
-                    <div class="col-sm-3 col-lg-2 pull-right">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{ item.image.url }}" alt="{{ item.title }}"/>
-                                    <h2>{{ item.title }} </h2>
-                                    <a href="#" class="btn btn-default add-to-cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        محصولات بیشتر
-                                    </a>
+    </section>
+    <!--/slider-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="recommended_items"><!--NewProduct_items-->
+                    <h2 class="title text-center">جدیدترین محصولات</h2>
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for group in latest_products %}
+                                <div class="item {% if forloop.first %} active {% endif %}">
+                                    {% for product in group %}
+                                        <div class="col-sm-3">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        {% thumbnail product.image "268x250" as im %}
+                                                            <img src="{{ im.url }}">
+                                                        {% endthumbnail %}
+                                                        <h2>{{ product.price }}</h2>
+                                                        <p>{{ product.title }}</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i>افزودن به سبـد خرید</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     </div>
-                {% endfor %}
+                </div><!--/NewProduct_items-->
             </div>
         </div>
-    {% endfor %}
-
-    </div>
-    </div>
-
-    </div>
-    </div>
     </section>
 {% endblock %}

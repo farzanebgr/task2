@@ -1,22 +1,24 @@
+from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from siteSettingsApp.models import settingModel, footerLinkBox, Slider
-from productionsApp.models import CategoryParent
-
+from productionsApp.models import Products
+from utils.convertors import group_list
 
 class indexView(TemplateView):
     template_name = 'homeApp/index.html'
-    model = CategoryParent
+    model = Products
 
     def get_context_data(self, **kwargs):
-        categoriesParents = CategoryParent.objects.filter(isActive=True)[:6]
-        settings = settingModel.objects.filter(isMainSettings=True).first()
+        context = super().get_context_data(**kwargs)
         sliders = Slider.objects.filter(isActive=True)
-        context = {
-            'sliders': sliders,
-            'categoriesParents': categoriesParents,
-            'settings': settings,
-        }
+        context['sliders'] = sliders
+        latest_products = Products.objects.filter(isActive=True, isDelete=False).order_by('-id')[:12]
+        most_visit_products = Products.objects.filter(isActive=True, isDelete=False).annotate(
+            visit_count=Count('productsvisit')).order_by('-productsvisit')[:12]
+
+        context['latest_products'] = group_list(latest_products)
+        context['most_visit_products'] = group_list(most_visit_products)
         return context
 
 

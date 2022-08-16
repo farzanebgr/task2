@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/siteSettingsApp/migrations/0005_alter_slider_url.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/pin_12-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/scene22_6-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/sliders/tr_vi_2-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cache/76/d3/76d362e27fc0aba85769a22d42616789.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cache/7e/38/7e38ccf0cd62b6ba92394f9ecfd6581f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cache/dc/00/dc000d8722bbc2def40beb03a93f1590.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cache/eb/70/eb703e25c5044d4469dd267ff51ffdea.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteSettingsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteSettingsApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/images/sliders/front-view-woman-with-shopping-bag-concept-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/images/sliders/front-view-woman-with-shopping-bag-concept-removebg-preview.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/convertors.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/convertors.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +157,7 @@
       <workItem from="1660562872623" duration="3405000" />
       <workItem from="1660623660861" duration="6123000" />
       <workItem from="1660637997606" duration="8000" />
-      <workItem from="1660638692453" duration="8055000" />
+      <workItem from="1660638692453" duration="9284000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
