@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0017_productgallery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/ShowImageGalleries.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/cache/5a/30/5a30919f3a24c79bd221d8524892dc2d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_603.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_604.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_605.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_607.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_608.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/products/Screenshot_60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/detailsProductions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/footerRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footerRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,19 +69,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/polls" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.grazie" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/developer/Desktop/task2/shopCenter&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Python\shopCenter\task2\polls" />
@@ -114,8 +101,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="shopCenter.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/Documents/API/djangoProject/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shopCenter" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -167,6 +154,7 @@
       <workItem from="1660637997606" duration="8000" />
       <workItem from="1660638692453" duration="13327000" />
       <workItem from="1660653454962" duration="659000" />
+      <workItem from="1661323099349" duration="868000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -201,6 +189,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/shop_center" />
+    </ignored-roots>
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>

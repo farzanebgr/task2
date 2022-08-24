@@ -1,8 +1,8 @@
 from django import forms
-from .models import contactUs
+from contactApp.models import contactUs
 
 
-class contactUsModelForm(forms.ModelForm):
+class ContactUsModelForm(forms.ModelForm):
     class Meta:
         model = contactUs
         fields = ['title', 'email', 'fullName', 'message']
