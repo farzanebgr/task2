@@ -40,7 +40,8 @@ class footerLink(models.Model):
     title = models.CharField(max_length=200, verbose_name='عنوان')
     titleEnglish = models.CharField(max_length=200, verbose_name='نمایش متن کمکی')
     url = models.URLField(max_length=500, verbose_name='لینک')
-    footerLinkRelation = models.ForeignKey(to=footerLinkBox, on_delete=models.CASCADE, verbose_name='دسته بندی')
+    footerLinkRelation = models.ForeignKey(to=footerLinkBox, on_delete=models.CASCADE, verbose_name='دسته بندی',
+                                           related_name='footerLinkRelation')
 
     class Meta:
         verbose_name = 'آدرس در فوتر'

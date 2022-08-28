@@ -1,53 +1,48 @@
-from rest_framework import generics
+from rest_framework.decorators import api_view
 from rest_framework import viewsets
-from homeApp.api.serializers import SliderSerializer, ProductsSerializer, AboutUsSerializer
+from rest_framework.response import Response
+from homeApp.api.serializers import SliderSerializer, ProductsSerializer, AboutUsSerializer, SiteHeaderSerializer,\
+    SiteFooterPartialAV
 from django.db.models import Count
 from django.shortcuts import render
-from siteSettingsApp.models import settingModel, footerLinkBox, Slider
+from siteSettingsApp.models import settingModel, footerLinkBox, Slider, footerLink
 from productionsApp.models import Products
 
 
 # Show all sliders and Retrieve Update Destroy APIView a particular slider
-class IndexSliderDetailsAV(viewsets.ModelViewSet):
+class IndexSliderDetailsVS(viewsets.ModelViewSet):
     queryset = Slider.objects.all()
     serializer_class = SliderSerializer
 
 
-# Show a particular active product and Retrieve Update Destroy APIView
-class LatestProductsDetailsAV(viewsets.ModelViewSet):
+# Show the latest products and Retrieve Update Destroy APIView a particular product
+class LatestProductsDetailsVS(viewsets.ModelViewSet):
     queryset = Products.objects.filter(isActive=True, isDelete=False).all()
     serializer_class = ProductsSerializer
 
 
-# Show a particular most visit product and Retrieve Update Destroy APIView
-class MostVisitProductsDetailsAV(viewsets.ModelViewSet):
+# Show the most visit products and Retrieve Update Destroy APIView a particular product
+class MostVisitProductsDetailsVS(viewsets.ModelViewSet):
     queryset = Products.objects.filter(isActive=True, isDelete=False).annotate(
         visit_count=Count('productsvisit')).all()
     serializer_class = ProductsSerializer
 
 
-# Show particular active site setting model and Retrieve Update Destroy APIView
-class AboutUsDetailsAV(viewsets.ModelViewSet):
+# Show site setting model and Retrieve Update Destroy APIView a particular setting model
+class AboutUsDetailsVS(viewsets.ModelViewSet):
     queryset = settingModel.objects.filter(isMainSettings=True).all()
     serializer_class = AboutUsSerializer
 
 
-def siteHeaderPartial(request):
-    settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-    context = {
-        'settings': settings
-    }
-    return render(request, 'shared/header.html', context)
+# Show site setting model and Retrieve Update Destroy APIView a particular setting model
+class SiteHeaderPartialVS(viewsets.ModelViewSet):
+    queryset = settingModel.objects.filter(isMainSettings=True).all()
+    serializer_class = SiteHeaderSerializer
 
 
-def siteFooterPartial(request):
-    settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-    footer_link_boxes = footerLinkBox.objects.all()
-    for item in footer_link_boxes:
-        item.footerlink_set
+# Show site setting model and Retrieve Update Destroy APIView a particular setting model
+class SiteFooterPartialVS(viewsets.ModelViewSet):
 
-    context = {
-        'settings': settings,
-        'footer_link_boxes': footer_link_boxes
-    }
-    return render(request, 'shared/footer.html', context)
+    queryset = footerLink.objects.all()
+    serializer_class = SiteFooterPartialAV
+
