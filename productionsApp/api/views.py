@@ -1,15 +1,10 @@
+from rest_framework import mixins
+from rest_framework import generics
 from rest_framework import viewsets
+from rest_framework.response import Response
 
-from productionsApp.api.serializers import ProductsSerializer
-from django.db.models import Count
-from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
-from utils.httpService import get_client_ip
-from productionsApp.models import Products, ProductsCategory, CategoryParent, ProductsBrand, ProductsComments, \
-    BrandsComments, \
-    ProductsVisit, ProductGallery
-from django.views.generic import ListView, DetailView
-from utils.convertors import group_list
+from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer
+from productionsApp.models import Products, ProductsComments, ProductGallery
 
 
 # Show all products
@@ -18,27 +13,43 @@ class ProductsVS(viewsets.ModelViewSet):
     serializer_class = ProductsSerializer
 
 
+# Show gallery products
+class ProductGalleryVS(viewsets.ModelViewSet):
+    queryset = ProductGallery.objects.all()
+    serializer_class = ProductsGallerySerializer
 
-#         context['visit'] = ProductsVisit.objects.filter(product_id=product.id).count()
-#         galleries = list(ProductGallery.objects.filter(product_id=loaded_product.id).all())
-#         galleries.insert(0, loaded_product)
-#         context['product_galleries'] = group_list(galleries, 3)
-#         request = self.request
-#         user_ip = get_client_ip(self.request)
-#         user_id = None
-#         if self.request.user.is_authenticated:
-#             user_id = self.request.user.id
-#         has_been_visited = ProductsVisit.objects.filter(ip__iexact=user_ip, product_id=loaded_product.id).exists()
-#         if not has_been_visited:
-#             new_visit = ProductsVisit(ip=user_ip, user_id=user_id, product_id=loaded_product.pk)
-#             new_visit.save()
-#         if Products.haveComments:
-#             context['comments'] = ProductsComments.objects.filter(product_id=product.id, parent=None).order_by(
-#                 '-createDate').prefetch_related('productscomments_set')
-#             context['comments_count'] = ProductsComments.objects.filter(product_id=product.id).count()
-#             return context
+
+# Show products comments
+class ProductsCommentsVS(viewsets.ModelViewSet):
+    queryset = ProductsComments.objects.all()
+    serializer_class = ProductsCommentSerializer
+
 #
+# class ProductCommentCreateVS(mixins.RetrieveModelMixin,
+#                              mixins.DestroyModelMixin,
+#                              mixins.CreateModelMixin,
+#                              mixins.ListModelMixin,
+#                              mixins.UpdateModelMixin,
+#                              generics.CreateAPIView):
+#     queryset = ProductsComments.objects.all()
+#     serializer_class = ProductsCommentSerializer
 #
+#     def list(self, request):
+#         queryset = self.get_queryset()
+#         serializer = ProductsCommentSerializer(queryset, many=True)
+#         return Response(serializer.data)
+#
+#     def create(self, request, *args, **kwargs):
+#         pass
+#
+#     def retrieve(self, request, *args, **kwargs):
+#         pass
+#
+#     def update(self, request, *args, **kwargs):
+#         pass
+#
+#     def destroy(self, request, *args, **kwargs):
+#         pass
 # def addProductComment(request: HttpRequest):
 #     if request.user.is_authenticated:
 #         product_comment = request.GET.get('product_comment')

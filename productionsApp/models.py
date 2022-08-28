@@ -104,8 +104,8 @@ class Products(models.Model):
     def get_absolute_url(self):
         return reverse('product-details-page', args=[self.slug])
 
-    def save(self, *args, **keyargs):
-        super().save(*args, **keyargs)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -151,16 +151,15 @@ class ProductsTags(models.Model):
 
 
 class ProductsVisit(models.Model):
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول',related_name='productsvisit')
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول', related_name='productsvisit')
     ip = models.CharField(max_length=30, verbose_name='آی پی کاربر')
     user = models.ForeignKey(User, verbose_name='کاربر', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.product.title} / {self.ip}'
 
-
-    def productCount(self):
-        return self.ip.count(self.id)
+    # def productCount(self):
+    #     return self.ip.count(self.id)
 
     class Meta:
         verbose_name = 'بازید محصول'
@@ -182,7 +181,7 @@ class ProductsRating(models.Model):
 
 
 class ProductGallery(models.Model):
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول', related_name='product_gallery')
     image = models.ImageField(upload_to='images/productGallery', verbose_name='تصویر')
 
     class Meta:

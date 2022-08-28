@@ -1,13 +1,17 @@
 from rest_framework.routers import DefaultRouter
 
 from django.urls import path, include
-from productionsApp.api.views import ProductsVS
+from productionsApp.api.views import ProductsVS, ProductGalleryVS, ProductsCommentsVS
 
 router = DefaultRouter()
 router.register('product', ProductsVS, basename='detail-product')
+router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
+router.register('product-comment', ProductsCommentsVS, basename='product-comments')
+# router.register('comment-create', ProductCommentCreateVS, basename='comments-create')
 
 urlpatterns = [
     path('', include(router.urls)),
+    # path('comment-create/', ProductCommentCreateVS.as_view(), name='comment-create'),
     # path('', views.ProductsDetailVS.as_view(), name='all-productions'),
     # path('<slug:slug>', views.ProductionsDetailView.as_view(), name='detail-productions-page'),
     # path('add-product-comment/', views.addProductComment, name='product-comment-page'),
