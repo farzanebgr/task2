@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="add api folder and files">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -63,13 +71,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Python\shopCenter\task2\polls" />
-      <recent name="D:\Python\shopCenter\task2\userPanelApp\templates\userPanelApp" />
-      <recent name="D:\Python\shopCenter\shopCenter\uploads\images\category" />
-      <recent name="D:\Python\shopCenter\shopCenter\productsApp\templates\productsApp" />
-      <recent name="D:\Python\shopCenter\shopCenter\static" />
+      <recent name="D:\Python\shopCenter\task2\userPanelApp" />
+      <recent name="D:\Python\shopCenter\task2\userAccountApp" />
+      <recent name="D:\Python\shopCenter\task2\productionsApp" />
+      <recent name="D:\Python\shopCenter\task2\orderApp" />
+      <recent name="D:\Python\shopCenter\task2\homeApp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Python\shopCenter\task2\shopCenter" />
@@ -156,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660473482765</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add api folder and files">
+      <created>1661665693433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661665693433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +205,7 @@
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="add api folder and files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add api folder and files" />
   </component>
 </project>

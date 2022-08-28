@@ -5,6 +5,7 @@ from siteSettingsApp.models import settingModel, footerLinkBox, Slider
 from productionsApp.models import Products
 from utils.convertors import group_list
 
+
 class indexView(TemplateView):
     template_name = 'homeApp/index.html'
     model = Products

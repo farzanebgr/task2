@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'jalali_date',
     'star_ratings',
     'sorl.thumbnail',
+    'rest_framework',
 ]
 
 # default settings

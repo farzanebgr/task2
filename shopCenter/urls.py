@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('homeApp.urls')),
+    path('', include('homeApp.api.urls')),
     path('', include('contactApp.urls')),
     path('', include('userAccountApp.urls')),
     path('userpanel/', include('userPanelApp.urls')),
