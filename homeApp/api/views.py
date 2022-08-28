@@ -1,7 +1,6 @@
-from rest_framework import mixins
 from rest_framework import generics
 
-from homeApp.api.serializers import SliderSerializer
+from homeApp.api.serializers import SliderSerializer, ProductsSerializer, AboutUsSerializer
 from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import TemplateView
@@ -10,41 +9,54 @@ from productionsApp.models import Products
 from utils.convertors import group_list
 
 
+# Show all active sliders and create new one
 class IndexSliderAV(generics.ListCreateAPIView):
     queryset = Slider.objects.filter(isActive=True)
     serializer_class = SliderSerializer
 
 
+# Show a particular active sliders and Retrieve Update Destroy APIView
 class IndexSliderDetailsAV(generics.RetrieveUpdateDestroyAPIView):
     queryset = Slider.objects.all()
     serializer_class = SliderSerializer
 
 
-class indexView(TemplateView):
-    template_name = 'homeApp/index.html'
-    model = Products
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        sliders = Slider.objects.filter(isActive=True)
-        context['sliders'] = sliders
-        latest_products = Products.objects.filter(isActive=True, isDelete=False).order_by('-id')[:12]
-        most_visit_products = Products.objects.filter(isActive=True, isDelete=False).annotate(
-            visit_count=Count('productsvisit')).order_by('-productsvisit')[:12]
-
-        context['latest_products'] = group_list(latest_products)
-        context['most_visit_products'] = group_list(most_visit_products)
-        return context
+# Show 12 active products and create new one
+class LatestProductsAv(generics.ListCreateAPIView):
+    queryset = Products.objects.filter(isActive=True, isDelete=False)[:12]
+    serializer_class = ProductsSerializer
 
 
-class aboutUsView(TemplateView):
-    template_name = 'homeApp/aboutUs.html'
+# Show a particular active product and Retrieve Update Destroy APIView
+class LatestProductsDetailsAV(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Products.objects.filter(isActive=True, isDelete=False).all()
+    serializer_class = ProductsSerializer
 
-    def get_context_data(self, **kwargs):
-        context = super(aboutUsView, self).get_context_data()
-        siteSettongs: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-        context['siteSettongs'] = siteSettongs
-        return context
+
+# Show 12 most visit products and create new one
+class MostVisitProductsAV(generics.ListCreateAPIView):
+    queryset = Products.objects.filter(isActive=True, isDelete=False).annotate(
+        visit_count=Count('productsvisit')).order_by('-productsvisit')[:12]
+    serializer_class = ProductsSerializer
+
+
+# Show a particular most visit product and Retrieve Update Destroy APIView
+class MostVisitProductsDetailsAV(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Products.objects.filter(isActive=True, isDelete=False).annotate(
+        visit_count=Count('productsvisit')).all()
+    serializer_class = ProductsSerializer
+
+
+# Show active site setting model and create new one
+class AboutUsAV(generics.ListCreateAPIView):
+    queryset = settingModel.objects.filter(isMainSettings=True).all()
+    serializer_class = AboutUsSerializer
+
+
+# Show particular active site setting model and Retrieve Update Destroy APIView
+class AboutUsDetailsAV(generics.RetrieveUpdateDestroyAPIView):
+    queryset = settingModel.objects.filter(isMainSettings=True).all()
+    serializer_class = AboutUsSerializer
 
 
 def siteHeaderPartial(request):
