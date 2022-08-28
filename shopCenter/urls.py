@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include('userAccountApp.urls')),
     path('userpanel/', include('userPanelApp.urls')),
     path('order/', include('orderApp.urls')),
-    path('productions/', include('productionsApp.urls')),
+    path('productions/', include('productionsApp.api.urls')),
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
     path('admin/', admin.site.urls),
 
