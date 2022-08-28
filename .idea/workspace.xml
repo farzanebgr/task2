@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="ProductsVS View">
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0019_alter_productgallery_product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/productionsApp/migrations/0020_alter_productgallery_product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/download2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/download2_a2gWnW3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/download2_zMqjdQD.png" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="product comment View">
+      <change afterPath="$PROJECT_DIR$/userAccountApp/migrations/0003_alter_user_mobile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +158,7 @@
       <workItem from="1660653454962" duration="659000" />
       <workItem from="1661323099349" duration="868000" />
       <workItem from="1661680508003" duration="20000" />
-      <workItem from="1661680529359" duration="8726000" />
+      <workItem from="1661680529359" duration="11618000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -212,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661684624252</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="product comment View">
+      <created>1661690967532</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661690967532</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +244,7 @@
     <MESSAGE value="add product parts in index page and site setting in about us implementation api" />
     <MESSAGE value="Use a router for a better URL" />
     <MESSAGE value="ProductsVS View" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductsVS View" />
+    <MESSAGE value="product comment View" />
+    <option name="LAST_COMMIT_MESSAGE" value="product comment View" />
   </component>
 </project>
