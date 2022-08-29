@@ -58,13 +58,13 @@
                             </li>
                             <li class="dropdown"><a href="#">فروشگـاه<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{% url 'all-productions-page' %}" class="{% if request.resolver_match.url_name == 'all-productions-page' %} active {% endif %}"><i class="fa fa-product-hunt"></i> محصولات فروشگاه </a></li>
-                                    <li><a href="{% url 'categories-productions-page' %}" class="{% if request.resolver_match.url_name == 'categories-productions-page' %} active {% endif %}"><i class="fa fa-buysellads"></i> دسته بندی </a></li>
+{#                                    <li><a href="{% url 'all-productions' %}" class="{% if request.resolver_match.url_name == 'all-productions-page' %} active {% endif %}"><i class="fa fa-product-hunt"></i> محصولات فروشگاه </a></li>#}
+{#                                    <li><a href="{% url 'categories-productions-page' %}" class="{% if request.resolver_match.url_name == 'categories-productions-page' %} active {% endif %}"><i class="fa fa-buysellads"></i> دسته بندی </a></li>#}
                                     <li><a href="{% url 'user-basket-page' %}"><i class="fa fa-shopping-cart"></i> سبد خرید شما </a></li>
                                     <li><a href="{% url 'login-page' %}" class="{% if request.resolver_match.url_name == 'login-page' %} active {% endif %}"><i class="fa fa-user-circle"></i> ورود به پنل کاربری</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'brands-page' %}" class="{% if request.resolver_match.url_name == 'brands-page' %} active {% endif %}">برند ها </a></li>
+{#                            <li><a href="{% url 'brands-page' %}" class="{% if request.resolver_match.url_name == 'brands-page' %} active {% endif %}">برند ها </a></li>#}
                             <li><a href="{% url 'about-us-page' %}" class="{% if request.resolver_match.url_name == 'about-us-page' %} active {% endif %}">درباره مـا</a></li>
 {#                            <li><a href="{% url 'contact-us' %}" class="{% if request.resolver_match.url_name == 'contact-us-page' %} active {% endif %}">تماس با مـا</a></li>#}
                         </ul>

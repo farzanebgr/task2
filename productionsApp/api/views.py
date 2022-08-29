@@ -1,6 +1,7 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.permissions import IsAdminUser, AllowAny
-from productionsApp.api.permissions import IsAdminOrReadOnly
+from rest_framework.response import Response
+from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer
 from productionsApp.models import Products, ProductsComments, ProductGallery
 
@@ -14,15 +15,38 @@ class ProductsVS(viewsets.ModelViewSet):
 
 # Show gallery products
 class ProductGalleryVS(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly, ]
     queryset = ProductGallery.objects.all()
     serializer_class = ProductsGallerySerializer
 
 
 # Show products comments
-class ProductsCommentsVS(viewsets.ModelViewSet):
+class ProductCommentsVS(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrIsAuthenticatedOrReadOnly, ]
     queryset = ProductsComments.objects.all()
-    serializer_class = ProductsCommentSerializer
 
+    def list(self, request, *args, **kwargs):
+        comments = ProductsComments.objects.filter(product_id=self.kwargs['pk']).all()
+        serializer = ProductsCommentSerializer(comments, many=True)
+        return Response(serializer.data)
+
+
+class ProductCommentDetailsVS(viewsets.ViewSet):
+    permission_classes = [IsAdminOrIsAuthenticatedOrReadOnly, ]
+
+    def retrieve(self, request, *args, **kwargs):
+        queryset = ProductsComments.objects.all()
+        comment = get_object_or_404(queryset, pk=self.kwargs['id'])
+        serializer = ProductsCommentSerializer(comment)
+        return Response(serializer.data)
+
+    def update(self, request):
+        queryset = ProductsComments.objects.all()
+        comment = get_object_or_404(queryset, pk=self.kwargs['id'])
+        serializer = ProductsCommentSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
 
 # class ProductCommentCreateVS(mixins.RetrieveModelMixin,
 #                              mixins.DestroyModelMixin,

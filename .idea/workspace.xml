@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="curd in product">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="IsAdminOrReadOnly permission">
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_525.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_525_ewzfqLU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_526.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_526_7LNPRig.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_526_Y8UyYbL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_526_z3gHXON.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_528.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_528_0X9aTfA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_528_4A5YqoR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_529.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_529_qgo2Yjp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_530.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_561.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/productGallery/Screenshot_561_HMxh6eH.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/api/permissions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +169,7 @@
       <workItem from="1660638692453" duration="13327000" />
       <workItem from="1660653454962" duration="659000" />
       <workItem from="1661323099349" duration="868000" />
-      <workItem from="1661754540493" duration="16878000" />
+      <workItem from="1661754540493" duration="21124000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -182,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661770379530</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="IsAdminOrReadOnly permission">
+      <created>1661774301721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661774301721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +231,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="copy right and contact us" />
     <MESSAGE value="curd in product" />
-    <option name="LAST_COMMIT_MESSAGE" value="curd in product" />
+    <MESSAGE value="IsAdminOrReadOnly permission" />
+    <option name="LAST_COMMIT_MESSAGE" value="IsAdminOrReadOnly permission" />
   </component>
 </project>
