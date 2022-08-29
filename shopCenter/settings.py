@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'jalali_date',
     'star_ratings',
     'sorl.thumbnail',
+    'rest_framework',
 ]
 
 # default settings
@@ -164,5 +165,9 @@ STAR_RATINGS_STAR_HEIGHT = 16
 
 LOGIN_URL = '/login/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
 AUTH_USER_MODEL = 'userAccountApp.User'

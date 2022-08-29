@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contactApp/api/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contactApp/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contactApp/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contactApp/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contactApp/migrations/0002_contactus_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/392b7bfb-535c-4808-8e32-df4a23bc095a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shopCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopCenter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contactApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -69,14 +75,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/developer/Desktop/task2/shopCenter&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Python\shopCenter\task2\polls" />
@@ -101,9 +107,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="shopCenter.settings" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Documents/API/djangoProject/venv/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shopCenter" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -155,6 +161,7 @@
       <workItem from="1660638692453" duration="13327000" />
       <workItem from="1660653454962" duration="659000" />
       <workItem from="1661323099349" duration="868000" />
+      <workItem from="1661754540493" duration="10418000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>

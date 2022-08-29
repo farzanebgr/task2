@@ -1,7 +1,9 @@
 from django.db import models
+from userAccountApp.models import User
 
 
 class contactUs(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usercontact')
     fullName = models.CharField(max_length=300, verbose_name='نام و نام خانوادگی')
     email = models.CharField(max_length=300, verbose_name='آدرس ایمیل')
     title = models.CharField(max_length=300, verbose_name='عنوان پیام')
