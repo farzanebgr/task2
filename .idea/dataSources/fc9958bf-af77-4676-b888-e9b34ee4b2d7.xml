@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="db.sqlite3">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.40">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.32">
     <root id="1">
       <ServerVersion>3.38.0</ServerVersion>
     </root>
@@ -1351,10 +1351,10 @@
     <table id="513" parent="166" name="userAccountApp_user_groups"/>
     <table id="514" parent="166" name="userAccountApp_user_user_permissions"/>
     <column id="515" parent="482" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="516" parent="482" name="name">
       <DataType>varchar(150)|0s</DataType>
@@ -1363,6 +1363,7 @@
     </column>
     <index id="517" parent="482" name="sqlite_autoindex_auth_group_1">
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -1375,10 +1376,10 @@
       <UnderlyingIndexName>sqlite_autoindex_auth_group_1</UnderlyingIndexName>
     </key>
     <column id="520" parent="483" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="521" parent="483" name="group_id">
       <DataType>INTEGER|0s</DataType>
@@ -1407,23 +1408,27 @@
     <index id="525" parent="483" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="526" parent="483" name="auth_group_permissions_group_id_b120cbf9">
       <ColNames>group_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="527" parent="483" name="auth_group_permissions_permission_id_84c5c92e">
       <ColNames>permission_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="528" parent="483">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="529" parent="484" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="530" parent="484" name="content_type_id">
       <DataType>INTEGER|0s</DataType>
@@ -1450,20 +1455,23 @@ permission_id</ColNames>
     <index id="534" parent="484" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="535" parent="484" name="auth_permission_content_type_id_2f476e4b">
       <ColNames>content_type_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="536" parent="484">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="537" parent="485" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="538" parent="485" name="fullName">
       <DataType>varchar(300)|0s</DataType>
@@ -1507,10 +1515,10 @@ codename</ColNames>
       <Predicate>&quot;action_flag&quot; &gt;= 0</Predicate>
     </check>
     <column id="547" parent="486" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="548" parent="486" name="action_time">
       <DataType>datetime|0s</DataType>
@@ -1561,19 +1569,21 @@ codename</ColNames>
     </foreign-key>
     <index id="557" parent="486" name="django_admin_log_content_type_id_c4bce8eb">
       <ColNames>content_type_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="558" parent="486" name="django_admin_log_user_id_c564eba6">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="559" parent="486">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="560" parent="487" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="561" parent="487" name="app_label">
       <DataType>varchar(100)|0s</DataType>
@@ -1588,6 +1598,8 @@ codename</ColNames>
     <index id="563" parent="487" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="564" parent="487">
@@ -1595,10 +1607,10 @@ model</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="565" parent="488" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="566" parent="488" name="app">
       <DataType>varchar(255)|0s</DataType>
@@ -1636,11 +1648,13 @@ model</ColNames>
     </column>
     <index id="573" parent="489" name="sqlite_autoindex_django_session_1">
       <ColNames>session_key</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
     <index id="574" parent="489" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="575" parent="489">
       <ColNames>session_key</ColNames>
@@ -1648,10 +1662,10 @@ model</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_django_session_1</UnderlyingIndexName>
     </key>
     <column id="576" parent="490" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="577" parent="490" name="isPaid">
       <DataType>bool|0s</DataType>
@@ -1676,16 +1690,17 @@ model</ColNames>
     </foreign-key>
     <index id="581" parent="490" name="orderApp_order_user_id_d8756840">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="582" parent="490">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="583" parent="491" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="584" parent="491" name="finalPrice">
       <DataType>INTEGER|0s</DataType>
@@ -1722,19 +1737,21 @@ model</ColNames>
     </foreign-key>
     <index id="590" parent="491" name="orderApp_orderdetail_order_id_daa6d8e1">
       <ColNames>order_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="591" parent="491" name="orderApp_orderdetail_product_id_4948a5aa">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="592" parent="491">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="593" parent="492" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="594" parent="492" name="createDate">
       <DataType>datetime|0s</DataType>
@@ -1787,22 +1804,25 @@ model</ColNames>
     </foreign-key>
     <index id="603" parent="492" name="productionsApp_brandscomments_brand_id_58bb9357">
       <ColNames>brand_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="604" parent="492" name="productionsApp_brandscomments_user_id_8eb456ef">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="605" parent="492" name="productionsApp_brandscomments_parent_id_603e8847">
       <ColNames>parent_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="606" parent="492">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="607" parent="493" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="608" parent="493" name="title">
       <DataType>varchar(300)|0s</DataType>
@@ -1820,19 +1840,21 @@ model</ColNames>
     </column>
     <index id="611" parent="493" name="productionsApp_categoryparent_title_9b780e74">
       <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="612" parent="493" name="productionsApp_categoryparent_titleEN_67f4767b">
       <ColNames>titleEN</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="613" parent="493">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="614" parent="494" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="615" parent="494" name="image">
       <DataType>varchar(100)|0s</DataType>
@@ -1853,16 +1875,17 @@ model</ColNames>
     </foreign-key>
     <index id="618" parent="494" name="productionsApp_productgallery_product_id_353cbf59">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="619" parent="494">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="620" parent="495" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="621" parent="495" name="title">
       <DataType>varchar(300)|0s</DataType>
@@ -1929,17 +1952,21 @@ model</ColNames>
     </foreign-key>
     <index id="634" parent="495" name="sqlite_autoindex_productionsApp_products_1">
       <ColNames>slug</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
     <index id="635" parent="495" name="productionsApp_products_shortDescription_ff50b21a">
       <ColNames>shortDescription</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="636" parent="495" name="productionsApp_products_Description_cff8e6d6">
       <ColNames>Description</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="637" parent="495" name="productionsApp_products_brand_id_63cfe86b">
       <ColNames>brand_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="638" parent="495">
       <ColNames>id</ColNames>
@@ -1950,10 +1977,10 @@ model</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_productionsApp_products_1</UnderlyingIndexName>
     </key>
     <column id="640" parent="496" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="641" parent="496" name="products_id">
       <DataType>bigint|0s</DataType>
@@ -1982,23 +2009,27 @@ model</ColNames>
     <index id="645" parent="496" name="productionsApp_products_category_products_id_productscategory_id_2a94b870_uniq">
       <ColNames>products_id
 productscategory_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="646" parent="496" name="productionsApp_products_category_products_id_e080103d">
       <ColNames>products_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="647" parent="496" name="productionsApp_products_category_productscategory_id_c11c9d0c">
       <ColNames>productscategory_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="648" parent="496">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="649" parent="497" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="650" parent="497" name="title">
       <DataType>varchar(200)|0s</DataType>
@@ -2036,19 +2067,21 @@ productscategory_id</ColNames>
     </column>
     <index id="658" parent="497" name="productionsApp_productsbrand_title_dd589064">
       <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="659" parent="497" name="productionsApp_productsbrand_titleEN_6aebb5c7">
       <ColNames>titleEN</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="660" parent="497">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="661" parent="498" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="662" parent="498" name="title">
       <DataType>varchar(300)|0s</DataType>
@@ -2086,22 +2119,25 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="669" parent="498" name="productionsApp_productscategory_title_5048ea7a">
       <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="670" parent="498" name="productionsApp_productscategory_urlTitle_343b7f27">
       <ColNames>urlTitle</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="671" parent="498" name="productionsApp_productscategory_parent_id_d81894d6">
       <ColNames>parent_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="672" parent="498">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="673" parent="499" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="674" parent="499" name="createDate">
       <DataType>datetime|0s</DataType>
@@ -2150,22 +2186,25 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="682" parent="499" name="productionsApp_productscomments_parent_id_13383a6a">
       <ColNames>parent_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="683" parent="499" name="productionsApp_productscomments_product_id_684456b8">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="684" parent="499" name="productionsApp_productscomments_user_id_cb07d097">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="685" parent="499">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="686" parent="500" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="687" parent="500" name="isRating">
       <DataType>bool|0s</DataType>
@@ -2202,19 +2241,21 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="693" parent="500" name="productionsApp_productsrating_product_id_facbede0">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="694" parent="500" name="productionsApp_productsrating_user_id_504954e2">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="695" parent="500">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="696" parent="501" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="697" parent="501" name="caption">
       <DataType>varchar(300)|0s</DataType>
@@ -2235,19 +2276,21 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="700" parent="501" name="productionsApp_productstags_caption_83ddc759">
       <ColNames>caption</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="701" parent="501" name="productionsApp_productstags_product_id_776ef121">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="702" parent="501">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="703" parent="502" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="704" parent="502" name="ip">
       <DataType>varchar(30)|0s</DataType>
@@ -2279,19 +2322,21 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="709" parent="502" name="productionsApp_productsvisit_product_id_37f94755">
       <ColNames>product_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="710" parent="502" name="productionsApp_productsvisit_user_id_cf702ca0">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="711" parent="502">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="712" parent="503" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="713" parent="503" name="title">
       <DataType>varchar(200)|0s</DataType>
@@ -2322,16 +2367,17 @@ productscategory_id</ColNames>
     </foreign-key>
     <index id="718" parent="503" name="siteSettingsApp_footerlink_footerLinkRelation_id_49c22f07">
       <ColNames>footerLinkRelation_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="719" parent="503">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="720" parent="504" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="721" parent="504" name="title">
       <DataType>varchar(200)|0s</DataType>
@@ -2347,10 +2393,10 @@ productscategory_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="724" parent="505" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="725" parent="505" name="siteName">
       <DataType>varchar(200)|0s</DataType>
@@ -2418,10 +2464,10 @@ productscategory_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="739" parent="506" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="740" parent="506" name="title">
       <DataType>varchar(200)|0s</DataType>
@@ -2498,10 +2544,10 @@ productscategory_id</ColNames>
       <Predicate>&quot;total&quot; &gt;= 0</Predicate>
     </check>
     <column id="758" parent="509" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="759" parent="509" name="count">
       <DataType>integer unsigned|0s</DataType>
@@ -2536,10 +2582,13 @@ productscategory_id</ColNames>
     <index id="765" parent="509" name="star_ratings_rating_content_type_id_object_id_f170c88b_uniq">
       <ColNames>content_type_id
 object_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="766" parent="509" name="star_ratings_rating_content_type_id_176abacc">
       <ColNames>content_type_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="767" parent="509">
       <ColNames>id</ColNames>
@@ -2549,10 +2598,10 @@ object_id</ColNames>
       <Predicate>&quot;score&quot; &gt;= 0</Predicate>
     </check>
     <column id="769" parent="510" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="770" parent="510" name="created">
       <DataType>datetime|0s</DataType>
@@ -2599,13 +2648,17 @@ object_id</ColNames>
     <index id="778" parent="510" name="star_ratings_userrating_user_id_rating_id_25ba0a69_uniq">
       <ColNames>user_id
 rating_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="779" parent="510" name="star_ratings_userrating_rating_id_e7ac9370">
       <ColNames>rating_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="780" parent="510" name="star_ratings_userrating_user_id_33d5d349">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="781" parent="510">
       <ColNames>id</ColNames>
@@ -2623,6 +2676,7 @@ rating_id</ColNames>
     </column>
     <index id="784" parent="511" name="sqlite_autoindex_thumbnail_kvstore_1">
       <ColNames>key</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -2632,10 +2686,10 @@ rating_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_thumbnail_kvstore_1</UnderlyingIndexName>
     </key>
     <column id="786" parent="512" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="787" parent="512" name="password">
       <DataType>varchar(128)|0s</DataType>
@@ -2709,6 +2763,7 @@ rating_id</ColNames>
     </column>
     <index id="802" parent="512" name="sqlite_autoindex_userAccountApp_user_1">
       <ColNames>username</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -2721,10 +2776,10 @@ rating_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_userAccountApp_user_1</UnderlyingIndexName>
     </key>
     <column id="805" parent="513" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="806" parent="513" name="user_id">
       <DataType>bigint|0s</DataType>
@@ -2753,23 +2808,27 @@ rating_id</ColNames>
     <index id="810" parent="513" name="userAccountApp_user_groups_user_id_group_id_712a85d2_uniq">
       <ColNames>user_id
 group_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="811" parent="513" name="userAccountApp_user_groups_user_id_1a1bbf37">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="812" parent="513" name="userAccountApp_user_groups_group_id_09335d24">
       <ColNames>group_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="813" parent="513">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="814" parent="514" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="815" parent="514" name="user_id">
       <DataType>bigint|0s</DataType>
@@ -2798,13 +2857,17 @@ group_id</ColNames>
     <index id="819" parent="514" name="userAccountApp_user_user_permissions_user_id_permission_id_a480d0fb_uniq">
       <ColNames>user_id
 permission_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="820" parent="514" name="userAccountApp_user_user_permissions_user_id_c2e2936a">
       <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <index id="821" parent="514" name="userAccountApp_user_user_permissions_permission_id_783b7c5d">
       <ColNames>permission_id</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="822" parent="514">
       <ColNames>id</ColNames>

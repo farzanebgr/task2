@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
@@ -26,14 +27,23 @@ class CopyRightAV(APIView):
             return Response(serializer.errors)
 
 
+# Return a form for add message for contact
 class ContactUsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
     queryset = contactUs.objects.all()
     serializer_class = ContactUsSerializer
 
     def list(self, request, *args, **kwargs):
-        empty_field = []
-        return Response(empty_field)
+        return Response(None)
 
     def update(self, request, *args, **kwargs):
-        pass
+        if request.user.id == self.kwargs['user'].id:
+            message = contactUs.objects.get(user_id=request.user.id).all()
+            serializer = ContactUsSerializer(message, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            else:
+                return Response(serializer.errors)
+        else:
+            return Response(serializers.ValidationError({'error': 'this contact is not yours!'}))
+

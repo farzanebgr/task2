@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/contactApp/api/permissions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contactApp/api/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contactApp/api/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contactApp/api/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contactApp/migrations/0002_contactus_user.py" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="copy right and contact us">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shopCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopCenter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bda35701-6d39-402c-81af-50129875d9d9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_28_2022_10_13_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_28_2022_10_13_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_28_2022_10_14_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_28_2022_10_14_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +40,7 @@
         <option value="zeynab boogari &lt;102822120+farzanebgr@users.noreply.github.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -161,7 +158,7 @@
       <workItem from="1660638692453" duration="13327000" />
       <workItem from="1660653454962" duration="659000" />
       <workItem from="1661323099349" duration="868000" />
-      <workItem from="1661754540493" duration="10418000" />
+      <workItem from="1661754540493" duration="14037000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -177,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660473482765</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="copy right and contact us">
+      <created>1661767064946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661767064946</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +204,7 @@
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="copy right and contact us" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy right and contact us" />
   </component>
 </project>
