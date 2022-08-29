@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-# from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, AllowAny
 from productionsApp.api.permissions import IsAdminOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer
 from productionsApp.models import Products, ProductsComments, ProductGallery
@@ -7,9 +7,9 @@ from productionsApp.models import Products, ProductsComments, ProductGallery
 
 # Show all products
 class ProductsVS(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly, ]
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
-    permission_classes = [IsAdminOrReadOnly]
 
 
 # Show gallery products
@@ -23,7 +23,7 @@ class ProductsCommentsVS(viewsets.ModelViewSet):
     queryset = ProductsComments.objects.all()
     serializer_class = ProductsCommentSerializer
 
-#
+
 # class ProductCommentCreateVS(mixins.RetrieveModelMixin,
 #                              mixins.DestroyModelMixin,
 #                              mixins.CreateModelMixin,

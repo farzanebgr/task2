@@ -4,10 +4,9 @@ from django.urls import path, include
 from productionsApp.api.views import ProductsVS, ProductGalleryVS, ProductsCommentsVS
 
 router = DefaultRouter()
-router.register('product', ProductsVS, basename='detail-product')
+router.register('products', ProductsVS, basename='all-products')
 router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
 router.register('product-comment', ProductsCommentsVS, basename='product-comments')
-# router.register('comment-create', ProductCommentCreateVS, basename='comments-create')
 
 urlpatterns = [
     path('', include(router.urls)),
