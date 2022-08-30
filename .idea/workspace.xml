@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="show brand comments">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="brand comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +155,7 @@
       <workItem from="1660653454962" duration="659000" />
       <workItem from="1661323099349" duration="868000" />
       <workItem from="1661754540493" duration="22012000" />
-      <workItem from="1661834115037" duration="21641000" />
+      <workItem from="1661834115037" duration="24292000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -227,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661858705395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="brand comments">
+      <created>1661860051034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661860051034</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +265,7 @@
     <MESSAGE value="permission" />
     <MESSAGE value="add brand and category api" />
     <MESSAGE value="show brand comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="show brand comments" />
+    <MESSAGE value="brand comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="brand comments" />
   </component>
 </project>

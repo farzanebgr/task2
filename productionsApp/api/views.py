@@ -25,7 +25,7 @@ class BrandCommentsVS(generics.ListAPIView):
 
     def get_queryset(self):
         pk = self.kwargs['pk']
-        comments = BrandsComments.objects.filter(brand_id=pk)
+        comments = BrandsComments.objects.filter(brand_id=pk, brand__haveComments=True).all()
         return comments
 
 
@@ -85,27 +85,19 @@ class ProductGalleryVS(viewsets.ModelViewSet):
 
 
 # Show Comment Product
+class ProductCommentVS(generics.ListAPIView):
+    serializer_class = ProductsCommentSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        comments = ProductsComments.objects.filter(product_id=pk, product__haveComments=True).all()
+        return comments
+
+
 class ProductCommentDetailsVS(viewsets.ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly, ]
     queryset = ProductsComments.objects.all()
     serializer_class = ProductsCommentSerializer
-
-    def list(self, request, *args, **kwargs):
-        if request.method == 'POST':
-            if request.user:
-                serializer = ProductsCommentSerializer(data=request.data)
-                if serializer.is_valid():
-                    serializer.save()
-                    return Response(serializer.data)
-                else:
-                    return Response(serializer.errors)
-            else:
-                return Response(serializers.ValidationError({'error': 'you are not login into site!'}))
-
-        if request.method == 'GET':
-            query = ProductsComments.objects.filter(product_id=self.kwargs['pk']).all()
-            serializer = ProductsCommentSerializer(query, many=True)
-            return Response(serializer.data)
 
     def retrieve(self, request, *args, **kwargs):
         query = ProductsComments.objects.filter(product_id=self.kwargs['pk'], pk=self.kwargs['pk']).first()
