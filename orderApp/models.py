@@ -1,10 +1,11 @@
 from django.db import models
-from userAccountApp.models import User
+# from userAccountApp.models import User
+import settings
 from productionsApp.models import Products
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='کاربر')
     isPaid = models.BooleanField(verbose_name='نهایی شده/ نشده')
     paymentDate = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name='تاریخ پرداخت')
 

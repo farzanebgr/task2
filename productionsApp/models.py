@@ -1,7 +1,8 @@
 from django.db import models
 from django.shortcuts import reverse
 from jalali_date import datetime2jalali, date2jalali
-from userAccountApp.models import User
+# from userAccountApp.models import User
+import settings
 
 
 class ProductsCategory(models.Model):
@@ -63,7 +64,7 @@ class ProductsBrand(models.Model):
 class BrandsComments(models.Model):
     isActive = models.BooleanField(verbose_name='نمایش نظر', null=True)
     brand = models.ForeignKey(ProductsBrand, on_delete=models.CASCADE, verbose_name='نام برند')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='نام کاربر')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='نام کاربر')
     parent = models.ForeignKey('BrandsComments', null=True, blank=True, on_delete=models.CASCADE, verbose_name='والد')
     createDate = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت نظر')
     message = models.TextField(verbose_name='متن نظر')
@@ -118,7 +119,7 @@ class Products(models.Model):
 class ProductsComments(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
     parent = models.ForeignKey('ProductsComments', null=True, blank=True, on_delete=models.CASCADE, verbose_name='والد')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر', )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='کاربر', )
     createDate = models.DateTimeField(verbose_name='تاریخ ثبت', auto_now_add=True)
     message = models.TextField(verbose_name='متن نظر')
 
@@ -153,7 +154,7 @@ class ProductsTags(models.Model):
 class ProductsVisit(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول', related_name='productsvisit')
     ip = models.CharField(max_length=30, verbose_name='آی پی کاربر')
-    user = models.ForeignKey(User, verbose_name='کاربر', null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='کاربر', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.product.title} / {self.ip}'
@@ -169,7 +170,7 @@ class ProductsVisit(models.Model):
 class ProductsRating(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='محصول')
     rating = models.IntegerField(verbose_name='امتیاز', null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='کاربر')
     isRating = models.BooleanField(verbose_name='نظر داده / نداده')
 
     class Meta:

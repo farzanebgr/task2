@@ -1,17 +1,24 @@
 from rest_framework.routers import DefaultRouter
 
 from django.urls import path, include
-from productionsApp.api.views import ProductsVS, ProductGalleryVS, ProductCommentsVS, ProductCommentDetailsVS
+from productionsApp.api.views import ProductsVS, ProductGalleryVS, ProductCommentDetailsVS
 
 router = DefaultRouter()
 router.register('products', ProductsVS, basename='all-productions')
 router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
-# router.register('product-comment', ProductsCommentsVS, basename='product-comments')
+router.register('product-comments', ProductCommentDetailsVS, basename='product-comments')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('<int:pk>/product-comment/', ProductCommentsVS.as_view({'get': 'list'}), name='product-comments'),
-    path('<int:pk>/product-comment/<int:id>/', ProductCommentDetailsVS.as_view({'get': 'retrieve'}), name='product-comments'),
+    path('<int:pk>/', include(router.urls)),
+    # path('<int:pk>/product-comment/', ProductCommentsVS.as_view({'get': 'list'}), name='product-comments'),
+    # path('product-comment/<int:pk>/', ProductCommentDetailsVS.as_view({'get': 'retrieve'}),
+    #      name='product-comment'),
+
+
+
+
+
     # path('', views.ProductsDetailVS.as_view(), name='all-productions'),
     # path('<slug:slug>', views.ProductionsDetailView.as_view(), name='detail-productions-page'),
     # path('add-product-comment/', views.addProductComment, name='product-comment-page'),

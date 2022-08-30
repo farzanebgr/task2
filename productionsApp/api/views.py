@@ -1,7 +1,9 @@
-from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
+from rest_framework import status
+from rest_framework import serializers
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly
+from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer
 from productionsApp.models import Products, ProductsComments, ProductGallery
 
@@ -20,33 +22,64 @@ class ProductGalleryVS(viewsets.ModelViewSet):
     serializer_class = ProductsGallerySerializer
 
 
-# Show products comments
-class ProductCommentsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrIsAuthenticatedOrReadOnly, ]
+class ProductCommentDetailsVS(viewsets.ModelViewSet):
+    permission_classes = [IsOwnerOrReadOnly, ]
     queryset = ProductsComments.objects.all()
+    serializer_class = ProductsCommentSerializer
 
     def list(self, request, *args, **kwargs):
-        comments = ProductsComments.objects.filter(product_id=self.kwargs['pk']).all()
-        serializer = ProductsCommentSerializer(comments, many=True)
-        return Response(serializer.data)
+        if request.method == 'POST':
+            if request.user:
+                serializer = ProductsCommentSerializer(data=request.data)
+                if serializer.is_valid():
+                    serializer.save()
+                    return Response(serializer.data)
+                else:
+                    return Response(serializer.errors)
+            else:
+                return Response(serializers.ValidationError({'error': 'you are not login into site!'}))
 
-
-class ProductCommentDetailsVS(viewsets.ViewSet):
-    permission_classes = [IsAdminOrIsAuthenticatedOrReadOnly, ]
+        if request.method == 'GET':
+            query = ProductsComments.objects.filter(product_id=self.kwargs['pk']).all()
+            serializer = ProductsCommentSerializer(query, many=True)
+            return Response(serializer.data)
 
     def retrieve(self, request, *args, **kwargs):
-        queryset = ProductsComments.objects.all()
-        comment = get_object_or_404(queryset, pk=self.kwargs['id'])
-        serializer = ProductsCommentSerializer(comment)
+        query = ProductsComments.objects.filter(product_id=self.kwargs['pk'], pk=self.kwargs['pk']).first()
+        serializer = ProductsCommentSerializer(query)
         return Response(serializer.data)
 
-    def update(self, request):
-        queryset = ProductsComments.objects.all()
-        comment = get_object_or_404(queryset, pk=self.kwargs['id'])
-        serializer = ProductsCommentSerializer(comment, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
+    def destroy(self, request, *args, **kwargs):
+        query = ProductsComments.objects.filter(product_id=self.kwargs['pk'], pk=self.kwargs['pk']).first()
+        query.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    # def retrieve(self, request, *args, **kwargs):
+    #     queryset = ProductsComments.objects.all()
+    #     comment = get_object_or_404(queryset, pk=self.kwargs['pk'])
+    #     serializer = ProductsCommentSerializer(comment)
+    #     return Response(serializer.data)
+    #
+    # def post(self, request):
+    #     if request.user:
+    #         serializer = ProductsCommentSerializer(data=request.data)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             return Response(serializer.data)
+    #         else:
+    #             return Response(serializer.errors)
+    #     else:
+    #         return Response(serializers.ValidationError({'error': 'your not login in the site!'}))
+    #
+    # def put(self, request, pk=None):
+    #     queryset = ProductsComments.objects.all()
+    #     comment = get_object_or_404(queryset, pk=self.kwargs['pk'])
+    #     serializer = ProductsCommentSerializer(comment, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     else:
+    #         return Response(serializer.errors)
 
 # class ProductCommentCreateVS(mixins.RetrieveModelMixin,
 #                              mixins.DestroyModelMixin,
