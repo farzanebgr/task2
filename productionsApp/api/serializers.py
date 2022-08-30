@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags,\
+from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductGallery, ProductsComments
 
 

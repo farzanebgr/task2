@@ -10,7 +10,6 @@ from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySe
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductsComments, ProductGallery
-from django.core.exceptions import ValidationError
 
 
 # Show all Brands
@@ -32,13 +31,22 @@ class BrandCommentsVS(generics.ListAPIView):
 
 # Create Comment for brand
 class CreateBrandsCommentsAV(mixins.CreateModelMixin,
-                             generics.CreateAPIView):
+                             generics.GenericAPIView):
     serializer_class = BrandsCommentsSerializer
     queryset = BrandsComments.objects.all()
     permission_classes = [IsAuthenticated]
 
-    def create(self, request, *args, **kwargs):
-        return None
+    def post(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        brand = BrandsComments.objects.filter(brand_id=pk)
+        user_info = request.user
+        user = BrandsComments.objects.filter(user_id=user_info.id)
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(brand=brand, user=user)
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
 
 
 # Show all Categories
