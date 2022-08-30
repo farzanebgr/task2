@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from productionsApp.models import ProductsBrand, ProductsCategory, Products, ProductGallery, ProductsComments
+from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags,\
+    Products, ProductGallery, ProductsComments
 
 
 # Serializer for Brand
@@ -12,10 +13,35 @@ class BrandsSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+# Serializer for Brand comments
+class BrandsCommentsSerializer(serializers.ModelSerializer):
+    brand = serializers.StringRelatedField(read_only=True)
+    parent = serializers.StringRelatedField(read_only=True)
+    user = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = BrandsComments
+        exclude = ['isActive', ]
+
+
 # Serializer for Category
 class CategoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductsCategory
+        fields = "__all__"
+
+
+# Serializer for Parent Category
+class CategoryParentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CategoryParent
+        fields = "__all__"
+
+
+# Serializer for Tags Products
+class ProductsTagsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductsTags
         fields = "__all__"
 
 
