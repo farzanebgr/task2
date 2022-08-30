@@ -1,6 +1,22 @@
 from rest_framework import serializers
 
-from productionsApp.models import Products, ProductGallery, ProductsComments
+from productionsApp.models import ProductsBrand, ProductsCategory, Products, ProductGallery, ProductsComments
+
+
+# Serializer for Brand
+class BrandsSerializer(serializers.ModelSerializer):
+    brand = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = ProductsBrand
+        fields = "__all__"
+
+
+# Serializer for Category
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductsCategory
+        fields = "__all__"
 
 
 # Serializer for Products

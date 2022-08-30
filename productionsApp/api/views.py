@@ -1,11 +1,25 @@
 from rest_framework import viewsets
 from rest_framework import status
 from rest_framework import serializers
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
-from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer
-from productionsApp.models import Products, ProductsComments, ProductGallery
+from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer,\
+    BrandsSerializer, CategoriesSerializer
+from productionsApp.models import ProductsBrand, ProductsCategory, Products, ProductsComments, ProductGallery
+
+
+# Show all Brands
+class BrandsVS(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly, ]
+    queryset = ProductsBrand.objects.all()
+    serializer_class = BrandsSerializer
+
+
+# Show all Categories
+class CategoriesVS(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly, ]
+    queryset = ProductsCategory.objects.all()
+    serializer_class = CategoriesSerializer
 
 
 # Show all products

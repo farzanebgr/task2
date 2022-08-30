@@ -3,7 +3,7 @@ from django.db import models
 
 
 # from userAccountApp.models import User
-import settings
+from shopCenter import settings
 
 
 class contactUs(models.Model):
