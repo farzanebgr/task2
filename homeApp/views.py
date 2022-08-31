@@ -12,6 +12,8 @@ class indexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettings'] = siteSettings
         sliders = Slider.objects.filter(isActive=True)
         context['sliders'] = sliders
         latest_products = Products.objects.filter(isActive=True, isDelete=False).order_by('-id')[:12]
@@ -28,8 +30,8 @@ class aboutUsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(aboutUsView, self).get_context_data()
-        siteSettongs: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-        context['siteSettongs'] = siteSettongs
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettings'] = siteSettings
         return context
 
 
@@ -42,13 +44,13 @@ def siteHeaderPartial(request):
 
 
 def siteFooterPartial(request):
-    settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+    siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
     footer_link_boxes = footerLinkBox.objects.all()
     for item in footer_link_boxes:
         item.footerlink_set
 
     context = {
-        'settings': settings,
+        'siteSettings': siteSettings,
         'footer_link_boxes': footer_link_boxes
     }
     return render(request, 'shared/footer.html', context)

@@ -2227,7 +2227,6 @@ h2.title {
 }
 
 .sinlge-post-meta li i:after,
-.blog-post-area,
 .post-meta ul li i:after {
     content: "";
     position: absolute;
@@ -2240,7 +2239,6 @@ h2.title {
     right: 26px;
 }
 
-.blog-post-area,
 .post-meta ul span {
     float: right;
     color: #FE980F
@@ -2262,7 +2260,6 @@ h2.title {
     border-radius: 0.1em;
 }
 
-.blog-post-area,
 .single-blog-post,
 .btn-primary {
     background: #FE980F;

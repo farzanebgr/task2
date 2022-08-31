@@ -14,8 +14,8 @@ class ContactUsView(CreateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-        context['settings'] = settings
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettings'] = siteSettings
         return context
 
     def post(self, request):
@@ -30,10 +30,10 @@ class ContactUsView(CreateView):
                 contactUs_form.add_error('email', 'شما هنوز وارد سایت نشده اید')
                 result_message = 'متاسفانه شما در سایت ثبت نام نکرده اید. برای ثبت نظر خود باید ابتدا وارد حساب ' \
                                  'کاربری شوید. '
-                settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+                siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
                 context = {
                     'result_message': result_message,
-                    'settings': settings
+                    'siteSettings': siteSettings
                 }
 
                 return render(request, 'contactApp/showMessages.html', context)
@@ -67,6 +67,6 @@ class CopyRightView(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-        context['settings'] = settings
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettings'] = siteSettings
         return context

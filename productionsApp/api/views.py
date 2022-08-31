@@ -72,7 +72,7 @@ class ProductsTagsVS(viewsets.ModelViewSet):
 
 # Show all products
 class ProductsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [IsAdminOrReadOnly, ]
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
 
