@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="add JWT">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/contactUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/copyRight.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/copyRight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/templates/contactApp/showMessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/templates/contactApp/showMessages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/templates/homeApp/aboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/templates/homeApp/aboutUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/templates/productionsApp/brandsList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/categoriesProductions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/templates/productionsApp/newBrands.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Fixed some bugs in the previous project">
+      <change beforePath="$PROJECT_DIR$/orderApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopCenter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +156,7 @@
       <workItem from="1661754540493" duration="22012000" />
       <workItem from="1661834115037" duration="24292000" />
       <workItem from="1661866553754" duration="38000" />
-      <workItem from="1661920780032" duration="17668000" />
+      <workItem from="1661920780032" duration="18044000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -269,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661925476743</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed some bugs in the previous project">
+      <created>1661945726228</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661945726228</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +290,7 @@
     <MESSAGE value="brand comments" />
     <MESSAGE value="comments" />
     <MESSAGE value="add JWT" />
-    <option name="LAST_COMMIT_MESSAGE" value="add JWT" />
+    <MESSAGE value="Fixed some bugs in the previous project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs in the previous project" />
   </component>
 </project>
