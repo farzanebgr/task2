@@ -73,25 +73,6 @@ def addProductComment(request: HttpRequest):
         return render(request, 'productionsApp/includes/commentsProduction.html', context)
 
 
-# Group by categories in the Side menu
-class CategoriesProductionsView(ListView):
-    model = ProductsCategory
-    context_object_name = 'categories'
-
-    # Get all categories from database
-    def get_queryset(self):
-        base_query = super(CategoriesProductionsView, self).get_queryset()
-        categoryProduction = base_query.filter(isActive=True)
-        return categoryProduction
-
-    # Show site settings model in page
-    def get_context_data(self, **kwargs):
-        context = super(CategoriesProductionsView, self).get_context_data()
-        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-        context['siteSettings'] = siteSettings
-        return context
-
-
 # Show all Products by pagination 6
 class AllProductionsView(ListView):
     template_name = 'productionsApp/allProductions.html'

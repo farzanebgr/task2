@@ -2,10 +2,9 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, BlacklistMixin
 from userAccountApp.api.serializers import RegistrationSerializer
 # from userAccountApp.models import User
-
 
 @api_view(['POST', ])
 def registration_view(request):
@@ -15,3 +14,8 @@ def registration_view(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
+
+class TokenBlacklistView(BlacklistMixin):
+    def blacklist(self):
+        token = RefreshToken(base64_encoded_token_string)
+        token.blacklist()

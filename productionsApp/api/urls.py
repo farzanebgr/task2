@@ -4,11 +4,15 @@ from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, P
     ProductGalleryVS, ProductCommentDetailsVS, CreateBrandsCommentsAV, BrandCommentsVS, ProductCommentVS
 
 router = DefaultRouter()
+router.register('products', ProductsVS, basename='all-productions')
+#add product comment
+#add brand comment
 router.register('brands', BrandsVS, basename='all-brands')
-router.register('categories', CategoriesVS, basename='all-categories')
+#filter by brand
+#filter by category
+router.register('category', CategoriesVS, basename='all-categories')
 router.register('category-parent', CategoryParentVS, basename='category-parent')
 router.register('tags', ProductsTagsVS, basename='all-tags')
-router.register('products', ProductsVS, basename='all-productions')
 router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
 router.register('product-comment-details', ProductCommentDetailsVS, basename='product-comment-details')
 
@@ -17,7 +21,5 @@ urlpatterns = [
     path('<int:pk>/', include(router.urls)),
     path('<int:pk>/brand-comments/', BrandCommentsVS.as_view(), name='brand-comments'),
     path('<int:pk>/product-comments/', ProductCommentVS.as_view(), name='product-comments'),
-    # path('<int:pk>/brand-comments/create/', CreateBrandsCommentsAV.as_view(), name='create-comment-brand'),
-    # path('<int:pk>/brand-comment/<int:id>/', CreateBrandsCommentsAV.as_view(), name='brand-comment'),
 
 ]

@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Fixed some API">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Order Detail Part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccountApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,8 @@
       <workItem from="1661754540493" duration="22012000" />
       <workItem from="1661834115037" duration="24292000" />
       <workItem from="1661866553754" duration="38000" />
-      <workItem from="1661920780032" duration="22329000" />
+      <workItem from="1661920780032" duration="23166000" />
+      <workItem from="1662006944405" duration="3103000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -269,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661946057403</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Order Detail Part">
+      <created>1661950696375</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661950696375</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +313,7 @@
     <MESSAGE value="add JWT" />
     <MESSAGE value="Fixed some bugs in the previous project" />
     <MESSAGE value="Fixed some API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some API" />
+    <MESSAGE value="Order Detail Part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order Detail Part" />
   </component>
 </project>
