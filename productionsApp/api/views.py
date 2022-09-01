@@ -8,10 +8,9 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticate
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
-    BrandRatingsSerializer
+    ProductRatingsSerializer
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
-    Products, ProductsComments, ProductGallery
-from star_ratings.models import UserRating
+    Products, ProductsComments, ProductGallery, ProductsRating
 
 
 # Show all Brands
@@ -21,10 +20,10 @@ class BrandsVS(viewsets.ModelViewSet):
     serializer_class = BrandsSerializer
 
 # Show all Brands
-class BrandRatingsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly, ]
-    queryset = UserRating.objects.all()
-    serializer_class = BrandRatingsSerializer
+# class BrandRatingsVS(viewsets.ModelViewSet):
+#     permission_classes = [IsAuthenticatedOrReadOnly, ]
+#     queryset = UserRating.objects.all()
+#     serializer_class = BrandRatingsSerializer
 
 
 # Show  Brand Comments
@@ -91,6 +90,11 @@ class ProductGalleryVS(viewsets.ModelViewSet):
     queryset = ProductGallery.objects.all()
     serializer_class = ProductsGallerySerializer
 
+# Show all Product Ratings
+class ProductRatingsVS(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    queryset = ProductsRating.objects.all()
+    serializer_class = ProductRatingsSerializer
 
 # Show Comment Product
 class ProductCommentVS(generics.ListAPIView):
