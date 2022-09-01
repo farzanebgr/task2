@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Order Detail Part">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="JWT for register login and logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +58,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/star_ratings/models.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -80,6 +85,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -163,7 +171,7 @@
       <workItem from="1661834115037" duration="24292000" />
       <workItem from="1661866553754" duration="38000" />
       <workItem from="1661920780032" duration="23166000" />
-      <workItem from="1662006944405" duration="3103000" />
+      <workItem from="1662006944405" duration="7651000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -277,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661950696375</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="JWT for register login and logout">
+      <created>1662010339570</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1662010339570</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +329,7 @@
     <MESSAGE value="Fixed some bugs in the previous project" />
     <MESSAGE value="Fixed some API" />
     <MESSAGE value="Order Detail Part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order Detail Part" />
+    <MESSAGE value="JWT for register login and logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="JWT for register login and logout" />
   </component>
 </project>

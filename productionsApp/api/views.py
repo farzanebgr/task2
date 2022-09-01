@@ -4,12 +4,14 @@ from rest_framework import serializers
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
-    BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer
+    BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
+    BrandRatingsSerializer
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductsComments, ProductGallery
+from star_ratings.models import UserRating
 
 
 # Show all Brands
@@ -17,6 +19,12 @@ class BrandsVS(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = ProductsBrand.objects.all()
     serializer_class = BrandsSerializer
+
+# Show all Brands
+class BrandRatingsVS(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    queryset = UserRating.objects.all()
+    serializer_class = BrandRatingsSerializer
 
 
 # Show  Brand Comments

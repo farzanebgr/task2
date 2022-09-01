@@ -1,13 +1,14 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, ProductsTagsVS, ProductsVS,\
-    ProductGalleryVS, ProductCommentDetailsVS, CreateBrandsCommentsAV, BrandCommentsVS, ProductCommentVS
+    ProductGalleryVS, ProductCommentDetailsVS, CreateBrandsCommentsAV, BrandCommentsVS, ProductCommentVS, BrandRatingsVS
 
 router = DefaultRouter()
 router.register('products', ProductsVS, basename='all-productions')
 #add product comment
 #add brand comment
 router.register('brands', BrandsVS, basename='all-brands')
+router.register('brand-ratings', BrandRatingsVS, basename='brand-ratings')
 #filter by brand
 #filter by category
 router.register('category', CategoriesVS, basename='all-categories')
@@ -15,6 +16,7 @@ router.register('category-parent', CategoryParentVS, basename='category-parent')
 router.register('tags', ProductsTagsVS, basename='all-tags')
 router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
 router.register('product-comment-details', ProductCommentDetailsVS, basename='product-comment-details')
+
 
 urlpatterns = [
     path('', include(router.urls)),

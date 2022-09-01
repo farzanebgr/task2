@@ -7,6 +7,7 @@ from django.views import View
 from django.views.generic import TemplateView, ListView
 from orderApp.models import Order, OrderDetail
 from productionsApp.models import Products
+from siteSettingsApp.models import settingModel
 from userAccountApp.models import User
 from .forms import editProfileModelForm, changePasswordForm
 from django.contrib.auth import logout
@@ -17,6 +18,14 @@ from django.utils.decorators import method_decorator
 class userPanelDashboard(TemplateView):
     template_name = 'userPanelApp/userPanelDashboard.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(userPanelDashboard, self).get_context_data()
+
+        # Get site setting model
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        context['siteSettings'] = siteSettings
+
+        return context
 
 @login_required
 def shoppingPaid(request: HttpRequest):
@@ -26,6 +35,7 @@ def shoppingPaid(request: HttpRequest):
 
     order_item = Order.objects.filter(id=order_id, user_id=request.user.id).first()
     order_detail = OrderDetail.objects.filter(order_id=order_id, order__isPaid=False, order__user_id=request.user.id).first()
+
 
     if order_detail is None:
         return JsonResponse({
@@ -53,26 +63,33 @@ def shoppingPaid(request: HttpRequest):
         })
 
 
+
 @method_decorator(login_required, name='dispatch')
 class editProdileView(View):
 
     def get(self, request: HttpRequest):
         currentUser = User.objects.filter(id=request.user.id).first()
         editForm = editProfileModelForm(instance=currentUser)
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+
         context = {
             'form': editForm,
-            'currentUser': currentUser
+            'currentUser': currentUser,
+            'siteSettings': siteSettings
         }
         return render(request, 'userPanelApp/editProfile.html', context)
 
     def post(self, request: HttpRequest):
         currentUser = User.objects.filter(id=request.user.id).first()
         editForm = editProfileModelForm(request.POST, request.FILES, instance=currentUser)
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+
         if editForm.is_valid():
             editForm.save(commit=True)
         context = {
             'form': editForm,
-            'currentUser': currentUser
+            'currentUser': currentUser,
+            'siteSettings': siteSettings
         }
         return render(request, 'userPanelApp/editProfile.html', context)
 
@@ -80,13 +97,18 @@ class editProdileView(View):
 @method_decorator(login_required, name='dispatch')
 class changePasswordView(View):
     def get(self, request: HttpRequest):
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+
         context = {
-            'form': changePasswordForm()
+            'form': changePasswordForm(),
+            'siteSettings': siteSettings
+
         }
         return render(request, 'userPanelApp/changePassword.html', context)
 
     def post(self, request: HttpRequest):
         form = changePasswordForm(request.POST)
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
         if form.is_valid():
             currentUser: User = User.objects.filter(id=request.user.id).first()
             if currentUser.check_password(form.cleaned_data.get('current_password')):
@@ -98,7 +120,8 @@ class changePasswordView(View):
                 form.add_error('password', 'کلمه عبور فعلی نادرست است')
 
         context = {
-            'form': form
+            'form': form,
+            'siteSettings': siteSettings
         }
         return render(request, 'userPanelApp/changePassword.html', context)
 
@@ -110,8 +133,10 @@ class myShopping(ListView):
 
     def get_queryset(self):
         queryset = super(myShopping, self).get_queryset()
+        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
         request: HttpRequest = self.request
         queryset = queryset.filter(user_id=request.user.id, isPaid=True)
+        queryset['siteSettings'] = siteSettings
         return queryset
 
 
