@@ -8,7 +8,7 @@ from django_filters import rest_framework as filters
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
-from productionsApp.api.paginations import BrandListPagination, ProductListPagination
+from productionsApp.api.pagination import BrandListPagination, ProductListPagination
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
