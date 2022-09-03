@@ -4,6 +4,7 @@ from rest_framework import generics
 from rest_framework import mixins
 from rest_framework import serializers
 from rest_framework.response import Response
+from django_filters import rest_framework as filters
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
@@ -43,8 +44,7 @@ class BrandFilteringGA(generics.ListAPIView):
     serializer_class = BrandsSerializer
     queryset = ProductsBrand
     def get_queryset(self):
-        brand_name = self.request.query_params.get('brand')
-        brands = ProductsBrand.objects.all()
+        brand_name = self.kwargs['brand']
         if brand_name is not None:
             brand = Products.objects.filter(brand__titleEN=brand_name)
             return brand
@@ -122,6 +122,19 @@ class ProductCommentVS(generics.ListAPIView):
         return comments
 
 
+# Filter products by category
+class CategoryFilteringGA(generics.ListAPIView):
+    serializer_class = CategoriesSerializer
+    queryset = ProductsCategory
+
+    def get_queryset(self):
+        cat_name = self.request.query_params.get('cat')
+        if cat_name is not None:
+            cat = ProductsCategory.objects.filter(urlTitle=cat_name)
+            return cat
+        else:
+            return Response(serializers.ValidationError({'error': 'The products of this category are not available'}))
+
 class ProductCommentDetailsVS(viewsets.ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly, ]
     queryset = ProductsComments.objects.all()
@@ -136,3 +149,19 @@ class ProductCommentDetailsVS(viewsets.ModelViewSet):
         query = ProductsComments.objects.filter(product_id=self.kwargs['pk'], pk=self.kwargs['pk']).first()
         query.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class ProductFilter(filters.FilterSet):
+    min_price = filters.NumberFilter(field_name="price", lookup_expr='gte')
+    max_price = filters.NumberFilter(field_name="price", lookup_expr='lte')
+
+    class Meta:
+        model = Products
+        fields = ['category',]
+
+
+class ProductList(generics.ListAPIView):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = ProductFilter
