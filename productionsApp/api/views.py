@@ -4,7 +4,9 @@ from rest_framework import serializers
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework.response import Response
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
@@ -29,6 +31,7 @@ class BrandsVS(viewsets.ModelViewSet):
 # Show  Brand Comments
 class BrandCommentsVS(generics.ListAPIView):
     serializer_class = BrandsCommentsSerializer
+    throttle_classes = [BrandCommentsThrottle,]
 
     def get_queryset(self):
         pk = self.kwargs['pk']
@@ -89,6 +92,7 @@ class ProductGalleryVS(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = ProductGallery.objects.all()
     serializer_class = ProductsGallerySerializer
+    throttle_classes = [UserRateThrottle, AnonRateThrottle]
 
 # Show all Product Ratings
 class ProductRatingsVS(viewsets.ModelViewSet):
@@ -99,7 +103,7 @@ class ProductRatingsVS(viewsets.ModelViewSet):
 # Show Comment Product
 class ProductCommentVS(generics.ListAPIView):
     serializer_class = ProductsCommentSerializer
-
+    throttle_classes = [ProductCommentsThrottle,]
     def get_queryset(self):
         pk = self.kwargs['pk']
         comments = ProductsComments.objects.filter(product_id=pk, product__haveComments=True).all()

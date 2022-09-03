@@ -207,7 +207,20 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ],
+
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '10/hour',
+        'user': '100/hour',
+        'brand-comments': '3/hour',
+        'product-comments': '10/hour',
+    }
 }
+
+# For JWT in Authenticated ....
 SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
 }

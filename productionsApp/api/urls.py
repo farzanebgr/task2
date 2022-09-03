@@ -23,5 +23,4 @@ urlpatterns = [
     path('<int:pk>/', include(router.urls)),
     path('<int:pk>/brand-comments/', BrandCommentsVS.as_view(), name='brand-comments'),
     path('<int:pk>/product-comments/', ProductCommentVS.as_view(), name='product-comments'),
-
 ]
