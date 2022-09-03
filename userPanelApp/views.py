@@ -133,10 +133,8 @@ class myShopping(ListView):
 
     def get_queryset(self):
         queryset = super(myShopping, self).get_queryset()
-        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
         request: HttpRequest = self.request
         queryset = queryset.filter(user_id=request.user.id, isPaid=True)
-        queryset['siteSettings'] = siteSettings
         return queryset
 
 
