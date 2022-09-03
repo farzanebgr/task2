@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from django_filters import rest_framework as filters
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+
+from productionsApp.api.paginations import BrandListPagination
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
@@ -17,10 +19,24 @@ from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategor
 
 
 # Show all Brands
-class BrandsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly]
+class BrandsVS(generics.ListAPIView):
+    permission_classes = [IsAdminOrReadOnly,]
     queryset = ProductsBrand.objects.all()
     serializer_class = BrandsSerializer
+    pagination_class = BrandListPagination
+
+
+# Show a Particular Brands
+class BrandDetailsVS(generics.RetrieveAPIView):
+    permission_classes = [IsAdminOrReadOnly,]
+    queryset = ProductsBrand.objects.all()
+    serializer_class = BrandsSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        brand = ProductsBrand.objects.filter(pk=pk).first()
+        serializer = BrandsSerializer(brand)
+        return Response(serializer.data)
 
 # Show all Brands
 # class BrandRatingsVS(viewsets.ModelViewSet):
@@ -43,6 +59,7 @@ class BrandCommentsVS(generics.ListAPIView):
 class BrandFilteringGA(generics.ListAPIView):
     serializer_class = BrandsSerializer
     queryset = ProductsBrand
+
     def get_queryset(self):
         brand_name = self.kwargs['brand']
         if brand_name is not None:
@@ -113,14 +130,26 @@ class ProductRatingsVS(viewsets.ModelViewSet):
     serializer_class = ProductRatingsSerializer
 
 # Show Comment Product
-class ProductCommentVS(generics.ListAPIView):
+class ProductCommentVS(generics.ListAPIView,
+                       generics.CreateAPIView):
     serializer_class = ProductsCommentSerializer
     throttle_classes = [ProductCommentsThrottle,]
+
     def get_queryset(self):
-        pk = self.kwargs['pk']
-        comments = ProductsComments.objects.filter(product_id=pk, product__haveComments=True).all()
+        product = self.kwargs['id']
+        comments = ProductsComments.objects.filter(product_id=product, product__haveComments=True).all()
+        if comments is None:
+            return Response(serializers.ValidationError({'error':'Product comments are closed!!!'}))
         return comments
 
+    def create(self, request, *args, **kwargs):
+        pk=self.kwargs['id']
+        serializer = ProductsCommentSerializer(data=request.data,product_id=pk)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
 
 # Filter products by category
 class CategoryFilteringGA(generics.ListAPIView):
@@ -141,7 +170,7 @@ class ProductCommentDetailsVS(viewsets.ModelViewSet):
     serializer_class = ProductsCommentSerializer
 
     def retrieve(self, request, *args, **kwargs):
-        query = ProductsComments.objects.filter(product_id=self.kwargs['pk'], pk=self.kwargs['pk']).first()
+        query = ProductsComments.objects.filter(product_id=self.kwargs['id'], pk=self.kwargs['pk']).first()
         serializer = ProductsCommentSerializer(query)
         return Response(serializer.data)
 

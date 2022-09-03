@@ -56,8 +56,6 @@ class ProductsSerializer(serializers.ModelSerializer):
 
 # Serializer for Products
 class ProductsGallerySerializer(serializers.ModelSerializer):
-    product = serializers.StringRelatedField(read_only=True)
-
     class Meta:
         model = ProductGallery
         fields = "__all__"
@@ -73,10 +71,6 @@ class ProductRatingsSerializer(serializers.ModelSerializer):
 
 # Serializer for Products comments
 class ProductsCommentSerializer(serializers.ModelSerializer):
-    product = serializers.StringRelatedField(read_only=True)
-    parent = serializers.StringRelatedField(read_only=True)
-    user = serializers.StringRelatedField(read_only=True)
-
     class Meta:
         model = ProductsComments
         fields = "__all__"
