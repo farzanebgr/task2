@@ -1,4 +1,9 @@
-from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination
 
-class BrandListPagination(LimitOffsetPagination):
-    PAGE_SIZE =2
+class ProductListPagination(PageNumberPagination):
+    page_size = 6
+
+class BrandListPagination(PageNumberPagination):
+    page_size = 2
+
+

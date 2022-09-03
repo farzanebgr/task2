@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="Filter products">
-      <change afterPath="$PROJECT_DIR$/productionsApp/api/paginations.py" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="pagination class for Brand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/paginations.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/paginations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +179,7 @@
       <workItem from="1661920780032" duration="23166000" />
       <workItem from="1662006944405" duration="10006000" />
       <workItem from="1662179177511" duration="2621000" />
-      <workItem from="1662195904222" duration="4911000" />
+      <workItem from="1662195904222" duration="6030000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -331,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662196520872</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="pagination class for Brand">
+      <created>1662202328768</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662202328768</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +377,7 @@
     <MESSAGE value="star ratings database" />
     <MESSAGE value="Filter products by category and price" />
     <MESSAGE value="Filter products" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filter products" />
+    <MESSAGE value="pagination class for Brand" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination class for Brand" />
   </component>
 </project>

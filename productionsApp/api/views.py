@@ -8,7 +8,7 @@ from django_filters import rest_framework as filters
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
-from productionsApp.api.paginations import BrandListPagination
+from productionsApp.api.paginations import BrandListPagination, ProductListPagination
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
@@ -110,11 +110,23 @@ class ProductsTagsVS(viewsets.ModelViewSet):
 
 
 # Show all products
-class ProductsVS(viewsets.ModelViewSet):
+class ProductsVS(generics.ListAPIView):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
+    pagination_class = ProductListPagination
 
+# Show a Particular Brands
+class ProductDetailsVS(generics.RetrieveAPIView):
+    permission_classes = [IsAdminOrReadOnly,]
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        product = Products.objects.filter(pk=pk).first()
+        serializer = ProductsSerializer(product)
+        return Response(serializer.data)
 
 # Show gallery products
 class ProductGalleryVS(viewsets.ModelViewSet):

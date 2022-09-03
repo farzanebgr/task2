@@ -222,9 +222,7 @@ REST_FRAMEWORK = {
         'user': '100/hour',
         'brand-comments': '3/hour',
         'product-comments': '10/hour',
-    },
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 2
+    }
 }
 
 # For JWT in Authenticated ....
