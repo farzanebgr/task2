@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="pagination class for product">
-      <change afterPath="$PROJECT_DIR$/productionsApp/api/pagination.py" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="More settings for pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/paginations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/pagination.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +179,7 @@
       <workItem from="1661920780032" duration="23166000" />
       <workItem from="1662006944405" duration="10006000" />
       <workItem from="1662179177511" duration="2621000" />
-      <workItem from="1662195904222" duration="7725000" />
+      <workItem from="1662195904222" duration="11490000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -341,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662203239470</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="More settings for pagination">
+      <created>1662206114173</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662206114173</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +393,7 @@
     <MESSAGE value="Filter products" />
     <MESSAGE value="pagination class for Brand" />
     <MESSAGE value="pagination class for product" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination class for product" />
+    <MESSAGE value="More settings for pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="More settings for pagination" />
   </component>
 </project>

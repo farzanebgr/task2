@@ -1,7 +1,7 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, ProductsTagsVS, ProductsVS,\
-    ProductGalleryVS, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsVS, ProductCommentVS,\
+    ProductGalleryGL, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsVS, ProductCommentVS,\
     ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS, ProductDetailsVS
 
 router = DefaultRouter()
@@ -12,7 +12,7 @@ router.register('product-ratings', ProductRatingsVS, basename='product-ratings')
 router.register('category', CategoriesVS, basename='all-categories')
 router.register('category-parent', CategoryParentVS, basename='category-parent')
 router.register('tags', ProductsTagsVS, basename='all-tags')
-router.register('product-galleries', ProductGalleryVS, basename='product-galleries')
+# router.register('product-galleries', ProductGalleryGL, basename='product-galleries')
 router.register('product-comment-details', ProductCommentDetailsVS, basename='product-comment-details')
 
 
@@ -20,6 +20,7 @@ urlpatterns = [
     path('', include(router.urls)),
 
     path('products/', ProductsVS.as_view(), name='all-production'),
+    path('products/gallery/', ProductGalleryGL.as_view(), name='product-galleries'),
     path('products/<int:pk>', ProductDetailsVS.as_view(), name='brand-detail'),
 
     path('brands/', BrandsVS.as_view(), name='all-brands'),

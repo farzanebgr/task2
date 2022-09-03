@@ -18,16 +18,24 @@ from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategor
     Products, ProductsComments, ProductGallery, ProductsRating
 
 
-# Show all Brands
-class BrandsVS(generics.ListAPIView):
+# Show all Brands and create a new one by permission admin
+class BrandsVS(generics.ListCreateAPIView):
     permission_classes = [IsAdminOrReadOnly,]
     queryset = ProductsBrand.objects.all()
     serializer_class = BrandsSerializer
     pagination_class = BrandListPagination
 
+    def create(self, request, *args, **kwargs):
+        serializer = BrandsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
 
-# Show a Particular Brands
-class BrandDetailsVS(generics.RetrieveAPIView):
+
+# retrieve a Particular Brand and update and destroy a Particular Brand by permission admin
+class BrandDetailsVS(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminOrReadOnly,]
     queryset = ProductsBrand.objects.all()
     serializer_class = BrandsSerializer
@@ -37,6 +45,22 @@ class BrandDetailsVS(generics.RetrieveAPIView):
         brand = ProductsBrand.objects.filter(pk=pk).first()
         serializer = BrandsSerializer(brand)
         return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        brand = ProductsBrand.objects.filter(pk=pk).first()
+        serializer = BrandsSerializer(brand, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        brand = ProductsBrand.objects.filter(pk=pk).first()
+        brand.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 # Show all Brands
 # class BrandRatingsVS(viewsets.ModelViewSet):
@@ -110,30 +134,93 @@ class ProductsTagsVS(viewsets.ModelViewSet):
 
 
 # Show all products
-class ProductsVS(generics.ListAPIView):
+class ProductsVS(generics.ListCreateAPIView):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
     pagination_class = ProductListPagination
 
-# Show a Particular Brands
-class ProductDetailsVS(generics.RetrieveAPIView):
-    permission_classes = [IsAdminOrReadOnly,]
+    def create(self, request, *args, **kwargs):
+        serializer = ProductsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+
+# retrieve a Particular Product and update and destroy a Particular Product by permission admin
+class ProductDetailsVS(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminOrReadOnly, ]
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
 
     def retrieve(self, request, *args, **kwargs):
-        pk=self.kwargs['pk']
+        pk = self.kwargs['pk']
         product = Products.objects.filter(pk=pk).first()
         serializer = ProductsSerializer(product)
         return Response(serializer.data)
 
+    def update(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        brand = Products.objects.filter(pk=pk).first()
+        serializer = ProductsSerializer(brand, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        brand = Products.objects.filter(pk=pk).first()
+        brand.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 # Show gallery products
-class ProductGalleryVS(viewsets.ModelViewSet):
+class ProductGalleryGL(generics.ListCreateAPIView):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = ProductGallery.objects.all()
     serializer_class = ProductsGallerySerializer
-    throttle_classes = [UserRateThrottle, AnonRateThrottle]
+
+    def create(self, request, *args, **kwargs):
+        serializer = ProductsGallerySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+
+# retrieve a Particular Product and update and destroy a Particular Product by permission admin
+class ProductDetailsVS(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminOrReadOnly, ]
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        product = Products.objects.filter(pk=pk).first()
+        serializer = ProductsSerializer(product)
+        return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        brand = Products.objects.filter(pk=pk).first()
+        serializer = ProductsSerializer(brand, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        brand = Products.objects.filter(pk=pk).first()
+        brand.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 # Show all Product Ratings
 class ProductRatingsVS(viewsets.ModelViewSet):
