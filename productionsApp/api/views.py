@@ -1,13 +1,13 @@
 from rest_framework import viewsets
 from rest_framework import status
-from rest_framework import serializers
 from rest_framework import generics
 from rest_framework import mixins
+from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
-from productionsApp.api.permissions import IsAdminOrReadOnly, IsAdminOrIsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
+from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
     ProductRatingsSerializer
@@ -17,7 +17,7 @@ from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategor
 
 # Show all Brands
 class BrandsVS(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly, ]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = ProductsBrand.objects.all()
     serializer_class = BrandsSerializer
 
@@ -38,6 +38,18 @@ class BrandCommentsVS(generics.ListAPIView):
         comments = BrandsComments.objects.filter(brand_id=pk, brand__haveComments=True).all()
         return comments
 
+# Filter products by brand
+class BrandFilteringGA(generics.ListAPIView):
+    serializer_class = BrandsSerializer
+    queryset = ProductsBrand
+    def get_queryset(self):
+        brand_name = self.request.query_params.get('brand')
+        brands = ProductsBrand.objects.all()
+        if brand_name is not None:
+            brand = Products.objects.filter(brand__titleEN=brand_name)
+            return brand
+        else:
+            return Response(serializers.ValidationError({'error':'The products of this brand are not available'}))
 
 # Create Comment for brand
 class CreateBrandsCommentsAV(mixins.CreateModelMixin,
@@ -61,14 +73,14 @@ class CreateBrandsCommentsAV(mixins.CreateModelMixin,
 
 # Show all Categories
 class CategoriesVS(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly, ]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = ProductsCategory.objects.all()
     serializer_class = CategoriesSerializer
 
 
 # Show all Parent Category
 class CategoryParentVS(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly, ]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = CategoryParent.objects.all()
     serializer_class = CategoryParentSerializer
 
