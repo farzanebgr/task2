@@ -2,7 +2,8 @@ from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, ProductsTagsVS, ProductsVS,\
     ProductGalleryGL, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsVS, ProductCommentGV,\
-    ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS, ProductDetailsVS,CreateProductCommentGC
+    ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS, ProductDetailsVS,CreateProductCommentGC,\
+    ChangeProductCommentGRUD
 
 router = DefaultRouter()
 router.register('product-ratings', ProductRatingsVS, basename='product-ratings')
@@ -32,6 +33,8 @@ urlpatterns = [
 
     path('<int:pk>/', include(router.urls)),
     path('<int:pk>/brand-comments/', BrandCommentsVS.as_view(), name='brand-comments'),
+
     path('<int:id>/product-comments/', ProductCommentGV.as_view(), name='product-comments'),
     path('<int:id>/product-comments/create/', CreateProductCommentGC.as_view(), name='product-comments-create'),
+    path('<int:id>/product-comments/change/<int:pk>/', ChangeProductCommentGRUD.as_view(), name='product-comments-change'),
 ]

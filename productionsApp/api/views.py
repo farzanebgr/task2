@@ -247,21 +247,47 @@ class CreateProductCommentGC(generics.CreateAPIView):
     serializer_class = CreateProductsCommentSerializer
     throttle_classes = [ProductCommentsThrottle,]
 
-    def get_queryset(self):
-        product = self.kwargs['id']
-        comments = ProductsComments.objects.filter(product_id=product, product__haveComments=True).first()
-        if comments is None:
-            return Response(serializers.ValidationError({'error':'Product comments are closed!!!'}))
-        return comments
-
     def create(self, request, *args, **kwargs):
-        pk=self.kwargs['id']
+        product_id=self.kwargs['id']
         serializer = CreateProductsCommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         else:
             return Response(serializer.errors)
+
+# Show Comment Product
+class ChangeProductCommentGRUD(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsOwnerOrReadOnly,]
+    serializer_class = CreateProductsCommentSerializer
+    throttle_classes = [ProductCommentsThrottle,]
+
+    def retrieve(self, request, *args, **kwargs):
+        product = self.kwargs['id']
+        pk = self.kwargs['pk']
+        comment = ProductsComments.objects.filter(product_id=product,pk=pk,user_id=request.user.id).first()
+        serializer = ProductsCommentSerializer(comment)
+        if serializer is None:
+            return Response(serializers.ValidationError({'error': 'Product comments are closed!!!'}))
+        return Response(serializer.data)
+
+
+    def update(self, request, *args, **kwargs):
+        product_id=self.kwargs['id']
+        comment = ProductsComments.objects.filter(product_id=product_id,user_id=request.user.id).first()
+        serializer = CreateProductsCommentSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        product_id = self.kwargs['id']
+        comment = ProductsComments.objects.filter(product_id=product_id, user_id=request.user.id).first()
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 # Filter products by category
 class CategoryFilteringGA(generics.ListAPIView):
