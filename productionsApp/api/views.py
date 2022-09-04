@@ -1,23 +1,20 @@
 # import directly from rest framework
-from rest_framework import viewsets
-from rest_framework import status
+from django_filters import rest_framework as filters
 from rest_framework import generics
-from rest_framework import mixins
 from rest_framework import serializers
-
+from rest_framework import status
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 # import from rest framework. something
 from rest_framework.response import Response
-from django_filters import rest_framework as filters
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 # import from internal apps
 from productionsApp.api.pagination import BrandListPagination, ProductListPagination
-from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
-    BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
+    BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer, \
     ProductRatingsSerializer, CreateProductsCommentSerializer, CreateBrandCommentSerializer
-
+from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 # import models from productionsApp
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductsComments, ProductGallery, ProductsRating
@@ -107,7 +104,7 @@ class CreateBrandCommentGC(generics.CreateAPIView):
             return Response(serializer.errors)
 
 # Show, update and destroy a Brand Comment by owner ...
-class ChangeProductCommentGRUD(generics.RetrieveUpdateDestroyAPIView):
+class ChangeBrandCommentGRUD(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly,]
     serializer_class = CreateBrandCommentSerializer
     throttle_classes = [BrandCommentsThrottle,]
@@ -232,35 +229,6 @@ class ProductGalleryGL(generics.ListCreateAPIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors)
-
-
-# retrieve a Particular Product and update and destroy a Particular Product by permission admin
-class ProductDetailsVS(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAdminOrReadOnly, ]
-    queryset = Products.objects.all()
-    serializer_class = ProductsSerializer
-
-    def retrieve(self, request, *args, **kwargs):
-        pk = self.kwargs['pk']
-        product = Products.objects.filter(pk=pk).first()
-        serializer = ProductsSerializer(product)
-        return Response(serializer.data)
-
-    def update(self, request, *args, **kwargs):
-        pk = self.kwargs['pk']
-        brand = Products.objects.filter(pk=pk).first()
-        serializer = ProductsSerializer(brand, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors)
-
-    def destroy(self, request, *args, **kwargs):
-        pk = self.kwargs['pk']
-        brand = Products.objects.filter(pk=pk).first()
-        brand.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 # Show all Product Ratings

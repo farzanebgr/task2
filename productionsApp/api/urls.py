@@ -1,9 +1,9 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, ProductsTagsVS, ProductsVS,\
-    ProductGalleryGL, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsVS, ProductCommentGR,\
+    ProductGalleryGL, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsGL, ProductCommentGR,\
     ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS, ProductDetailsVS,CreateProductCommentGC,\
-    ChangeProductCommentGRUD, ProductCommentsGV
+    ChangeProductCommentGRUD, ProductCommentsGV, BrandCommentGR, CreateBrandCommentGC, ChangeBrandCommentGRUD
 
 router = DefaultRouter()
 router.register('product-ratings', ProductRatingsVS, basename='product-ratings')
@@ -31,7 +31,6 @@ urlpatterns = [
 
 
     path('<int:pk>/', include(router.urls)),
-    path('<int:pk>/brand-comments/', BrandCommentsVS.as_view(), name='brand-comments'),
     # Product Comments
     path('<int:id>/product-comments/', ProductCommentsGV.as_view(), name='product-comments'),
     path('<int:id>/product-comments/<int:pk>/', ProductCommentGR.as_view(), name='product-comment'),
@@ -39,10 +38,10 @@ urlpatterns = [
     path('<int:id>/product-comments/change/<int:pk>/', ChangeProductCommentGRUD.as_view(),
          name='product-comments-change'),
     # Brand Comments
-    path('<int:id>/brand-comments/', ProductCommentsGV.as_view(), name='brand-comments'),
-    path('<int:id>/brand-comments/<int:pk>/', ProductCommentGR.as_view(), name='brand-comment'),
-    path('<int:id>/brand-comments/create/', CreateProductCommentGC.as_view(), name='brand-comments-create'),
-    path('<int:id>/brand-comments/change/<int:pk>/', ChangeProductCommentGRUD.as_view(),
+    path('<int:id>/brand-comments/', BrandCommentsGL.as_view(), name='brand-comments'),
+    path('<int:id>/brand-comments/<int:pk>/', BrandCommentGR.as_view(), name='brand-comment'),
+    path('<int:id>/brand-comments/create/', CreateBrandCommentGC.as_view(), name='brand-comments-create'),
+    path('<int:id>/brand-comments/change/<int:pk>/', ChangeBrandCommentGRUD.as_view(),
          name='brand-comments-change'),
 
 ]
