@@ -71,7 +71,7 @@ class BrandCommentsGL(generics.ListAPIView):
 
     def get_queryset(self):
         brand = self.kwargs['id']
-        comments = BrandsComments.objects.filter(brand_id=brand, product__haveComments=True).all()
+        comments = BrandsComments.objects.filter(brand_id=brand, brand__haveComments=True).all()
         if comments is None:
             return Response(serializers.ValidationError({'error':'Brand comments are closed!!!'}))
         return comments

@@ -15,7 +15,6 @@ router.register('product-comment-details', ProductCommentDetailsVS, basename='pr
 
 
 urlpatterns = [
-    #add brand comment
     path('', include(router.urls)),
     # Products' Links
     path('products/', ProductsVS.as_view(), name='all-production'),
@@ -28,7 +27,6 @@ urlpatterns = [
     path('brands/<brand>', BrandFilteringGA.as_view(), name='product-list-by-brand'),
     # Categories' Links
     path('category/', CategoryFilteringGA.as_view(), name='product-list-by-brand'),
-
 
     path('<int:pk>/', include(router.urls)),
     # Product Comments
@@ -43,5 +41,4 @@ urlpatterns = [
     path('<int:id>/brand-comments/create/', CreateBrandCommentGC.as_view(), name='brand-comments-create'),
     path('<int:id>/brand-comments/change/<int:pk>/', ChangeBrandCommentGRUD.as_view(),
          name='brand-comments-change'),
-
 ]
