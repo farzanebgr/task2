@@ -1,19 +1,24 @@
+# import directly from rest framework
 from rest_framework import viewsets
 from rest_framework import status
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework import serializers
+
+# import from rest framework. something
 from rest_framework.response import Response
 from django_filters import rest_framework as filters
-from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
+# import from internal apps
 from productionsApp.api.pagination import BrandListPagination, ProductListPagination
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
-    ProductRatingsSerializer, CreateProductsCommentSerializer
+    ProductRatingsSerializer, CreateProductsCommentSerializer, CreateBrandCommentSerializer
+
+# import models from productionsApp
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductsComments, ProductGallery, ProductsRating
 
@@ -62,22 +67,77 @@ class BrandDetailsVS(generics.RetrieveUpdateDestroyAPIView):
         brand.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-# Show all Brands
-# class BrandRatingsVS(viewsets.ModelViewSet):
-#     permission_classes = [IsAuthenticatedOrReadOnly, ]
-#     queryset = UserRating.objects.all()
-#     serializer_class = BrandRatingsSerializer
-
-
-# Show  Brand Comments
-class BrandCommentsVS(generics.ListAPIView):
+# Show All Brand Comments
+class BrandCommentsGL(generics.ListAPIView):
     serializer_class = BrandsCommentsSerializer
-    throttle_classes = [BrandCommentsThrottle,]
+    throttle_classes = [ProductCommentsThrottle,]
 
     def get_queryset(self):
-        pk = self.kwargs['pk']
-        comments = BrandsComments.objects.filter(brand_id=pk, brand__haveComments=True).all()
+        brand = self.kwargs['id']
+        comments = BrandsComments.objects.filter(brand_id=brand, product__haveComments=True).all()
+        if comments is None:
+            return Response(serializers.ValidationError({'error':'Brand comments are closed!!!'}))
         return comments
+
+# Show a Particular Brand Comment
+class BrandCommentGR(generics.RetrieveAPIView):
+    serializer_class = BrandsCommentsSerializer
+
+    def get_queryset(self):
+        brand = self.kwargs['id']
+        pk = self.kwargs['pk']
+        comment = BrandsComments.objects.filter(brand_id=brand, pk=pk).all()
+        if comment is not []:
+            return comment
+        return Response({'error': 'Brand comment are not available!!!'})
+
+
+# Create Brand Comment by Auth
+class CreateBrandCommentGC(generics.CreateAPIView):
+    permission_classes = [IsAuthenticated,]
+    serializer_class = CreateBrandCommentSerializer
+    throttle_classes = [BrandCommentsThrottle,]
+
+    def create(self, request, *args, **kwargs):
+        serializer = CreateBrandCommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+# Show, update and destroy a Brand Comment by owner ...
+class ChangeProductCommentGRUD(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsOwnerOrReadOnly,]
+    serializer_class = CreateBrandCommentSerializer
+    throttle_classes = [BrandCommentsThrottle,]
+
+    def retrieve(self, request, *args, **kwargs):
+        brand = self.kwargs['id']
+        pk = self.kwargs['pk']
+        comment = BrandsComments.objects.filter(brand_id=brand,pk=pk,user_id=request.user.id).first()
+        serializer = CreateBrandCommentSerializer(comment)
+        if serializer is None:
+            return Response(serializers.ValidationError({'error': 'Product comments are closed!!!'}))
+        return Response(serializer.data)
+
+
+    def update(self, request, *args, **kwargs):
+        brand=self.kwargs['id']
+        comment = BrandsComments.objects.filter(brand_id=brand,user_id=request.user.id).first()
+        serializer = CreateBrandCommentSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        brand = self.kwargs['id']
+        comment = BrandsComments.objects.filter(brand_id=brand, user_id=request.user.id).first()
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 # Filter products by brand
 class BrandFilteringGA(generics.ListAPIView):
@@ -91,25 +151,6 @@ class BrandFilteringGA(generics.ListAPIView):
             return brand
         else:
             return Response(serializers.ValidationError({'error':'The products of this brand are not available'}))
-
-# Create Comment for brand
-class CreateBrandsCommentsAV(mixins.CreateModelMixin,
-                             generics.GenericAPIView):
-    serializer_class = BrandsCommentsSerializer
-    queryset = BrandsComments.objects.all()
-    permission_classes = [IsAuthenticated]
-
-    def post(self, request, *args, **kwargs):
-        pk = self.kwargs['pk']
-        brand = BrandsComments.objects.filter(brand_id=pk)
-        user_info = request.user
-        user = BrandsComments.objects.filter(user_id=user_info.id)
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(brand=brand, user=user)
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors)
 
 
 # Show all Categories
@@ -228,8 +269,8 @@ class ProductRatingsVS(viewsets.ModelViewSet):
     queryset = ProductsRating.objects.all()
     serializer_class = ProductRatingsSerializer
 
-# Show Comment Product
-class ProductCommentGV(generics.ListAPIView):
+# Show All Product Comments
+class ProductCommentsGV(generics.ListAPIView):
     serializer_class = ProductsCommentSerializer
     throttle_classes = [ProductCommentsThrottle,]
 
@@ -240,15 +281,26 @@ class ProductCommentGV(generics.ListAPIView):
             return Response(serializers.ValidationError({'error':'Product comments are closed!!!'}))
         return comments
 
+# Show a Particular Product Comment
+class ProductCommentGR(generics.RetrieveAPIView):
+    serializer_class = ProductsCommentSerializer
 
-# Show Comment Product
+    def get_queryset(self):
+        product = self.kwargs['id']
+        pk = self.kwargs['pk']
+        comment = ProductsComments.objects.filter(product_id=product, pk=pk).all()
+        if comment is not []:
+            return comment
+        return Response({'error': 'Product comment are not available!!!'})
+
+
+# Create Product Comment by Auth
 class CreateProductCommentGC(generics.CreateAPIView):
     permission_classes = [IsAuthenticated,]
     serializer_class = CreateProductsCommentSerializer
     throttle_classes = [ProductCommentsThrottle,]
 
     def create(self, request, *args, **kwargs):
-        product_id=self.kwargs['id']
         serializer = CreateProductsCommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -256,7 +308,7 @@ class CreateProductCommentGC(generics.CreateAPIView):
         else:
             return Response(serializer.errors)
 
-# Show Comment Product
+# Show, update and destroy a Product Comment by owner ...
 class ChangeProductCommentGRUD(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly,]
     serializer_class = CreateProductsCommentSerializer

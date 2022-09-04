@@ -85,3 +85,10 @@ class CreateProductsCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductsComments
         fields = "__all__"
+
+
+# Serializer for Products comments
+class CreateBrandCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BrandsComments
+        fields = "__all__"

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="create and show product comments">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="show a product comment and destroy and update by owner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
@@ -181,7 +181,7 @@
       <workItem from="1662179177511" duration="2621000" />
       <workItem from="1662195904222" duration="12348000" />
       <workItem from="1662265895973" duration="700000" />
-      <workItem from="1662285263939" duration="3502000" />
+      <workItem from="1662285263939" duration="5286000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -372,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662290021717</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="show a product comment and destroy and update by owner">
+      <created>1662291595935</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1662291595935</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +401,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="copy right and contact us" />
     <MESSAGE value="curd in product" />
     <MESSAGE value="IsAdminOrReadOnly permission" />
     <MESSAGE value="products comment permission" />
@@ -419,6 +425,7 @@
     <MESSAGE value="change product gallery" />
     <MESSAGE value="Change shopping cart" />
     <MESSAGE value="create and show product comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="create and show product comments" />
+    <MESSAGE value="show a product comment and destroy and update by owner" />
+    <option name="LAST_COMMIT_MESSAGE" value="show a product comment and destroy and update by owner" />
   </component>
 </project>

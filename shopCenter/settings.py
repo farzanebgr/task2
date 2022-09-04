@@ -220,8 +220,8 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '10/hour',
         'user': '100/hour',
-        'brand-comments': '3/hour',
-        'product-comments': '5/hour',
+        'brand-comments': '10/hour',
+        'product-comments': '10/hour',
     }
 }
 
