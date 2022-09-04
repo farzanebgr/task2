@@ -71,6 +71,17 @@ class ProductRatingsSerializer(serializers.ModelSerializer):
 
 # Serializer for Products comments
 class ProductsCommentSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField(read_only=True)
+    product = serializers.StringRelatedField(read_only=True)
+    parent = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = ProductsComments
+        fields = "__all__"
+
+
+# Serializer for Products comments
+class CreateProductsCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductsComments
         fields = "__all__"

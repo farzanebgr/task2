@@ -13,7 +13,7 @@ from productionsApp.api.throttling import BrandCommentsThrottle, ProductComments
 from productionsApp.api.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySerializer, ProductsCommentSerializer, \
     BrandsSerializer, CategoriesSerializer, CategoryParentSerializer, ProductsTagsSerializer, BrandsCommentsSerializer,\
-    ProductRatingsSerializer
+    ProductRatingsSerializer, CreateProductsCommentSerializer
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductsComments, ProductGallery, ProductsRating
 
@@ -229,8 +229,7 @@ class ProductRatingsVS(viewsets.ModelViewSet):
     serializer_class = ProductRatingsSerializer
 
 # Show Comment Product
-class ProductCommentVS(generics.ListAPIView,
-                       generics.CreateAPIView):
+class ProductCommentGV(generics.ListAPIView):
     serializer_class = ProductsCommentSerializer
     throttle_classes = [ProductCommentsThrottle,]
 
@@ -241,9 +240,23 @@ class ProductCommentVS(generics.ListAPIView,
             return Response(serializers.ValidationError({'error':'Product comments are closed!!!'}))
         return comments
 
+
+# Show Comment Product
+class CreateProductCommentGC(generics.CreateAPIView):
+    permission_classes = [IsAuthenticated,]
+    serializer_class = CreateProductsCommentSerializer
+    throttle_classes = [ProductCommentsThrottle,]
+
+    def get_queryset(self):
+        product = self.kwargs['id']
+        comments = ProductsComments.objects.filter(product_id=product, product__haveComments=True).first()
+        if comments is None:
+            return Response(serializers.ValidationError({'error':'Product comments are closed!!!'}))
+        return comments
+
     def create(self, request, *args, **kwargs):
         pk=self.kwargs['id']
-        serializer = ProductsCommentSerializer(data=request.data,product_id=pk)
+        serializer = CreateProductsCommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
