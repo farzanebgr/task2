@@ -6,5 +6,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = "__all__"
-
+        exclude = ['is_superuser', 'last_login', 'is_staff', 'groups', 'user_permissions', ]

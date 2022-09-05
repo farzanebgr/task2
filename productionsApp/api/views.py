@@ -17,7 +17,8 @@ from productionsApp.api.serializers import ProductsSerializer, ProductsGallerySe
 from productionsApp.api.throttling import BrandCommentsThrottle, ProductCommentsThrottle
 # import models from productionsApp
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
-    Products, ProductsComments, ProductGallery, ProductsRating
+    Products, ProductsComments, ProductGallery
+from star_ratings.models import UserRating
 
 
 # Show all Brands and create a new one by permission admin
@@ -273,7 +274,7 @@ class ProductGalleryGL(generics.ListCreateAPIView):
 # Show all Product Ratings
 class ProductRatingsVS(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly, ]
-    queryset = ProductsRating.objects.all()
+    queryset = UserRating.objects.all()
     serializer_class = ProductRatingsSerializer
 
 # Show All Product Comments

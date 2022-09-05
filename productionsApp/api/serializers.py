@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from star_ratings.models import UserRating
 
 from productionsApp.models import ProductsBrand, BrandsComments, ProductsCategory, CategoryParent, ProductsTags, \
     Products, ProductGallery, ProductsComments, ProductsRating
@@ -62,11 +63,9 @@ class ProductsGallerySerializer(serializers.ModelSerializer):
 
 # Serializer for Product
 class ProductRatingsSerializer(serializers.ModelSerializer):
-    product = serializers.StringRelatedField(read_only=True)
-    user = serializers.StringRelatedField(read_only=True)
 
     class Meta:
-        model = ProductsRating
+        model = UserRating
         fields = "__all__"
 
 # Serializer for Products comments

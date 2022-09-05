@@ -4,7 +4,7 @@ from userPanelApp.api import views
 
 urlpatterns = [
     path('user-panel/', views.userPanelDashboard.as_view({'get': 'retrieve'}), name='user-panel'),
-    # path('edit-profile/', views.editProdileView.as_view(), name='edit-profile-page'),
+    path('edit-profile/', views.ChangeProfileGRU.as_view(), name='edit-profile'),
     # path('change-password/', views.changePasswordView.as_view(), name='change-password-page'),
     # path('user-basket/', views.userBasket, name='user-basket-page'),
     # path('my-shopping/', views.myShopping.as_view(), name='user-shopping-page'),

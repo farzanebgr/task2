@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="settings for all apps">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="tags links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +185,7 @@
       <workItem from="1662265895973" duration="700000" />
       <workItem from="1662285263939" duration="9469000" />
       <workItem from="1662352744156" duration="35000" />
-      <workItem from="1662367635930" duration="1832000" />
+      <workItem from="1662367635930" duration="4380000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -408,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662297680249</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="tags links">
+      <created>1662369499529</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1662369499529</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +440,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="comment permission" />
     <MESSAGE value="permission" />
     <MESSAGE value="add brand and category api" />
     <MESSAGE value="show brand comments" />
@@ -455,6 +464,7 @@
     <MESSAGE value="urls brand comments" />
     <MESSAGE value="brand comments" />
     <MESSAGE value="settings for all apps" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings for all apps" />
+    <MESSAGE value="tags links" />
+    <option name="LAST_COMMIT_MESSAGE" value="tags links" />
   </component>
 </project>
