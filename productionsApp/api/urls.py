@@ -1,18 +1,12 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
-from productionsApp.api.views import BrandsVS, CategoriesVS, CategoryParentVS, ProductsTagsVS, ProductsVS,\
-    ProductGalleryGL, ProductCommentDetailsVS, CategoryFilteringGA, BrandCommentsGL, ProductCommentGR,\
-    ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS, ProductDetailsVS,CreateProductCommentGC,\
-    ChangeProductCommentGRUD, ProductCommentsGV, BrandCommentGR, CreateBrandCommentGC, ChangeBrandCommentGRUD
+from productionsApp.api.views import BrandsVS, ProductsTagsVS, ProductsVS, ProductGalleryGL, CategoryFilteringGA,\
+    BrandCommentsGL, ProductCommentGR, ProductRatingsVS, BrandFilteringGA, ProductList, BrandDetailsVS,\
+    ProductDetailsVS,CreateProductCommentGC, ChangeProductCommentGRUD, ProductCommentsGV, BrandCommentGR, \
+    CreateBrandCommentGC, ChangeBrandCommentGRUD, ProductsTagDetailsVS
 
 router = DefaultRouter()
 router.register('product-ratings', ProductRatingsVS, basename='product-ratings')
-
-router.register('category', CategoriesVS, basename='all-categories')
-router.register('category-parent', CategoryParentVS, basename='category-parent')
-router.register('tags', ProductsTagsVS, basename='all-tags')
-router.register('product-comment-details', ProductCommentDetailsVS, basename='product-comment-details')
-
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -27,8 +21,9 @@ urlpatterns = [
     path('brands/<brand>', BrandFilteringGA.as_view(), name='product-list-by-brand'),
     # Categories' Links
     path('category/', CategoryFilteringGA.as_view(), name='product-list-by-brand'),
-
-    path('<int:pk>/', include(router.urls)),
+    # Tags' Links
+    path('tag/', ProductsTagsVS.as_view(), name='all-tags'),
+    path('tag/<int:pk>/', ProductsTagDetailsVS.as_view(), name='all-tags'),
     # Product Comments
     path('<int:id>/product-comments/', ProductCommentsGV.as_view(), name='product-comments'),
     path('<int:id>/product-comments/<int:pk>/', ProductCommentGR.as_view(), name='product-comment'),

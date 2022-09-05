@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="urls brand comments">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="settings for all apps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
@@ -180,7 +180,9 @@
       <workItem from="1662179177511" duration="2621000" />
       <workItem from="1662195904222" duration="12348000" />
       <workItem from="1662265895973" duration="700000" />
-      <workItem from="1662285263939" duration="8029000" />
+      <workItem from="1662285263939" duration="9469000" />
+      <workItem from="1662352744156" duration="35000" />
+      <workItem from="1662367635930" duration="1832000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -392,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662295441306</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="brand comments">
+      <created>1662296783271</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1662296783271</updated>
+    </task>
+    <task id="LOCAL-00032" summary="settings for all apps">
+      <created>1662297680249</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1662297680249</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,12 +430,10 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="products comment permission" />
     <MESSAGE value="comment permission" />
     <MESSAGE value="permission" />
     <MESSAGE value="add brand and category api" />
     <MESSAGE value="show brand comments" />
-    <MESSAGE value="brand comments" />
     <MESSAGE value="comments" />
     <MESSAGE value="add JWT" />
     <MESSAGE value="Fixed some bugs in the previous project" />
@@ -439,6 +453,8 @@
     <MESSAGE value="show a product comment and destroy and update by owner" />
     <MESSAGE value="show a brand comment and destroy and update by owner" />
     <MESSAGE value="urls brand comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="urls brand comments" />
+    <MESSAGE value="brand comments" />
+    <MESSAGE value="settings for all apps" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings for all apps" />
   </component>
 </project>

@@ -164,11 +164,50 @@ class CategoryParentVS(viewsets.ModelViewSet):
     serializer_class = CategoryParentSerializer
 
 
-# Show all Tags Products
-class ProductsTagsVS(viewsets.ModelViewSet):
+# Show all Product Tags and create new one by permission admin
+class ProductsTagsVS(generics.ListCreateAPIView):
     permission_classes = [IsAdminOrReadOnly, ]
     queryset = ProductsTags.objects.all()
     serializer_class = ProductsTagsSerializer
+
+
+    def create(self, request, *args, **kwargs):
+        serializer = ProductsTagsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+# Get a Particular product tag and update and destroy it by permission admin
+class ProductsTagDetailsVS(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminOrReadOnly, ]
+    queryset = ProductsTags.objects.all()
+    serializer_class = ProductsTagsSerializer
+
+
+    def retrieve(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        tag=ProductsTags.objects.filter(pk=pk).first()
+        serializer = ProductsTagsSerializer(tag)
+        return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        tag=ProductsTags.objects.filter(pk=pk).first()
+        serializer = ProductsTagsSerializer(tag,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def delete(self, request, *args, **kwargs):
+        pk=self.kwargs['pk']
+        tag=ProductsTags.objects.filter(pk=pk).first()
+        tag.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 
 # Show all products
