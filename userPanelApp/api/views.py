@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework import generics
+from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from userPanelApp.api.serializers import UserSerializer, UserPasswordSerializer,OrderDetailSerializer
@@ -57,16 +58,24 @@ class ChangePasswordGRU(generics.RetrieveUpdateAPIView):
 
 
 
-class UserBasketGR(generics.RetrieveAPIView):
+class UserBasketGLR(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = OrderDetail.objects.all()
     serializer_class = OrderDetailSerializer
 
-    def retrieve(self, request, *args, **kwargs):
+    def list(self, request, *args, **kwargs):
         u_id = request.user.id
         info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id).all()
         serializer = OrderDetailSerializer(info, many=True)
         return Response(serializer.data)
+
+    def create(self, request, *args, **kwargs):
+        serializer = OrderDetailSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
 
 class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated,]
@@ -90,3 +99,10 @@ class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
              return Response(serializer.data)
         else:
             return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        u_id = request.user.id
+        pk = self.kwargs['pk']
+        info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id, pk=pk).first()
+        info.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

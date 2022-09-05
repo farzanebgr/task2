@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="show User Basket">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="change products in user basket">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
     </list>
@@ -181,7 +183,7 @@
       <workItem from="1662265895973" duration="700000" />
       <workItem from="1662285263939" duration="9469000" />
       <workItem from="1662352744156" duration="35000" />
-      <workItem from="1662367635930" duration="8590000" />
+      <workItem from="1662367635930" duration="11447000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -435,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662377123883</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="change products in user basket">
+      <created>1662377701854</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1662377701854</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +466,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="comments" />
     <MESSAGE value="add JWT" />
     <MESSAGE value="Fixed some bugs in the previous project" />
     <MESSAGE value="Fixed some API" />
@@ -482,6 +490,7 @@
     <MESSAGE value="ChangeProfile link" />
     <MESSAGE value="create super user" />
     <MESSAGE value="show User Basket" />
-    <option name="LAST_COMMIT_MESSAGE" value="show User Basket" />
+    <MESSAGE value="change products in user basket" />
+    <option name="LAST_COMMIT_MESSAGE" value="change products in user basket" />
   </component>
 </project>
