@@ -68,15 +68,23 @@ class UserBasketGR(generics.RetrieveAPIView):
         serializer = OrderDetailSerializer(info, many=True)
         return Response(serializer.data)
 
-class UserBasketG(generics.UpdateAPIView, generics.DestroyAPIView):
+class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = OrderDetail.objects.all()
     serializer_class = OrderDetailSerializer
 
+    def retrieve(self, request, *args, **kwargs):
+        u_id = request.user.id
+        pk = self.kwargs['pk']
+        info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id, pk=pk).first()
+        serializer = OrderDetailSerializer(info)
+        return Response(serializer.data)
+
     def update(self, request, *args, **kwargs):
         u_id = request.user.id
-        info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id).all()
-        serializer = OrderDetailSerializer(info, many=True)
+        pk = self.kwargs['pk']
+        info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id,pk=pk).first()
+        serializer = OrderDetailSerializer(info, data=request.data)
         if serializer.is_valid():
              serializer.save()
              return Response(serializer.data)
