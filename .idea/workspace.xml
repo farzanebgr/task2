@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="ChangeProfile link">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="create super user">
+      <change afterPath="$PROJECT_DIR$/uploads/user/user_response_RIZpMH8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +185,7 @@
       <workItem from="1662265895973" duration="700000" />
       <workItem from="1662285263939" duration="9469000" />
       <workItem from="1662352744156" duration="35000" />
-      <workItem from="1662367635930" duration="5060000" />
+      <workItem from="1662367635930" duration="7950000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -423,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662373166638</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="create super user">
+      <created>1662374063587</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1662374063587</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +454,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="add brand and category api" />
     <MESSAGE value="show brand comments" />
     <MESSAGE value="comments" />
     <MESSAGE value="add JWT" />
@@ -470,6 +478,7 @@
     <MESSAGE value="settings for all apps" />
     <MESSAGE value="tags links" />
     <MESSAGE value="ChangeProfile link" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChangeProfile link" />
+    <MESSAGE value="create super user" />
+    <option name="LAST_COMMIT_MESSAGE" value="create super user" />
   </component>
 </project>

@@ -233,7 +233,6 @@ def myShoppingDetails(request: HttpRequest, order_id):
     order = Order.objects.prefetch_related('orderdetail_set').filter(id=order_id, user_id=request.user.id).first()
     if order is None:
         raise Http404('پیدا نشد')
-    order_detail = OrderDetail.objects.filter()
     context = {
         'order': order
     }
