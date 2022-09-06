@@ -6,10 +6,10 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 # Import serializers from api.serializers
 from userPanelApp.api.serializers import UserSerializer, UserPasswordSerializer,OrderDetailSerializer,\
-    UserPanelSerializer
+    UserPanelSerializer, OrderSerializer
 # Import models from applications
 from userAccountApp.models import User
-from orderApp.models import OrderDetail
+from orderApp.models import OrderDetail, Order
 from siteSettingsApp.models import UserPanel
 
 # Show User Panel links
@@ -147,3 +147,30 @@ class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
         info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id, pk=pk).first()
         info.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# Show details in a Particular Cart by Owner
+class MyShoppingDetailGL(generics.ListAPIView):
+    permission_classes = [IsAuthenticated,]
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+    def list(self, request, *args, **kwargs):
+        u_id = request.user.id
+        info = Order.objects.filter(isPaid=True, user_id=u_id).all()
+        serializer = OrderSerializer(info, many=True)
+        return Response(serializer.data)
+
+
+# Retrieve Products in Particular Cart by Owner
+class MyShoppingDetailGR(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated,]
+    queryset = OrderDetail.objects.all()
+    serializer_class = OrderSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        u_id = request.user.id
+        pk = self.kwargs['order_id']
+        info = OrderDetail.objects.filter(order__isPaid=True, order__user_id=u_id, order_id=pk).all()
+        serializer = OrderDetailSerializer(info, many=True)
+        return Response(serializer.data)

@@ -1,8 +1,7 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueTogetherValidator
 
 from userAccountApp.models import User
-from orderApp.models import OrderDetail
+from orderApp.models import OrderDetail, Order
 from siteSettingsApp.models import UserPanel
 
 class UserSerializer(serializers.ModelSerializer):
@@ -25,13 +24,12 @@ class UserPasswordSerializer(serializers.ModelSerializer):
 
 
 class OrderDetailSerializer(serializers.ModelSerializer):
-    count = serializers.IntegerField()
     class Meta:
         model = OrderDetail
         fields = "__all__"
-        # validators = [
-        #     UniqueTogetherValidator(
-        #         queryset=Products.objects.all(),
-        #         fields=['productCount', 'pk']
-        #     )
-        #     ]
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"

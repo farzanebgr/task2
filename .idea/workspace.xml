@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="update edit profile for user panel">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="comment for api.views in userpanel app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +184,7 @@
       <workItem from="1662285263939" duration="9469000" />
       <workItem from="1662352744156" duration="35000" />
       <workItem from="1662367635930" duration="13016000" />
-      <workItem from="1662439741795" duration="7936000" />
+      <workItem from="1662439741795" duration="10256000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -463,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662449145826</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="comment for api.views in userpanel app">
+      <created>1662453051777</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1662453051777</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +495,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="Order Detail Part" />
     <MESSAGE value="JWT for register login and logout" />
     <MESSAGE value="star ratings" />
     <MESSAGE value="star ratings database" />
@@ -510,6 +519,7 @@
     <MESSAGE value="create product by permission in user basket" />
     <MESSAGE value="create user panel model and change code in edit profile" />
     <MESSAGE value="update edit profile for user panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="update edit profile for user panel" />
+    <MESSAGE value="comment for api.views in userpanel app" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment for api.views in userpanel app" />
   </component>
 </project>
