@@ -5,7 +5,7 @@ from django.db import models
 # from userAccountApp.models import User
 from shopCenter import settings
 
-
+# Contact us's Fields in database by verbose name and some settings
 class contactUs(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='usercontact')
     fullName = models.CharField(max_length=300, verbose_name='نام و نام خانوادگی')
