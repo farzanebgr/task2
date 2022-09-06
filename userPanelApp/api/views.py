@@ -1,20 +1,24 @@
-from rest_framework import viewsets
+# Import directly from rest_framework
 from rest_framework import generics
 from rest_framework import status
+# Import from rest_framework. something
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+# Import serializers from api.serializers
 from userPanelApp.api.serializers import UserSerializer, UserPasswordSerializer,OrderDetailSerializer,\
-UserPanelSerializer
+    UserPanelSerializer
+# Import models from applications
 from userAccountApp.models import User
 from orderApp.models import OrderDetail
 from siteSettingsApp.models import UserPanel
 
-
+# Show User Panel links
 class UserPanelDashboardGL(generics.ListAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = UserPanel.objects.all()
     serializer_class = UserPanelSerializer
 
+# Create, Retrieve, Update and Destroy a Particular User Panel link by Admin Permission
 class UserPanelDashboardGCRUD(generics.CreateAPIView,generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminUser,]
     queryset = UserPanel.objects.all()
@@ -49,7 +53,7 @@ class UserPanelDashboardGCRUD(generics.CreateAPIView,generics.RetrieveUpdateDest
         panel.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
+# Retrieve and  Update a Particular User Information by Owner
 class ChangeProfileGRU(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = User.objects.all()
@@ -71,7 +75,7 @@ class ChangeProfileGRU(generics.RetrieveUpdateAPIView):
         else:
             return Response(serializer.errors)
 
-
+# Retrieve and  Update a Particular User Password by Owner
 class ChangePasswordGRU(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = User.objects.all()
@@ -93,8 +97,7 @@ class ChangePasswordGRU(generics.RetrieveUpdateAPIView):
         else:
             return Response(serializer.errors)
 
-
-
+# Show Products and create Product in Particular User Basket by Authenticated
 class UserBasketGLR(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = OrderDetail.objects.all()
@@ -114,6 +117,7 @@ class UserBasketGLR(generics.ListCreateAPIView):
         else:
             return Response(serializer.errors)
 
+# Retrieve Product, Update Product and Destroy Product in Particular User Basket by Authenticated
 class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = OrderDetail.objects.all()
