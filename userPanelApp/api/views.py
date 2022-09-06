@@ -8,10 +8,12 @@ from userAccountApp.models import User
 from orderApp.models import OrderDetail
 
 
-class userPanelDashboard(viewsets.ModelViewSet):
+class userPanelDashboard(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
 
 class ChangeProfileGRU(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated,]
@@ -28,7 +30,7 @@ class ChangeProfileGRU(generics.RetrieveUpdateAPIView):
         u_id = request.user.id
         info = User.objects.filter(pk=u_id).first()
         serializer = UserSerializer(info, data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
         else:
@@ -50,7 +52,7 @@ class ChangePasswordGRU(generics.RetrieveUpdateAPIView):
         u_id = request.user.id
         info = User.objects.filter(pk=u_id).first()
         serializer = UserPasswordSerializer(info, data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
         else:
@@ -71,7 +73,7 @@ class UserBasketGLR(generics.ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         serializer = OrderDetailSerializer(data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
         else:
@@ -94,7 +96,7 @@ class UserBasketGUD(generics.RetrieveUpdateDestroyAPIView):
         pk = self.kwargs['pk']
         info = OrderDetail.objects.filter(order__isPaid=False, order__user_id=u_id,pk=pk).first()
         serializer = OrderDetailSerializer(info, data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
              serializer.save()
              return Response(serializer.data)
         else:

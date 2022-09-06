@@ -8,9 +8,9 @@
             <div class="col-md-4">
                 <div class="thumbnail">
                     <div class="caption">
-                        {% if currentUser.avatar.url %}
+                        {% if currentUser.avatar.url is not None %}
                             <img style="width: 100%" src="{{ currentUser.avatar.url }}" />
-                        {% else %}
+                            {% else %}
                             <img style="width: 100%" src="/static/images/blog/user.png"/>
                         {% endif %}
                     </div>

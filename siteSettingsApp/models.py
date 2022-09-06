@@ -66,3 +66,15 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.title
+
+class UserPanel(models.Model):
+    title = models.CharField(max_length=100, verbose_name='عنوان منو')
+    url = models.URLField(max_length=100, verbose_name='آدرس url')
+    url_v1 = models.URLField(max_length=100, verbose_name='آدرس url برای ورژن1')
+
+    class Meta:
+        verbose_name = 'آیتم منوی کاربر'
+        verbose_name_plural = 'آیتم های منوی کاربران'
+
+    def __str__(self):
+        return self.title

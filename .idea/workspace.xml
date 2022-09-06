@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="change products in user basket">
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="create product by permission in user basket">
+      <change afterPath="$PROJECT_DIR$/siteSettingsApp/migrations/0007_userpanel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/user/user_response_LWntRh4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b6731276-aee6-40b5-afb6-551660498be4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b6731276-aee6-40b5-afb6-551660498be4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteSettingsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteSettingsApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userPanelApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/templates/userPanelApp/editProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +189,8 @@
       <workItem from="1662265895973" duration="700000" />
       <workItem from="1662285263939" duration="9469000" />
       <workItem from="1662352744156" duration="35000" />
-      <workItem from="1662367635930" duration="11447000" />
+      <workItem from="1662367635930" duration="13016000" />
+      <workItem from="1662439741795" duration="3762000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -444,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662377701854</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="create product by permission in user basket">
+      <created>1662380723306</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1662380723306</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +480,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="add JWT" />
     <MESSAGE value="Fixed some bugs in the previous project" />
     <MESSAGE value="Fixed some API" />
     <MESSAGE value="Order Detail Part" />
@@ -491,6 +504,7 @@
     <MESSAGE value="create super user" />
     <MESSAGE value="show User Basket" />
     <MESSAGE value="change products in user basket" />
-    <option name="LAST_COMMIT_MESSAGE" value="change products in user basket" />
+    <MESSAGE value="create product by permission in user basket" />
+    <option name="LAST_COMMIT_MESSAGE" value="create product by permission in user basket" />
   </component>
 </project>
