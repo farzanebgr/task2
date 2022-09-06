@@ -2,17 +2,52 @@ from rest_framework import viewsets
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from userPanelApp.api.serializers import UserSerializer, UserPasswordSerializer,OrderDetailSerializer
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from userPanelApp.api.serializers import UserSerializer, UserPasswordSerializer,OrderDetailSerializer,\
+UserPanelSerializer
 from userAccountApp.models import User
 from orderApp.models import OrderDetail
+from siteSettingsApp.models import UserPanel
 
 
-class userPanelDashboard(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class UserPanelDashboardGL(generics.ListAPIView):
+    permission_classes = [IsAuthenticated,]
+    queryset = UserPanel.objects.all()
+    serializer_class = UserPanelSerializer
 
+class UserPanelDashboardGCRUD(generics.CreateAPIView,generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminUser,]
+    queryset = UserPanel.objects.all()
+    serializer_class = UserPanelSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        panel = UserPanel.objects.filter(pk=self.kwargs['id']).first()
+        serializer = UserPanelSerializer(panel)
+        return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        p_id = self.kwargs['id']
+        panel = UserPanel.objects.filter(pk=p_id).first()
+        serializer = UserPanelSerializer(panel, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def create(self, request, *args, **kwargs):
+        serializer = UserPanelSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def destroy(self, request, *args, **kwargs):
+        p_id = self.kwargs['id']
+        panel = UserPanel.objects.filter(pk=p_id).first()
+        panel.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class ChangeProfileGRU(generics.RetrieveUpdateAPIView):

@@ -3,7 +3,7 @@ from rest_framework.validators import UniqueTogetherValidator
 
 from userAccountApp.models import User
 from orderApp.models import OrderDetail
-from productionsApp.models import Products
+from siteSettingsApp.models import UserPanel
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -11,15 +11,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         exclude = ['is_superuser', 'last_login', 'is_staff', 'groups', 'user_permissions', ]
 
-class UserPanelSerializer(serializers.HyperlinkedModelSerializer):
-    url = serializers.HyperlinkedIdentityField(
-        view_name='accounts',
-        lookup_field='slug'
-    )
+class UserPanelSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
-        exclude = ['is_superuser', 'last_login', 'is_staff', 'groups', 'user_permissions', ]
+        model = UserPanel
+        fields = "__all__"
 
 class UserPasswordSerializer(serializers.ModelSerializer):
 

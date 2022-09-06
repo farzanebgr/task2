@@ -3,7 +3,8 @@ from django.urls import path, include
 from userPanelApp.api import views
 
 urlpatterns = [
-    path('user-panel/', views.userPanelDashboard.as_view(), name='user-panel'),
+    path('user-panel/', views.UserPanelDashboardGL.as_view(), name='user-panel'),
+    path('user-panel/<int:id>/', views.UserPanelDashboardGCRUD.as_view(), name='user-panel-change'),
     path('edit-profile/', views.ChangeProfileGRU.as_view(), name='edit-profile'),
     path('change-password/', views.ChangePasswordGRU.as_view(), name='change-password'),
     path('user-basket/', views.UserBasketGLR.as_view(), name='user-basket'),
