@@ -48,6 +48,8 @@ def shoppingPaid(request: HttpRequest):
     if product.productCount >= customerCount:
         product.productCount -= customerCount
         order_item.isPaid = True
+        order_detail.finalPrice = order_detail.get_total_price()
+        order_detail.save()
         product.save()
         order_item.save()
         return JsonResponse({

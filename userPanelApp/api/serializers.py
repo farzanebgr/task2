@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from userAccountApp.models import User
+from productionsApp.api.serializers import ProductsSerializer
 from orderApp.models import OrderDetail, Order
 from siteSettingsApp.models import UserPanel
 
@@ -24,6 +25,8 @@ class UserPasswordSerializer(serializers.ModelSerializer):
 
 
 class OrderDetailSerializer(serializers.ModelSerializer):
+    product = ProductsSerializer()
+
     class Meta:
         model = OrderDetail
         fields = "__all__"
