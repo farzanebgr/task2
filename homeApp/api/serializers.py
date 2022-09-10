@@ -1,13 +1,14 @@
+
 from rest_framework import serializers
 
-from siteSettingsApp.models import Slider, settingModel, footerLink
+from siteSettingsApp import models
 from productionsApp.models import Products
 
 
 # Serializer for Sliders in index page
 class SliderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Slider
+        model = models.Slider
         fields = "__all__"
 
 
@@ -21,14 +22,14 @@ class ProductsSerializer(serializers.ModelSerializer):
 # Serializer for settingModel
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = settingModel
+        model = models.settingModel
         fields = "__all__"
 
 
 # Serializer for site header
 class SiteHeaderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = settingModel
+        model = models.settingModel
         exclude = ['siteMap', 'siteRights']
 
 
@@ -37,5 +38,5 @@ class SiteFooterPartialAV(serializers.ModelSerializer):
     footerLinkRelation = serializers.StringRelatedField(read_only=True)
 
     class Meta:
-        model = footerLink
+        model = models.footerLink
         fields = "__all__"

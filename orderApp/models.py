@@ -42,7 +42,8 @@ class OrderDetail(models.Model):
         return str(self.order)
 
     def get_total_price(self):
-        self.finalPrice = self.count * self.product.price
+        finalPrice = (self.count * self.product.price)
+        self.finalPrice=finalPrice
         return self.finalPrice
 
     def get_total_count(self):

@@ -1,23 +1,27 @@
+# Import from django. something
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from siteSettingsApp.models import settingModel
-from contactApp.forms import ContactUsModelForm
 from django.views.generic.edit import CreateView
-from userAccountApp.models import User
+# Import model from apps' files
+from siteSettingsApp.models import settingModel
 from contactApp.models import contactUs
+from userAccountApp.models import User
+# Import contact us form to get and post requests
+from contactApp.forms import ContactUsModelForm
 
 
+# Show contact us view by from
 class ContactUsView(CreateView):
     form_class = ContactUsModelForm
     template_name = 'contactApp/contactUs.html'
     success_url = '/contact-us/'
-
+    # Give data to show detail in footer and sidebar
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
         context['siteSettings'] = siteSettings
         return context
-
+    # Send information to the database if it was valid
     def post(self, request):
         contactUs_form = ContactUsModelForm(request.POST)
         if contactUs_form.is_valid():
@@ -53,18 +57,17 @@ class ContactUsView(CreateView):
                     'settings': settings
                 }
                 return render(request, 'contactApp/showMessages.html', context)
-
         context = {
             'register_form': contactUs_form
         }
-
         return render(request, 'contactApp/contactUs.html', context)
 
 
+# Show Copy Right page
 class CopyRightView(TemplateView):
     template_name = 'contactApp/copyRight.html'
     success_url = '/copy-right/'
-
+    # Give data to show detail in footer and sidebar
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()

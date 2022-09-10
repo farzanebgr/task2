@@ -1,13 +1,15 @@
-from django.db.models import Count
+# Import from django. something
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from siteSettingsApp.models import settingModel, footerLinkBox, Slider
+from django.views import generic
+# Import models from apps
+from siteSettingsApp import models
 from productionsApp.models import Products
+# Import option from convertors
 from utils.convertors import group_list
 
 
 # Show Sliders, The Latest products, site setting model
-class indexView(TemplateView):
+class indexView(generic.TemplateView):
     template_name = 'homeApp/index.html'
     model = Products
 
@@ -15,11 +17,11 @@ class indexView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         # Get site setting model
-        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        siteSettings: models.settingModel = models.settingModel.objects.filter(isMainSettings=True).first()
         context['siteSettings'] = siteSettings
 
         # Get Sliders
-        sliders = Slider.objects.filter(isActive=True)
+        sliders = models.Slider.objects.filter(isActive=True)
         context['sliders'] = sliders
 
         # Get The Latest products
@@ -29,14 +31,14 @@ class indexView(TemplateView):
         return context
 
 # Show a particular setting model in about us
-class aboutUsView(TemplateView):
+class aboutUsView(generic.TemplateView):
     template_name = 'homeApp/aboutUs.html'
 
     def get_context_data(self, **kwargs):
         context = super(aboutUsView, self).get_context_data()
 
         # Get site setting model
-        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+        siteSettings: models.settingModel = models.settingModel.objects.filter(isMainSettings=True).first()
         context['siteSettings'] = siteSettings
 
         return context
@@ -44,7 +46,7 @@ class aboutUsView(TemplateView):
 
 # Show a particular setting model
 def siteHeaderPartial(request):
-    settings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
+    settings: models.settingModel = models.settingModel.objects.filter(isMainSettings=True).first()
     context = {
         'settings': settings
     }
@@ -53,9 +55,9 @@ def siteHeaderPartial(request):
 
 # Show a particular setting model, footer link boxes
 def siteFooterPartial(request):
-    siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
-    footer_link_boxes = footerLinkBox.objects.all()
-
+    siteSettings: models.settingModel = models.settingModel.objects.filter(isMainSettings=True).first()
+    # Site footer and links
+    footer_link_boxes = models.footerLinkBox.objects.all()
     for item in footer_link_boxes:
         item.footerlink_set
 
@@ -63,5 +65,4 @@ def siteFooterPartial(request):
         'siteSettings': siteSettings,
         'footer_link_boxes': footer_link_boxes
     }
-
     return render(request, 'shared/footer.html', context)

@@ -48,6 +48,8 @@ def shoppingPaid(request: HttpRequest):
     if product.productCount >= customerCount:
         product.productCount -= customerCount
         order_item.isPaid = True
+        order_detail.finalPrice = order_detail.get_total_price()
+        order_detail.save()
         product.save()
         order_item.save()
         return JsonResponse({
@@ -133,10 +135,8 @@ class myShopping(ListView):
 
     def get_queryset(self):
         queryset = super(myShopping, self).get_queryset()
-        siteSettings: settingModel = settingModel.objects.filter(isMainSettings=True).first()
         request: HttpRequest = self.request
         queryset = queryset.filter(user_id=request.user.id, isPaid=True)
-        queryset['siteSettings'] = siteSettings
         return queryset
 
 
@@ -235,7 +235,6 @@ def myShoppingDetails(request: HttpRequest, order_id):
     order = Order.objects.prefetch_related('orderdetail_set').filter(id=order_id, user_id=request.user.id).first()
     if order is None:
         raise Http404('پیدا نشد')
-    order_detail = OrderDetail.objects.filter()
     context = {
         'order': order
     }

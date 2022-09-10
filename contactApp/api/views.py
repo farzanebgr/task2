@@ -1,9 +1,14 @@
+# Import directly from rest_framework
 from rest_framework import viewsets
 from rest_framework import serializers
+# Import from rest_framework. something
 from rest_framework.views import APIView
 from rest_framework.response import Response
+# Import permission's file from app folder
 from productionsApp.api.permissions import IsAdminOrReadOnly
+# Import Serializers from serializers' file from app folder
 from contactApp.api.serializers import SettingSerializer, ContactUsSerializer
+# Import models from apps
 from contactApp.models import contactUs
 from siteSettingsApp.models import settingModel
 
@@ -26,7 +31,7 @@ class CopyRightAV(APIView):
             return Response(serializer.errors)
 
 
-# Return a form for add message for contact
+# Return a form for add message to contact us tabel
 class ContactUsVS(viewsets.ModelViewSet):
     queryset = contactUs.objects.all()
     serializer_class = ContactUsSerializer

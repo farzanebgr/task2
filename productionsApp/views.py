@@ -3,8 +3,8 @@ from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 from siteSettingsApp.models import settingModel
 from utils.httpService import get_client_ip
-from productionsApp.models import Products, ProductsCategory, CategoryParent, ProductsBrand, ProductsComments, \
-    BrandsComments, ProductsVisit, ProductGallery
+from productionsApp.models import Products, CategoryParent, ProductsBrand, ProductsComments, BrandsComments, \
+    ProductsVisit, ProductGallery
 from django.views.generic import ListView, DetailView
 from utils.convertors import group_list
 

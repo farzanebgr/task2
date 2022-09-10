@@ -1,8 +1,9 @@
+# Import from django. something
 from django.urls import path
-from homeApp import views
+# Import views file to get views for urls
+from homeApp.views import indexView, aboutUsView
 
 urlpatterns = [
-    path('', views.indexView.as_view(), name='index-page'),
-    path('about-us/', views.aboutUsView.as_view(), name='about-us-page'),
-
+    path('', indexView.as_view(), name='index-page'),
+    path('about-us/', aboutUsView.as_view(), name='about-us-page'),
 ]
