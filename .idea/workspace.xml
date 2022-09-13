@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="change final price and add product detail in order">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="add chatApp application">
+      <change afterPath="$PROJECT_DIR$/chatApp/consumers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatApp/routing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +84,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Django Channel/channels/ChatRoom" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -187,6 +190,7 @@
       <workItem from="1662809136169" duration="722000" />
       <workItem from="1662814468442" duration="2653000" />
       <workItem from="1662878779446" duration="42000" />
+      <workItem from="1663049217530" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -496,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662816975277</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add chatApp application">
+      <created>1663049396371</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1663049396371</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +529,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="Filter products by category and price" />
     <MESSAGE value="Filter products" />
     <MESSAGE value="pagination class for Brand" />
     <MESSAGE value="pagination class for product" />
@@ -543,6 +553,7 @@
     <MESSAGE value="Shopping cart and show products" />
     <MESSAGE value="comments for contact us app" />
     <MESSAGE value="change final price and add product detail in order" />
-    <option name="LAST_COMMIT_MESSAGE" value="change final price and add product detail in order" />
+    <MESSAGE value="add chatApp application" />
+    <option name="LAST_COMMIT_MESSAGE" value="add chatApp application" />
   </component>
 </project>
