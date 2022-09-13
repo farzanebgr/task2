@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="comments for contact us app">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task2.zip" afterDir="false" />
+    <list default="true" id="a426eee8-663a-4541-82e8-1b938576b908" name="Changes" comment="change final price and add product detail in order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/contactApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orderApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionsApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionsApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopCenter/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopCenter/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/permissions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userAccountApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccountApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPanelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userPanelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +81,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Django Channel/channels/ChatRoom" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -202,7 +185,8 @@
       <workItem from="1662533086956" duration="1158000" />
       <workItem from="1662552158689" duration="19000" />
       <workItem from="1662809136169" duration="722000" />
-      <workItem from="1662814468442" duration="2151000" />
+      <workItem from="1662814468442" duration="2653000" />
+      <workItem from="1662878779446" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1659438898541</created>
@@ -505,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662462225380</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="change final price and add product detail in order">
+      <created>1662816975277</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1662816975277</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +518,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/shop_center" />
     </ignored-roots>
-    <MESSAGE value="star ratings database" />
     <MESSAGE value="Filter products by category and price" />
     <MESSAGE value="Filter products" />
     <MESSAGE value="pagination class for Brand" />
@@ -552,6 +542,7 @@
     <MESSAGE value="comment for api.views in userpanel app" />
     <MESSAGE value="Shopping cart and show products" />
     <MESSAGE value="comments for contact us app" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments for contact us app" />
+    <MESSAGE value="change final price and add product detail in order" />
+    <option name="LAST_COMMIT_MESSAGE" value="change final price and add product detail in order" />
   </component>
 </project>
